@@ -5,10 +5,10 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_2216.jpg",
     "date": "2025-06-11",
     "date_display": "June 11, 2025",
-    "location_hint": "München — kurz davor",
+    "location_hint": "M\u00fcnchen \u2014 kurz davor",
     "occasion": "early_days",
-    "used": false,
-    "used_on": null
+    "used": true,
+    "used_on": "2026-04-12"
   },
   {
     "filename": "IMG_2264.HEIC",
@@ -16,7 +16,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_2264.jpg",
     "date": "2025-06-13",
     "date_display": "June 13, 2025",
-    "location_hint": "München — kurz davor",
+    "location_hint": "M\u00fcnchen \u2014 kurz davor",
     "occasion": "early_days",
     "used": false,
     "used_on": null
@@ -27,7 +27,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_2266.jpg",
     "date": "2025-06-13",
     "date_display": "June 13, 2025",
-    "location_hint": "München — kurz davor",
+    "location_hint": "M\u00fcnchen \u2014 kurz davor",
     "occasion": "early_days",
     "used": false,
     "used_on": null
@@ -38,7 +38,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_2271.jpg",
     "date": "2025-06-13",
     "date_display": "June 13, 2025",
-    "location_hint": "München — kurz davor",
+    "location_hint": "M\u00fcnchen \u2014 kurz davor",
     "occasion": "early_days",
     "used": false,
     "used_on": null
@@ -49,7 +49,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_2274.jpg",
     "date": "2025-06-14",
     "date_display": "June 14, 2025",
-    "location_hint": "München — kurz davor",
+    "location_hint": "M\u00fcnchen \u2014 kurz davor",
     "occasion": "early_days",
     "used": false,
     "used_on": null
@@ -60,7 +60,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_2275.jpg",
     "date": "2025-06-14",
     "date_display": "June 14, 2025",
-    "location_hint": "München — kurz davor",
+    "location_hint": "M\u00fcnchen \u2014 kurz davor",
     "occasion": "early_days",
     "used": false,
     "used_on": null
@@ -71,7 +71,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_2276.jpg",
     "date": "2025-06-14",
     "date_display": "June 14, 2025",
-    "location_hint": "München — kurz davor",
+    "location_hint": "M\u00fcnchen \u2014 kurz davor",
     "occasion": "early_days",
     "used": false,
     "used_on": null
@@ -82,7 +82,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_2294.jpg",
     "date": "2025-06-14",
     "date_display": "June 14, 2025",
-    "location_hint": "München — kurz davor",
+    "location_hint": "M\u00fcnchen \u2014 kurz davor",
     "occasion": "early_days",
     "used": false,
     "used_on": null
@@ -93,7 +93,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_2297.jpg",
     "date": "2025-06-14",
     "date_display": "June 14, 2025",
-    "location_hint": "München — kurz davor",
+    "location_hint": "M\u00fcnchen \u2014 kurz davor",
     "occasion": "early_days",
     "used": false,
     "used_on": null
@@ -104,7 +104,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_2299.jpg",
     "date": "2025-06-14",
     "date_display": "June 14, 2025",
-    "location_hint": "München — kurz davor",
+    "location_hint": "M\u00fcnchen \u2014 kurz davor",
     "occasion": "early_days",
     "used": false,
     "used_on": null
@@ -115,7 +115,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_2316.jpg",
     "date": "2025-06-14",
     "date_display": "June 14, 2025",
-    "location_hint": "München — kurz davor",
+    "location_hint": "M\u00fcnchen \u2014 kurz davor",
     "occasion": "early_days",
     "used": false,
     "used_on": null
@@ -126,7 +126,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_2321.jpg",
     "date": "2025-06-14",
     "date_display": "June 14, 2025",
-    "location_hint": "München — kurz davor",
+    "location_hint": "M\u00fcnchen \u2014 kurz davor",
     "occasion": "early_days",
     "used": false,
     "used_on": null
@@ -137,7 +137,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/ff605e02-1e20-414e-90cf-4486a1b0a4e4.jpg",
     "date": "2025-06-15",
     "date_display": "June 15, 2025",
-    "location_hint": "München — Tag Eins 💕",
+    "location_hint": "M\u00fcnchen \u2014 Tag Eins \ud83d\udc95",
     "occasion": "first_day_together",
     "used": false,
     "used_on": null
@@ -148,7 +148,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_2338.jpg",
     "date": "2025-06-16",
     "date_display": "June 16, 2025",
-    "location_hint": "München — der Tag danach",
+    "location_hint": "M\u00fcnchen \u2014 der Tag danach",
     "occasion": "early_days",
     "used": false,
     "used_on": null
@@ -159,7 +159,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_2342.jpg",
     "date": "2025-06-16",
     "date_display": "June 16, 2025",
-    "location_hint": "München — der Tag danach",
+    "location_hint": "M\u00fcnchen \u2014 der Tag danach",
     "occasion": "early_days",
     "used": false,
     "used_on": null
@@ -170,7 +170,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_2348.jpg",
     "date": "2025-06-16",
     "date_display": "June 16, 2025",
-    "location_hint": "München — der Tag danach",
+    "location_hint": "M\u00fcnchen \u2014 der Tag danach",
     "occasion": "early_days",
     "used": false,
     "used_on": null
@@ -181,7 +181,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_2358.jpg",
     "date": "2025-06-16",
     "date_display": "June 16, 2025",
-    "location_hint": "München — der Tag danach",
+    "location_hint": "M\u00fcnchen \u2014 der Tag danach",
     "occasion": "early_days",
     "used": false,
     "used_on": null
@@ -192,7 +192,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_3029.jpg",
     "date": "2025-07-21",
     "date_display": "July 21, 2025",
-    "location_hint": "São Paulo — Sommer",
+    "location_hint": "S\u00e3o Paulo \u2014 Sommer",
     "occasion": "summer",
     "used": false,
     "used_on": null
@@ -203,7 +203,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_3035.jpg",
     "date": "2025-07-21",
     "date_display": "July 21, 2025",
-    "location_hint": "São Paulo — Sommer",
+    "location_hint": "S\u00e3o Paulo \u2014 Sommer",
     "occasion": "summer",
     "used": false,
     "used_on": null
@@ -214,7 +214,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_3038.jpg",
     "date": "2025-07-21",
     "date_display": "July 21, 2025",
-    "location_hint": "São Paulo — Sommer",
+    "location_hint": "S\u00e3o Paulo \u2014 Sommer",
     "occasion": "summer",
     "used": false,
     "used_on": null
@@ -225,7 +225,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_3083.jpg",
     "date": "2025-07-22",
     "date_display": "July 22, 2025",
-    "location_hint": "São Paulo — Sommer",
+    "location_hint": "S\u00e3o Paulo \u2014 Sommer",
     "occasion": "summer",
     "used": false,
     "used_on": null
@@ -236,7 +236,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_3098.jpg",
     "date": "2025-07-23",
     "date_display": "July 23, 2025",
-    "location_hint": "São Paulo — Sommer",
+    "location_hint": "S\u00e3o Paulo \u2014 Sommer",
     "occasion": "summer",
     "used": false,
     "used_on": null
@@ -247,7 +247,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_3102.jpg",
     "date": "2025-07-23",
     "date_display": "July 23, 2025",
-    "location_hint": "São Paulo — Sommer",
+    "location_hint": "S\u00e3o Paulo \u2014 Sommer",
     "occasion": "summer",
     "used": false,
     "used_on": null
@@ -258,7 +258,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_3110.jpg",
     "date": "2025-07-23",
     "date_display": "July 23, 2025",
-    "location_hint": "São Paulo — Sommer",
+    "location_hint": "S\u00e3o Paulo \u2014 Sommer",
     "occasion": "summer",
     "used": false,
     "used_on": null
@@ -269,7 +269,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_3111.jpg",
     "date": "2025-07-23",
     "date_display": "July 23, 2025",
-    "location_hint": "São Paulo — Sommer",
+    "location_hint": "S\u00e3o Paulo \u2014 Sommer",
     "occasion": "summer",
     "used": false,
     "used_on": null
@@ -280,7 +280,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_3113.jpg",
     "date": "2025-07-23",
     "date_display": "July 23, 2025",
-    "location_hint": "São Paulo — Sommer",
+    "location_hint": "S\u00e3o Paulo \u2014 Sommer",
     "occasion": "summer",
     "used": false,
     "used_on": null
@@ -291,7 +291,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_3116.jpg",
     "date": "2025-07-23",
     "date_display": "July 23, 2025",
-    "location_hint": "São Paulo — Sommer",
+    "location_hint": "S\u00e3o Paulo \u2014 Sommer",
     "occasion": "summer",
     "used": false,
     "used_on": null
@@ -302,7 +302,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_3176.jpg",
     "date": "2025-07-26",
     "date_display": "July 26, 2025",
-    "location_hint": "São Paulo — Sommer",
+    "location_hint": "S\u00e3o Paulo \u2014 Sommer",
     "occasion": "summer",
     "used": false,
     "used_on": null
@@ -313,7 +313,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_3184.jpg",
     "date": "2025-07-26",
     "date_display": "July 26, 2025",
-    "location_hint": "São Paulo — Sommer",
+    "location_hint": "S\u00e3o Paulo \u2014 Sommer",
     "occasion": "summer",
     "used": false,
     "used_on": null
@@ -324,7 +324,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_3192.jpg",
     "date": "2025-07-27",
     "date_display": "July 27, 2025",
-    "location_hint": "São Paulo — Sommer",
+    "location_hint": "S\u00e3o Paulo \u2014 Sommer",
     "occasion": "summer",
     "used": false,
     "used_on": null
@@ -335,7 +335,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_3200.jpg",
     "date": "2025-07-27",
     "date_display": "July 27, 2025",
-    "location_hint": "São Paulo — Sommer",
+    "location_hint": "S\u00e3o Paulo \u2014 Sommer",
     "occasion": "summer",
     "used": false,
     "used_on": null
@@ -346,7 +346,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_3207.jpg",
     "date": "2025-07-27",
     "date_display": "July 27, 2025",
-    "location_hint": "São Paulo — Sommer",
+    "location_hint": "S\u00e3o Paulo \u2014 Sommer",
     "occasion": "summer",
     "used": false,
     "used_on": null
@@ -357,7 +357,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/69c0343b-1ca3-4cef-ba78-e258a4b2f871.jpg",
     "date": "2025-07-30",
     "date_display": "July 30, 2025",
-    "location_hint": "São Paulo — Sommer",
+    "location_hint": "S\u00e3o Paulo \u2014 Sommer",
     "occasion": "summer",
     "used": false,
     "used_on": null
@@ -368,7 +368,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_3274.jpg",
     "date": "2025-07-31",
     "date_display": "July 31, 2025",
-    "location_hint": "São Paulo — Sommer",
+    "location_hint": "S\u00e3o Paulo \u2014 Sommer",
     "occasion": "summer",
     "used": false,
     "used_on": null
@@ -379,7 +379,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_3279.jpg",
     "date": "2025-08-01",
     "date_display": "August 01, 2025",
-    "location_hint": "São Paulo — Sommer",
+    "location_hint": "S\u00e3o Paulo \u2014 Sommer",
     "occasion": "summer",
     "used": false,
     "used_on": null
@@ -390,7 +390,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_3293.jpg",
     "date": "2025-08-01",
     "date_display": "August 01, 2025",
-    "location_hint": "São Paulo — Sommer",
+    "location_hint": "S\u00e3o Paulo \u2014 Sommer",
     "occasion": "summer",
     "used": false,
     "used_on": null
@@ -401,7 +401,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_3310.jpg",
     "date": "2025-08-02",
     "date_display": "August 02, 2025",
-    "location_hint": "São Paulo — Sommer",
+    "location_hint": "S\u00e3o Paulo \u2014 Sommer",
     "occasion": "summer",
     "used": false,
     "used_on": null
@@ -412,7 +412,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_3324.jpg",
     "date": "2025-08-03",
     "date_display": "August 03, 2025",
-    "location_hint": "São Paulo — Sommer",
+    "location_hint": "S\u00e3o Paulo \u2014 Sommer",
     "occasion": "summer",
     "used": false,
     "used_on": null
@@ -423,7 +423,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_3328.jpg",
     "date": "2025-08-03",
     "date_display": "August 03, 2025",
-    "location_hint": "São Paulo — Sommer",
+    "location_hint": "S\u00e3o Paulo \u2014 Sommer",
     "occasion": "summer",
     "used": false,
     "used_on": null
@@ -434,7 +434,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_3346.jpg",
     "date": "2025-08-03",
     "date_display": "August 03, 2025",
-    "location_hint": "São Paulo — Sommer",
+    "location_hint": "S\u00e3o Paulo \u2014 Sommer",
     "occasion": "summer",
     "used": false,
     "used_on": null
@@ -445,7 +445,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_3348.jpg",
     "date": "2025-08-03",
     "date_display": "August 03, 2025",
-    "location_hint": "São Paulo — Sommer",
+    "location_hint": "S\u00e3o Paulo \u2014 Sommer",
     "occasion": "summer",
     "used": false,
     "used_on": null
@@ -456,7 +456,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_3351.jpg",
     "date": "2025-08-03",
     "date_display": "August 03, 2025",
-    "location_hint": "São Paulo — Sommer",
+    "location_hint": "S\u00e3o Paulo \u2014 Sommer",
     "occasion": "summer",
     "used": false,
     "used_on": null
@@ -467,7 +467,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_3362.jpg",
     "date": "2025-08-04",
     "date_display": "August 04, 2025",
-    "location_hint": "São Paulo — Sommer",
+    "location_hint": "S\u00e3o Paulo \u2014 Sommer",
     "occasion": "summer",
     "used": false,
     "used_on": null
@@ -478,7 +478,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_3376.jpg",
     "date": "2025-08-05",
     "date_display": "August 05, 2025",
-    "location_hint": "São Paulo — Sommer",
+    "location_hint": "S\u00e3o Paulo \u2014 Sommer",
     "occasion": "summer",
     "used": false,
     "used_on": null
@@ -489,7 +489,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_3383.jpg",
     "date": "2025-08-05",
     "date_display": "August 05, 2025",
-    "location_hint": "São Paulo — Sommer",
+    "location_hint": "S\u00e3o Paulo \u2014 Sommer",
     "occasion": "summer",
     "used": false,
     "used_on": null
@@ -500,7 +500,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_3467.jpg",
     "date": "2025-08-09",
     "date_display": "August 09, 2025",
-    "location_hint": "São Paulo — Sommer",
+    "location_hint": "S\u00e3o Paulo \u2014 Sommer",
     "occasion": "summer",
     "used": false,
     "used_on": null
@@ -511,7 +511,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_3482.jpg",
     "date": "2025-08-09",
     "date_display": "August 09, 2025",
-    "location_hint": "São Paulo — Sommer",
+    "location_hint": "S\u00e3o Paulo \u2014 Sommer",
     "occasion": "summer",
     "used": false,
     "used_on": null
@@ -522,7 +522,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_3495.jpg",
     "date": "2025-08-09",
     "date_display": "August 09, 2025",
-    "location_hint": "São Paulo — Sommer",
+    "location_hint": "S\u00e3o Paulo \u2014 Sommer",
     "occasion": "summer",
     "used": false,
     "used_on": null
@@ -533,7 +533,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_3536.jpg",
     "date": "2025-08-11",
     "date_display": "August 11, 2025",
-    "location_hint": "São Paulo — Sommer",
+    "location_hint": "S\u00e3o Paulo \u2014 Sommer",
     "occasion": "summer",
     "used": false,
     "used_on": null
@@ -544,7 +544,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_3579.jpg",
     "date": "2025-08-14",
     "date_display": "August 14, 2025",
-    "location_hint": "São Paulo — Sommer",
+    "location_hint": "S\u00e3o Paulo \u2014 Sommer",
     "occasion": "summer",
     "used": false,
     "used_on": null
@@ -555,7 +555,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_3608.jpg",
     "date": "2025-08-15",
     "date_display": "August 15, 2025",
-    "location_hint": "São Paulo — Sommer",
+    "location_hint": "S\u00e3o Paulo \u2014 Sommer",
     "occasion": "summer",
     "used": false,
     "used_on": null
@@ -566,7 +566,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_3614.jpg",
     "date": "2025-08-15",
     "date_display": "August 15, 2025",
-    "location_hint": "São Paulo — Sommer",
+    "location_hint": "S\u00e3o Paulo \u2014 Sommer",
     "occasion": "summer",
     "used": false,
     "used_on": null
@@ -577,7 +577,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_3620.jpg",
     "date": "2025-08-15",
     "date_display": "August 15, 2025",
-    "location_hint": "São Paulo — Sommer",
+    "location_hint": "S\u00e3o Paulo \u2014 Sommer",
     "occasion": "summer",
     "used": false,
     "used_on": null
@@ -588,7 +588,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_3626.jpg",
     "date": "2025-08-15",
     "date_display": "August 15, 2025",
-    "location_hint": "São Paulo — Sommer",
+    "location_hint": "S\u00e3o Paulo \u2014 Sommer",
     "occasion": "summer",
     "used": false,
     "used_on": null
@@ -599,7 +599,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_3642.jpg",
     "date": "2025-08-16",
     "date_display": "August 16, 2025",
-    "location_hint": "São Paulo — Sommer",
+    "location_hint": "S\u00e3o Paulo \u2014 Sommer",
     "occasion": "summer",
     "used": false,
     "used_on": null
@@ -610,7 +610,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_3663.jpg",
     "date": "2025-08-17",
     "date_display": "August 17, 2025",
-    "location_hint": "São Paulo — Sommer",
+    "location_hint": "S\u00e3o Paulo \u2014 Sommer",
     "occasion": "summer",
     "used": false,
     "used_on": null
@@ -621,7 +621,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_3668.jpg",
     "date": "2025-08-17",
     "date_display": "August 17, 2025",
-    "location_hint": "São Paulo — Sommer",
+    "location_hint": "S\u00e3o Paulo \u2014 Sommer",
     "occasion": "summer",
     "used": false,
     "used_on": null
@@ -632,7 +632,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_3828.jpg",
     "date": "2025-08-23",
     "date_display": "August 23, 2025",
-    "location_hint": "São Paulo — Sommer",
+    "location_hint": "S\u00e3o Paulo \u2014 Sommer",
     "occasion": "summer",
     "used": false,
     "used_on": null
@@ -643,7 +643,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_3853.jpg",
     "date": "2025-08-24",
     "date_display": "August 24, 2025",
-    "location_hint": "São Paulo — Sommer",
+    "location_hint": "S\u00e3o Paulo \u2014 Sommer",
     "occasion": "summer",
     "used": false,
     "used_on": null
@@ -654,7 +654,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_3862.jpg",
     "date": "2025-08-24",
     "date_display": "August 24, 2025",
-    "location_hint": "São Paulo — Sommer",
+    "location_hint": "S\u00e3o Paulo \u2014 Sommer",
     "occasion": "summer",
     "used": false,
     "used_on": null
@@ -665,7 +665,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_3943.jpg",
     "date": "2025-08-28",
     "date_display": "August 28, 2025",
-    "location_hint": "São Paulo — Sommer",
+    "location_hint": "S\u00e3o Paulo \u2014 Sommer",
     "occasion": "summer",
     "used": false,
     "used_on": null
@@ -676,7 +676,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_3946.jpg",
     "date": "2025-08-29",
     "date_display": "August 29, 2025",
-    "location_hint": "São Paulo — Sommer",
+    "location_hint": "S\u00e3o Paulo \u2014 Sommer",
     "occasion": "summer",
     "used": false,
     "used_on": null
@@ -687,7 +687,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_3950.jpg",
     "date": "2025-08-29",
     "date_display": "August 29, 2025",
-    "location_hint": "São Paulo — Sommer",
+    "location_hint": "S\u00e3o Paulo \u2014 Sommer",
     "occasion": "summer",
     "used": false,
     "used_on": null
@@ -698,7 +698,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_3955.jpg",
     "date": "2025-08-30",
     "date_display": "August 30, 2025",
-    "location_hint": "São Paulo — Sommer",
+    "location_hint": "S\u00e3o Paulo \u2014 Sommer",
     "occasion": "summer",
     "used": false,
     "used_on": null
@@ -709,7 +709,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_3988.jpg",
     "date": "2025-08-30",
     "date_display": "August 30, 2025",
-    "location_hint": "São Paulo — Sommer",
+    "location_hint": "S\u00e3o Paulo \u2014 Sommer",
     "occasion": "summer",
     "used": false,
     "used_on": null
@@ -720,7 +720,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_3995.jpg",
     "date": "2025-08-31",
     "date_display": "August 31, 2025",
-    "location_hint": "São Paulo — Sommer",
+    "location_hint": "S\u00e3o Paulo \u2014 Sommer",
     "occasion": "summer",
     "used": false,
     "used_on": null
@@ -731,7 +731,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_4353.jpg",
     "date": "2025-09-24",
     "date_display": "September 24, 2025",
-    "location_hint": "Auf Reisen — September",
+    "location_hint": "Auf Reisen \u2014 September",
     "occasion": "trip",
     "used": false,
     "used_on": null
@@ -742,7 +742,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_4356.jpg",
     "date": "2025-09-25",
     "date_display": "September 25, 2025",
-    "location_hint": "Auf Reisen — September",
+    "location_hint": "Auf Reisen \u2014 September",
     "occasion": "trip",
     "used": false,
     "used_on": null
@@ -753,7 +753,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_4360.jpg",
     "date": "2025-09-25",
     "date_display": "September 25, 2025",
-    "location_hint": "Auf Reisen — September",
+    "location_hint": "Auf Reisen \u2014 September",
     "occasion": "trip",
     "used": false,
     "used_on": null
@@ -764,7 +764,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_4401.jpg",
     "date": "2025-09-25",
     "date_display": "September 25, 2025",
-    "location_hint": "Auf Reisen — September",
+    "location_hint": "Auf Reisen \u2014 September",
     "occasion": "trip",
     "used": false,
     "used_on": null
@@ -775,7 +775,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_4406.jpg",
     "date": "2025-09-26",
     "date_display": "September 26, 2025",
-    "location_hint": "Auf Reisen — September",
+    "location_hint": "Auf Reisen \u2014 September",
     "occasion": "trip",
     "used": false,
     "used_on": null
@@ -786,7 +786,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_4407.jpg",
     "date": "2025-09-26",
     "date_display": "September 26, 2025",
-    "location_hint": "Auf Reisen — September",
+    "location_hint": "Auf Reisen \u2014 September",
     "occasion": "trip",
     "used": false,
     "used_on": null
@@ -797,7 +797,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_4416.jpg",
     "date": "2025-09-26",
     "date_display": "September 26, 2025",
-    "location_hint": "Auf Reisen — September",
+    "location_hint": "Auf Reisen \u2014 September",
     "occasion": "trip",
     "used": false,
     "used_on": null
@@ -808,7 +808,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_4435.jpg",
     "date": "2025-09-26",
     "date_display": "September 26, 2025",
-    "location_hint": "Auf Reisen — September",
+    "location_hint": "Auf Reisen \u2014 September",
     "occasion": "trip",
     "used": false,
     "used_on": null
@@ -819,7 +819,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_4446.jpg",
     "date": "2025-09-26",
     "date_display": "September 26, 2025",
-    "location_hint": "Auf Reisen — September",
+    "location_hint": "Auf Reisen \u2014 September",
     "occasion": "trip",
     "used": false,
     "used_on": null
@@ -830,7 +830,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_4457.jpg",
     "date": "2025-09-26",
     "date_display": "September 26, 2025",
-    "location_hint": "Auf Reisen — September",
+    "location_hint": "Auf Reisen \u2014 September",
     "occasion": "trip",
     "used": false,
     "used_on": null
@@ -841,7 +841,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_4463.jpg",
     "date": "2025-09-26",
     "date_display": "September 26, 2025",
-    "location_hint": "Auf Reisen — September",
+    "location_hint": "Auf Reisen \u2014 September",
     "occasion": "trip",
     "used": false,
     "used_on": null
@@ -852,7 +852,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_4464.jpg",
     "date": "2025-09-26",
     "date_display": "September 26, 2025",
-    "location_hint": "Auf Reisen — September",
+    "location_hint": "Auf Reisen \u2014 September",
     "occasion": "trip",
     "used": false,
     "used_on": null
@@ -863,7 +863,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_4468.jpg",
     "date": "2025-09-26",
     "date_display": "September 26, 2025",
-    "location_hint": "Auf Reisen — September",
+    "location_hint": "Auf Reisen \u2014 September",
     "occasion": "trip",
     "used": false,
     "used_on": null
@@ -874,7 +874,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_4471.jpg",
     "date": "2025-09-26",
     "date_display": "September 26, 2025",
-    "location_hint": "Auf Reisen — September",
+    "location_hint": "Auf Reisen \u2014 September",
     "occasion": "trip",
     "used": false,
     "used_on": null
@@ -885,7 +885,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_4475.jpg",
     "date": "2025-09-26",
     "date_display": "September 26, 2025",
-    "location_hint": "Auf Reisen — September",
+    "location_hint": "Auf Reisen \u2014 September",
     "occasion": "trip",
     "used": false,
     "used_on": null
@@ -896,7 +896,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_4483.jpg",
     "date": "2025-09-26",
     "date_display": "September 26, 2025",
-    "location_hint": "Auf Reisen — September",
+    "location_hint": "Auf Reisen \u2014 September",
     "occasion": "trip",
     "used": false,
     "used_on": null
@@ -907,7 +907,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_4487.jpg",
     "date": "2025-09-27",
     "date_display": "September 27, 2025",
-    "location_hint": "Auf Reisen — September",
+    "location_hint": "Auf Reisen \u2014 September",
     "occasion": "trip",
     "used": false,
     "used_on": null
@@ -918,7 +918,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_4492.jpg",
     "date": "2025-09-27",
     "date_display": "September 27, 2025",
-    "location_hint": "Auf Reisen — September",
+    "location_hint": "Auf Reisen \u2014 September",
     "occasion": "trip",
     "used": false,
     "used_on": null
@@ -929,7 +929,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_4500.jpg",
     "date": "2025-09-27",
     "date_display": "September 27, 2025",
-    "location_hint": "Auf Reisen — September",
+    "location_hint": "Auf Reisen \u2014 September",
     "occasion": "trip",
     "used": false,
     "used_on": null
@@ -940,7 +940,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_4504.jpg",
     "date": "2025-09-27",
     "date_display": "September 27, 2025",
-    "location_hint": "Auf Reisen — September",
+    "location_hint": "Auf Reisen \u2014 September",
     "occasion": "trip",
     "used": false,
     "used_on": null
@@ -951,7 +951,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_4512.jpg",
     "date": "2025-09-27",
     "date_display": "September 27, 2025",
-    "location_hint": "Auf Reisen — September",
+    "location_hint": "Auf Reisen \u2014 September",
     "occasion": "trip",
     "used": false,
     "used_on": null
@@ -962,7 +962,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_4519.jpg",
     "date": "2025-09-27",
     "date_display": "September 27, 2025",
-    "location_hint": "Auf Reisen — September",
+    "location_hint": "Auf Reisen \u2014 September",
     "occasion": "trip",
     "used": false,
     "used_on": null
@@ -973,7 +973,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_4529.jpg",
     "date": "2025-09-27",
     "date_display": "September 27, 2025",
-    "location_hint": "Auf Reisen — September",
+    "location_hint": "Auf Reisen \u2014 September",
     "occasion": "trip",
     "used": false,
     "used_on": null
@@ -984,7 +984,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_4537.jpg",
     "date": "2025-09-27",
     "date_display": "September 27, 2025",
-    "location_hint": "Auf Reisen — September",
+    "location_hint": "Auf Reisen \u2014 September",
     "occasion": "trip",
     "used": false,
     "used_on": null
@@ -995,7 +995,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_4573.jpg",
     "date": "2025-09-28",
     "date_display": "September 28, 2025",
-    "location_hint": "Auf Reisen — September",
+    "location_hint": "Auf Reisen \u2014 September",
     "occasion": "trip",
     "used": false,
     "used_on": null
@@ -1006,7 +1006,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_4605.jpg",
     "date": "2025-09-28",
     "date_display": "September 28, 2025",
-    "location_hint": "Auf Reisen — September",
+    "location_hint": "Auf Reisen \u2014 September",
     "occasion": "trip",
     "used": false,
     "used_on": null
@@ -1017,7 +1017,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_4610.jpg",
     "date": "2025-09-28",
     "date_display": "September 28, 2025",
-    "location_hint": "Auf Reisen — September",
+    "location_hint": "Auf Reisen \u2014 September",
     "occasion": "trip",
     "used": false,
     "used_on": null
@@ -1028,7 +1028,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_4618.jpg",
     "date": "2025-09-28",
     "date_display": "September 28, 2025",
-    "location_hint": "Auf Reisen — September",
+    "location_hint": "Auf Reisen \u2014 September",
     "occasion": "trip",
     "used": false,
     "used_on": null
@@ -1039,7 +1039,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_4657.jpg",
     "date": "2025-09-28",
     "date_display": "September 28, 2025",
-    "location_hint": "Auf Reisen — September",
+    "location_hint": "Auf Reisen \u2014 September",
     "occasion": "trip",
     "used": false,
     "used_on": null
@@ -1050,7 +1050,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_4705.jpg",
     "date": "2025-09-30",
     "date_display": "September 30, 2025",
-    "location_hint": "São Paulo — Herbst",
+    "location_hint": "S\u00e3o Paulo \u2014 Herbst",
     "occasion": "autumn",
     "used": false,
     "used_on": null
@@ -1061,7 +1061,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_4719.jpg",
     "date": "2025-09-30",
     "date_display": "September 30, 2025",
-    "location_hint": "São Paulo — Herbst",
+    "location_hint": "S\u00e3o Paulo \u2014 Herbst",
     "occasion": "autumn",
     "used": false,
     "used_on": null
@@ -1072,7 +1072,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_4723.jpg",
     "date": "2025-10-01",
     "date_display": "October 01, 2025",
-    "location_hint": "São Paulo — Herbst",
+    "location_hint": "S\u00e3o Paulo \u2014 Herbst",
     "occasion": "autumn",
     "used": false,
     "used_on": null
@@ -1083,7 +1083,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_4732.jpg",
     "date": "2025-10-01",
     "date_display": "October 01, 2025",
-    "location_hint": "São Paulo — Herbst",
+    "location_hint": "S\u00e3o Paulo \u2014 Herbst",
     "occasion": "autumn",
     "used": false,
     "used_on": null
@@ -1094,7 +1094,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_4735.jpg",
     "date": "2025-10-01",
     "date_display": "October 01, 2025",
-    "location_hint": "São Paulo — Herbst",
+    "location_hint": "S\u00e3o Paulo \u2014 Herbst",
     "occasion": "autumn",
     "used": false,
     "used_on": null
@@ -1105,7 +1105,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_4744.jpg",
     "date": "2025-10-02",
     "date_display": "October 02, 2025",
-    "location_hint": "São Paulo — Herbst",
+    "location_hint": "S\u00e3o Paulo \u2014 Herbst",
     "occasion": "autumn",
     "used": false,
     "used_on": null
@@ -1116,7 +1116,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_4763.jpg",
     "date": "2025-10-02",
     "date_display": "October 02, 2025",
-    "location_hint": "São Paulo — Herbst",
+    "location_hint": "S\u00e3o Paulo \u2014 Herbst",
     "occasion": "autumn",
     "used": false,
     "used_on": null
@@ -1127,7 +1127,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_4771.jpg",
     "date": "2025-10-02",
     "date_display": "October 02, 2025",
-    "location_hint": "São Paulo — Herbst",
+    "location_hint": "S\u00e3o Paulo \u2014 Herbst",
     "occasion": "autumn",
     "used": false,
     "used_on": null
@@ -1138,7 +1138,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/d50e3ce6-6075-49eb-bc17-62b038fe1fcb.jpg",
     "date": "2025-10-02",
     "date_display": "October 02, 2025",
-    "location_hint": "São Paulo — Herbst",
+    "location_hint": "S\u00e3o Paulo \u2014 Herbst",
     "occasion": "autumn",
     "used": false,
     "used_on": null
@@ -1149,7 +1149,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_4801.jpg",
     "date": "2025-10-04",
     "date_display": "October 04, 2025",
-    "location_hint": "São Paulo — Herbst",
+    "location_hint": "S\u00e3o Paulo \u2014 Herbst",
     "occasion": "autumn",
     "used": false,
     "used_on": null
@@ -1160,7 +1160,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_4812.jpg",
     "date": "2025-10-04",
     "date_display": "October 04, 2025",
-    "location_hint": "São Paulo — Herbst",
+    "location_hint": "S\u00e3o Paulo \u2014 Herbst",
     "occasion": "autumn",
     "used": false,
     "used_on": null
@@ -1171,7 +1171,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_4814.jpg",
     "date": "2025-10-04",
     "date_display": "October 04, 2025",
-    "location_hint": "São Paulo — Herbst",
+    "location_hint": "S\u00e3o Paulo \u2014 Herbst",
     "occasion": "autumn",
     "used": false,
     "used_on": null
@@ -1182,7 +1182,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_4815.jpg",
     "date": "2025-10-04",
     "date_display": "October 04, 2025",
-    "location_hint": "São Paulo — Herbst",
+    "location_hint": "S\u00e3o Paulo \u2014 Herbst",
     "occasion": "autumn",
     "used": false,
     "used_on": null
@@ -1193,7 +1193,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_4825.jpg",
     "date": "2025-10-04",
     "date_display": "October 04, 2025",
-    "location_hint": "São Paulo — Herbst",
+    "location_hint": "S\u00e3o Paulo \u2014 Herbst",
     "occasion": "autumn",
     "used": false,
     "used_on": null
@@ -1204,7 +1204,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_4908.jpg",
     "date": "2025-10-07",
     "date_display": "October 07, 2025",
-    "location_hint": "São Paulo — Herbst",
+    "location_hint": "S\u00e3o Paulo \u2014 Herbst",
     "occasion": "autumn",
     "used": false,
     "used_on": null
@@ -1215,7 +1215,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_5022.jpg",
     "date": "2025-10-12",
     "date_display": "October 12, 2025",
-    "location_hint": "São Paulo — Herbst",
+    "location_hint": "S\u00e3o Paulo \u2014 Herbst",
     "occasion": "autumn",
     "used": false,
     "used_on": null
@@ -1226,7 +1226,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_5044.jpg",
     "date": "2025-10-14",
     "date_display": "October 14, 2025",
-    "location_hint": "São Paulo — Herbst",
+    "location_hint": "S\u00e3o Paulo \u2014 Herbst",
     "occasion": "autumn",
     "used": false,
     "used_on": null
@@ -1237,7 +1237,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_5054.jpg",
     "date": "2025-10-14",
     "date_display": "October 14, 2025",
-    "location_hint": "São Paulo — Herbst",
+    "location_hint": "S\u00e3o Paulo \u2014 Herbst",
     "occasion": "autumn",
     "used": false,
     "used_on": null
@@ -1248,7 +1248,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_5055.jpg",
     "date": "2025-10-14",
     "date_display": "October 14, 2025",
-    "location_hint": "São Paulo — Herbst",
+    "location_hint": "S\u00e3o Paulo \u2014 Herbst",
     "occasion": "autumn",
     "used": false,
     "used_on": null
@@ -1259,7 +1259,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_5079.jpg",
     "date": "2025-10-15",
     "date_display": "October 15, 2025",
-    "location_hint": "São Paulo — Herbst",
+    "location_hint": "S\u00e3o Paulo \u2014 Herbst",
     "occasion": "autumn",
     "used": false,
     "used_on": null
@@ -1270,7 +1270,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_5092.jpg",
     "date": "2025-10-15",
     "date_display": "October 15, 2025",
-    "location_hint": "São Paulo — Herbst",
+    "location_hint": "S\u00e3o Paulo \u2014 Herbst",
     "occasion": "autumn",
     "used": false,
     "used_on": null
@@ -1281,7 +1281,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_5099.jpg",
     "date": "2025-10-16",
     "date_display": "October 16, 2025",
-    "location_hint": "São Paulo — Herbst",
+    "location_hint": "S\u00e3o Paulo \u2014 Herbst",
     "occasion": "autumn",
     "used": false,
     "used_on": null
@@ -1292,7 +1292,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_5138.jpg",
     "date": "2025-10-18",
     "date_display": "October 18, 2025",
-    "location_hint": "São Paulo — Herbst",
+    "location_hint": "S\u00e3o Paulo \u2014 Herbst",
     "occasion": "autumn",
     "used": false,
     "used_on": null
@@ -1303,7 +1303,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_5146.jpg",
     "date": "2025-10-18",
     "date_display": "October 18, 2025",
-    "location_hint": "São Paulo — Herbst",
+    "location_hint": "S\u00e3o Paulo \u2014 Herbst",
     "occasion": "autumn",
     "used": false,
     "used_on": null
@@ -1314,7 +1314,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_5150.jpg",
     "date": "2025-10-18",
     "date_display": "October 18, 2025",
-    "location_hint": "São Paulo — Herbst",
+    "location_hint": "S\u00e3o Paulo \u2014 Herbst",
     "occasion": "autumn",
     "used": false,
     "used_on": null
@@ -1325,7 +1325,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_5188.jpg",
     "date": "2025-10-19",
     "date_display": "October 19, 2025",
-    "location_hint": "São Paulo — Herbst",
+    "location_hint": "S\u00e3o Paulo \u2014 Herbst",
     "occasion": "autumn",
     "used": false,
     "used_on": null
@@ -1336,7 +1336,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_5322.jpg",
     "date": "2025-10-25",
     "date_display": "October 25, 2025",
-    "location_hint": "São Paulo — Herbst",
+    "location_hint": "S\u00e3o Paulo \u2014 Herbst",
     "occasion": "autumn",
     "used": false,
     "used_on": null
@@ -1347,7 +1347,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_5387.jpg",
     "date": "2025-10-26",
     "date_display": "October 26, 2025",
-    "location_hint": "São Paulo — Herbst",
+    "location_hint": "S\u00e3o Paulo \u2014 Herbst",
     "occasion": "autumn",
     "used": false,
     "used_on": null
@@ -1358,7 +1358,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_5399.jpg",
     "date": "2025-10-27",
     "date_display": "October 27, 2025",
-    "location_hint": "São Paulo — Herbst",
+    "location_hint": "S\u00e3o Paulo \u2014 Herbst",
     "occasion": "autumn",
     "used": false,
     "used_on": null
@@ -1369,7 +1369,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_5420.jpg",
     "date": "2025-10-27",
     "date_display": "October 27, 2025",
-    "location_hint": "São Paulo — Herbst",
+    "location_hint": "S\u00e3o Paulo \u2014 Herbst",
     "occasion": "autumn",
     "used": false,
     "used_on": null
@@ -1380,7 +1380,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_5441.jpg",
     "date": "2025-10-27",
     "date_display": "October 27, 2025",
-    "location_hint": "São Paulo — Herbst",
+    "location_hint": "S\u00e3o Paulo \u2014 Herbst",
     "occasion": "autumn",
     "used": false,
     "used_on": null
@@ -1391,7 +1391,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_5491.jpg",
     "date": "2025-10-27",
     "date_display": "October 27, 2025",
-    "location_hint": "São Paulo — Herbst",
+    "location_hint": "S\u00e3o Paulo \u2014 Herbst",
     "occasion": "autumn",
     "used": false,
     "used_on": null
@@ -1402,7 +1402,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_5565.jpg",
     "date": "2025-10-31",
     "date_display": "October 31, 2025",
-    "location_hint": "São Paulo — Herbst",
+    "location_hint": "S\u00e3o Paulo \u2014 Herbst",
     "occasion": "autumn",
     "used": false,
     "used_on": null
@@ -1413,7 +1413,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_5572.jpg",
     "date": "2025-11-01",
     "date_display": "November 01, 2025",
-    "location_hint": "São Paulo — November",
+    "location_hint": "S\u00e3o Paulo \u2014 November",
     "occasion": "november",
     "used": false,
     "used_on": null
@@ -1424,7 +1424,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_5816.jpg",
     "date": "2025-11-17",
     "date_display": "November 17, 2025",
-    "location_hint": "São Paulo — November",
+    "location_hint": "S\u00e3o Paulo \u2014 November",
     "occasion": "november",
     "used": false,
     "used_on": null
@@ -1435,7 +1435,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_5817.jpg",
     "date": "2025-11-17",
     "date_display": "November 17, 2025",
-    "location_hint": "São Paulo — November",
+    "location_hint": "S\u00e3o Paulo \u2014 November",
     "occasion": "november",
     "used": false,
     "used_on": null
@@ -1446,7 +1446,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_5821.jpg",
     "date": "2025-11-17",
     "date_display": "November 17, 2025",
-    "location_hint": "São Paulo — November",
+    "location_hint": "S\u00e3o Paulo \u2014 November",
     "occasion": "november",
     "used": false,
     "used_on": null
@@ -1457,7 +1457,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_5838.jpg",
     "date": "2025-11-17",
     "date_display": "November 17, 2025",
-    "location_hint": "São Paulo — November",
+    "location_hint": "S\u00e3o Paulo \u2014 November",
     "occasion": "november",
     "used": false,
     "used_on": null
@@ -1468,7 +1468,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_5854.jpg",
     "date": "2025-11-18",
     "date_display": "November 18, 2025",
-    "location_hint": "São Paulo — November",
+    "location_hint": "S\u00e3o Paulo \u2014 November",
     "occasion": "november",
     "used": false,
     "used_on": null
@@ -1479,7 +1479,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_5857.jpg",
     "date": "2025-11-18",
     "date_display": "November 18, 2025",
-    "location_hint": "São Paulo — November",
+    "location_hint": "S\u00e3o Paulo \u2014 November",
     "occasion": "november",
     "used": false,
     "used_on": null
@@ -1490,7 +1490,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_5907.jpg",
     "date": "2025-11-20",
     "date_display": "November 20, 2025",
-    "location_hint": "São Paulo — November",
+    "location_hint": "S\u00e3o Paulo \u2014 November",
     "occasion": "november",
     "used": false,
     "used_on": null
@@ -1501,7 +1501,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_5908.jpg",
     "date": "2025-11-20",
     "date_display": "November 20, 2025",
-    "location_hint": "São Paulo — November",
+    "location_hint": "S\u00e3o Paulo \u2014 November",
     "occasion": "november",
     "used": false,
     "used_on": null
@@ -1512,7 +1512,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_5912.jpg",
     "date": "2025-11-20",
     "date_display": "November 20, 2025",
-    "location_hint": "São Paulo — November",
+    "location_hint": "S\u00e3o Paulo \u2014 November",
     "occasion": "november",
     "used": false,
     "used_on": null
@@ -1523,7 +1523,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_6076.jpg",
     "date": "2025-11-23",
     "date_display": "November 23, 2025",
-    "location_hint": "São Paulo — November",
+    "location_hint": "S\u00e3o Paulo \u2014 November",
     "occasion": "november",
     "used": false,
     "used_on": null
@@ -1534,7 +1534,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_6195.jpg",
     "date": "2025-11-27",
     "date_display": "November 27, 2025",
-    "location_hint": "São Paulo — November",
+    "location_hint": "S\u00e3o Paulo \u2014 November",
     "occasion": "november",
     "used": false,
     "used_on": null
@@ -1545,7 +1545,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_6201.jpg",
     "date": "2025-11-27",
     "date_display": "November 27, 2025",
-    "location_hint": "São Paulo — November",
+    "location_hint": "S\u00e3o Paulo \u2014 November",
     "occasion": "november",
     "used": false,
     "used_on": null
@@ -1556,7 +1556,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_6203.jpg",
     "date": "2025-11-27",
     "date_display": "November 27, 2025",
-    "location_hint": "São Paulo — November",
+    "location_hint": "S\u00e3o Paulo \u2014 November",
     "occasion": "november",
     "used": false,
     "used_on": null
@@ -1567,7 +1567,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_6206.jpg",
     "date": "2025-11-27",
     "date_display": "November 27, 2025",
-    "location_hint": "São Paulo — November",
+    "location_hint": "S\u00e3o Paulo \u2014 November",
     "occasion": "november",
     "used": false,
     "used_on": null
@@ -1578,7 +1578,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_6211.jpg",
     "date": "2025-11-28",
     "date_display": "November 28, 2025",
-    "location_hint": "São Paulo — November",
+    "location_hint": "S\u00e3o Paulo \u2014 November",
     "occasion": "november",
     "used": false,
     "used_on": null
@@ -1589,7 +1589,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_6215.jpg",
     "date": "2025-11-29",
     "date_display": "November 29, 2025",
-    "location_hint": "São Paulo — November",
+    "location_hint": "S\u00e3o Paulo \u2014 November",
     "occasion": "november",
     "used": false,
     "used_on": null
@@ -1600,7 +1600,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_6242.jpg",
     "date": "2025-11-29",
     "date_display": "November 29, 2025",
-    "location_hint": "São Paulo — November",
+    "location_hint": "S\u00e3o Paulo \u2014 November",
     "occasion": "november",
     "used": false,
     "used_on": null
@@ -1611,7 +1611,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_6264.jpg",
     "date": "2025-11-29",
     "date_display": "November 29, 2025",
-    "location_hint": "São Paulo — November",
+    "location_hint": "S\u00e3o Paulo \u2014 November",
     "occasion": "november",
     "used": false,
     "used_on": null
@@ -1622,7 +1622,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_6277.jpg",
     "date": "2025-11-29",
     "date_display": "November 29, 2025",
-    "location_hint": "São Paulo — November",
+    "location_hint": "S\u00e3o Paulo \u2014 November",
     "occasion": "november",
     "used": false,
     "used_on": null
@@ -1633,7 +1633,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_6299.jpg",
     "date": "2025-12-01",
     "date_display": "December 01, 2025",
-    "location_hint": "São Paulo — Dezember",
+    "location_hint": "S\u00e3o Paulo \u2014 Dezember",
     "occasion": "december",
     "used": false,
     "used_on": null
@@ -1644,7 +1644,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_6300.jpg",
     "date": "2025-12-01",
     "date_display": "December 01, 2025",
-    "location_hint": "São Paulo — Dezember",
+    "location_hint": "S\u00e3o Paulo \u2014 Dezember",
     "occasion": "december",
     "used": false,
     "used_on": null
@@ -1655,7 +1655,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_6311.jpg",
     "date": "2025-12-01",
     "date_display": "December 01, 2025",
-    "location_hint": "São Paulo — Dezember",
+    "location_hint": "S\u00e3o Paulo \u2014 Dezember",
     "occasion": "december",
     "used": false,
     "used_on": null
@@ -1666,7 +1666,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_6312.jpg",
     "date": "2025-12-01",
     "date_display": "December 01, 2025",
-    "location_hint": "São Paulo — Dezember",
+    "location_hint": "S\u00e3o Paulo \u2014 Dezember",
     "occasion": "december",
     "used": false,
     "used_on": null
@@ -1677,7 +1677,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_6346.jpg",
     "date": "2025-12-04",
     "date_display": "December 04, 2025",
-    "location_hint": "São Paulo — Dezember",
+    "location_hint": "S\u00e3o Paulo \u2014 Dezember",
     "occasion": "december",
     "used": false,
     "used_on": null
@@ -1688,7 +1688,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_6397.jpg",
     "date": "2025-12-05",
     "date_display": "December 05, 2025",
-    "location_hint": "São Paulo — Dezember",
+    "location_hint": "S\u00e3o Paulo \u2014 Dezember",
     "occasion": "december",
     "used": false,
     "used_on": null
@@ -1699,7 +1699,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_6458.jpg",
     "date": "2025-12-08",
     "date_display": "December 08, 2025",
-    "location_hint": "São Paulo — Dezember",
+    "location_hint": "S\u00e3o Paulo \u2014 Dezember",
     "occasion": "december",
     "used": false,
     "used_on": null
@@ -1710,7 +1710,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_6465.jpg",
     "date": "2025-12-08",
     "date_display": "December 08, 2025",
-    "location_hint": "São Paulo — Dezember",
+    "location_hint": "S\u00e3o Paulo \u2014 Dezember",
     "occasion": "december",
     "used": false,
     "used_on": null
@@ -1721,7 +1721,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_6477.jpg",
     "date": "2025-12-08",
     "date_display": "December 08, 2025",
-    "location_hint": "São Paulo — Dezember",
+    "location_hint": "S\u00e3o Paulo \u2014 Dezember",
     "occasion": "december",
     "used": false,
     "used_on": null
@@ -1732,7 +1732,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_6482.jpg",
     "date": "2025-12-08",
     "date_display": "December 08, 2025",
-    "location_hint": "São Paulo — Dezember",
+    "location_hint": "S\u00e3o Paulo \u2014 Dezember",
     "occasion": "december",
     "used": false,
     "used_on": null
@@ -1743,7 +1743,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_6502.jpg",
     "date": "2025-12-08",
     "date_display": "December 08, 2025",
-    "location_hint": "São Paulo — Dezember",
+    "location_hint": "S\u00e3o Paulo \u2014 Dezember",
     "occasion": "december",
     "used": false,
     "used_on": null
@@ -1754,7 +1754,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_6518.jpg",
     "date": "2025-12-09",
     "date_display": "December 09, 2025",
-    "location_hint": "São Paulo — Dezember",
+    "location_hint": "S\u00e3o Paulo \u2014 Dezember",
     "occasion": "december",
     "used": false,
     "used_on": null
@@ -1765,7 +1765,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_6527.jpg",
     "date": "2025-12-09",
     "date_display": "December 09, 2025",
-    "location_hint": "São Paulo — Dezember",
+    "location_hint": "S\u00e3o Paulo \u2014 Dezember",
     "occasion": "december",
     "used": false,
     "used_on": null
@@ -1776,7 +1776,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_6551.jpg",
     "date": "2025-12-10",
     "date_display": "December 10, 2025",
-    "location_hint": "São Paulo — Dezember",
+    "location_hint": "S\u00e3o Paulo \u2014 Dezember",
     "occasion": "december",
     "used": false,
     "used_on": null
@@ -1787,7 +1787,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_6625.jpg",
     "date": "2025-12-10",
     "date_display": "December 10, 2025",
-    "location_hint": "São Paulo — Dezember",
+    "location_hint": "S\u00e3o Paulo \u2014 Dezember",
     "occasion": "december",
     "used": false,
     "used_on": null
@@ -1798,7 +1798,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_6639.jpg",
     "date": "2025-12-10",
     "date_display": "December 10, 2025",
-    "location_hint": "São Paulo — Dezember",
+    "location_hint": "S\u00e3o Paulo \u2014 Dezember",
     "occasion": "december",
     "used": false,
     "used_on": null
@@ -1809,7 +1809,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_6641.jpg",
     "date": "2025-12-10",
     "date_display": "December 10, 2025",
-    "location_hint": "São Paulo — Dezember",
+    "location_hint": "S\u00e3o Paulo \u2014 Dezember",
     "occasion": "december",
     "used": false,
     "used_on": null
@@ -1820,7 +1820,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_6644.jpg",
     "date": "2025-12-10",
     "date_display": "December 10, 2025",
-    "location_hint": "São Paulo — Dezember",
+    "location_hint": "S\u00e3o Paulo \u2014 Dezember",
     "occasion": "december",
     "used": false,
     "used_on": null
@@ -1831,7 +1831,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_6668.jpg",
     "date": "2025-12-11",
     "date_display": "December 11, 2025",
-    "location_hint": "São Paulo — Dezember",
+    "location_hint": "S\u00e3o Paulo \u2014 Dezember",
     "occasion": "december",
     "used": false,
     "used_on": null
@@ -1842,7 +1842,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_6673.jpg",
     "date": "2025-12-11",
     "date_display": "December 11, 2025",
-    "location_hint": "São Paulo — Dezember",
+    "location_hint": "S\u00e3o Paulo \u2014 Dezember",
     "occasion": "december",
     "used": false,
     "used_on": null
@@ -1853,7 +1853,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_6679.jpg",
     "date": "2025-12-12",
     "date_display": "December 12, 2025",
-    "location_hint": "São Paulo — Dezember",
+    "location_hint": "S\u00e3o Paulo \u2014 Dezember",
     "occasion": "december",
     "used": false,
     "used_on": null
@@ -1864,7 +1864,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_6680.jpg",
     "date": "2025-12-13",
     "date_display": "December 13, 2025",
-    "location_hint": "São Paulo — Dezember",
+    "location_hint": "S\u00e3o Paulo \u2014 Dezember",
     "occasion": "december",
     "used": false,
     "used_on": null
@@ -1875,7 +1875,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_6711.jpg",
     "date": "2025-12-13",
     "date_display": "December 13, 2025",
-    "location_hint": "São Paulo — Dezember",
+    "location_hint": "S\u00e3o Paulo \u2014 Dezember",
     "occasion": "december",
     "used": false,
     "used_on": null
@@ -1886,7 +1886,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_6726.jpg",
     "date": "2025-12-13",
     "date_display": "December 13, 2025",
-    "location_hint": "São Paulo — Dezember",
+    "location_hint": "S\u00e3o Paulo \u2014 Dezember",
     "occasion": "december",
     "used": false,
     "used_on": null
@@ -1897,7 +1897,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_6733.jpg",
     "date": "2025-12-13",
     "date_display": "December 13, 2025",
-    "location_hint": "São Paulo — Dezember",
+    "location_hint": "S\u00e3o Paulo \u2014 Dezember",
     "occasion": "december",
     "used": false,
     "used_on": null
@@ -1908,7 +1908,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_6735.jpg",
     "date": "2025-12-13",
     "date_display": "December 13, 2025",
-    "location_hint": "São Paulo — Dezember",
+    "location_hint": "S\u00e3o Paulo \u2014 Dezember",
     "occasion": "december",
     "used": false,
     "used_on": null
@@ -1919,7 +1919,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_6773.jpg",
     "date": "2025-12-15",
     "date_display": "December 15, 2025",
-    "location_hint": "São Paulo — Dezember",
+    "location_hint": "S\u00e3o Paulo \u2014 Dezember",
     "occasion": "december",
     "used": false,
     "used_on": null
@@ -1930,7 +1930,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_6839.jpg",
     "date": "2025-12-17",
     "date_display": "December 17, 2025",
-    "location_hint": "São Paulo — Dezember",
+    "location_hint": "S\u00e3o Paulo \u2014 Dezember",
     "occasion": "december",
     "used": false,
     "used_on": null
@@ -1941,7 +1941,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_6840.jpg",
     "date": "2025-12-17",
     "date_display": "December 17, 2025",
-    "location_hint": "São Paulo — Dezember",
+    "location_hint": "S\u00e3o Paulo \u2014 Dezember",
     "occasion": "december",
     "used": false,
     "used_on": null
@@ -1952,7 +1952,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_6895.jpg",
     "date": "2025-12-20",
     "date_display": "December 20, 2025",
-    "location_hint": "São Paulo — Dezember",
+    "location_hint": "S\u00e3o Paulo \u2014 Dezember",
     "occasion": "december",
     "used": false,
     "used_on": null
@@ -1963,7 +1963,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_6944.jpg",
     "date": "2025-12-21",
     "date_display": "December 21, 2025",
-    "location_hint": "São Paulo — Dezember",
+    "location_hint": "S\u00e3o Paulo \u2014 Dezember",
     "occasion": "december",
     "used": false,
     "used_on": null
@@ -1974,7 +1974,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_7058.jpg",
     "date": "2025-12-23",
     "date_display": "December 23, 2025",
-    "location_hint": "Weihnachten 🎄",
+    "location_hint": "Weihnachten \ud83c\udf84",
     "occasion": "christmas",
     "used": false,
     "used_on": null
@@ -1985,7 +1985,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_7064.jpg",
     "date": "2025-12-23",
     "date_display": "December 23, 2025",
-    "location_hint": "Weihnachten 🎄",
+    "location_hint": "Weihnachten \ud83c\udf84",
     "occasion": "christmas",
     "used": false,
     "used_on": null
@@ -1996,7 +1996,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_7065.jpg",
     "date": "2025-12-24",
     "date_display": "December 24, 2025",
-    "location_hint": "Weihnachten 🎄",
+    "location_hint": "Weihnachten \ud83c\udf84",
     "occasion": "christmas",
     "used": false,
     "used_on": null
@@ -2007,7 +2007,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_7070.jpg",
     "date": "2025-12-24",
     "date_display": "December 24, 2025",
-    "location_hint": "Weihnachten 🎄",
+    "location_hint": "Weihnachten \ud83c\udf84",
     "occasion": "christmas",
     "used": false,
     "used_on": null
@@ -2018,7 +2018,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_7075.jpg",
     "date": "2025-12-24",
     "date_display": "December 24, 2025",
-    "location_hint": "Weihnachten 🎄",
+    "location_hint": "Weihnachten \ud83c\udf84",
     "occasion": "christmas",
     "used": false,
     "used_on": null
@@ -2029,7 +2029,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_7106.jpg",
     "date": "2025-12-27",
     "date_display": "December 27, 2025",
-    "location_hint": "Weihnachten 🎄",
+    "location_hint": "Weihnachten \ud83c\udf84",
     "occasion": "christmas",
     "used": false,
     "used_on": null
@@ -2040,7 +2040,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_7115.jpg",
     "date": "2025-12-28",
     "date_display": "December 28, 2025",
-    "location_hint": "Weihnachten 🎄",
+    "location_hint": "Weihnachten \ud83c\udf84",
     "occasion": "christmas",
     "used": false,
     "used_on": null
@@ -2051,7 +2051,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_7123.jpg",
     "date": "2025-12-28",
     "date_display": "December 28, 2025",
-    "location_hint": "Weihnachten 🎄",
+    "location_hint": "Weihnachten \ud83c\udf84",
     "occasion": "christmas",
     "used": false,
     "used_on": null
@@ -2062,7 +2062,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_7198.jpg",
     "date": "2025-12-31",
     "date_display": "December 31, 2025",
-    "location_hint": "Weihnachten 🎄",
+    "location_hint": "Weihnachten \ud83c\udf84",
     "occasion": "christmas",
     "used": false,
     "used_on": null
@@ -2073,7 +2073,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_7216.jpg",
     "date": "2025-12-31",
     "date_display": "December 31, 2025",
-    "location_hint": "Weihnachten 🎄",
+    "location_hint": "Weihnachten \ud83c\udf84",
     "occasion": "christmas",
     "used": false,
     "used_on": null
@@ -2084,7 +2084,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_7343.jpg",
     "date": "2026-01-10",
     "date_display": "January 10, 2026",
-    "location_hint": "São Paulo — Neues Jahr",
+    "location_hint": "S\u00e3o Paulo \u2014 Neues Jahr",
     "occasion": "new_year",
     "used": false,
     "used_on": null
@@ -2095,7 +2095,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_7383.jpg",
     "date": "2026-01-17",
     "date_display": "January 17, 2026",
-    "location_hint": "São Paulo — Neues Jahr",
+    "location_hint": "S\u00e3o Paulo \u2014 Neues Jahr",
     "occasion": "new_year",
     "used": false,
     "used_on": null
@@ -2106,7 +2106,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_7431.jpg",
     "date": "2026-01-20",
     "date_display": "January 20, 2026",
-    "location_hint": "São Paulo — Neues Jahr",
+    "location_hint": "S\u00e3o Paulo \u2014 Neues Jahr",
     "occasion": "new_year",
     "used": false,
     "used_on": null
@@ -2117,7 +2117,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_7522.jpg",
     "date": "2026-01-27",
     "date_display": "January 27, 2026",
-    "location_hint": "São Paulo — Neues Jahr",
+    "location_hint": "S\u00e3o Paulo \u2014 Neues Jahr",
     "occasion": "new_year",
     "used": false,
     "used_on": null
@@ -2128,7 +2128,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_7528.jpg",
     "date": "2026-01-28",
     "date_display": "January 28, 2026",
-    "location_hint": "São Paulo — Neues Jahr",
+    "location_hint": "S\u00e3o Paulo \u2014 Neues Jahr",
     "occasion": "new_year",
     "used": false,
     "used_on": null
@@ -2139,7 +2139,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_7536.jpg",
     "date": "2026-01-28",
     "date_display": "January 28, 2026",
-    "location_hint": "São Paulo — Neues Jahr",
+    "location_hint": "S\u00e3o Paulo \u2014 Neues Jahr",
     "occasion": "new_year",
     "used": false,
     "used_on": null
@@ -2150,7 +2150,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_7598.jpg",
     "date": "2026-01-29",
     "date_display": "January 29, 2026",
-    "location_hint": "São Paulo — Neues Jahr",
+    "location_hint": "S\u00e3o Paulo \u2014 Neues Jahr",
     "occasion": "new_year",
     "used": false,
     "used_on": null
@@ -2161,7 +2161,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_7607.jpg",
     "date": "2026-01-29",
     "date_display": "January 29, 2026",
-    "location_hint": "São Paulo — Neues Jahr",
+    "location_hint": "S\u00e3o Paulo \u2014 Neues Jahr",
     "occasion": "new_year",
     "used": false,
     "used_on": null
@@ -2172,7 +2172,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_7623.jpg",
     "date": "2026-01-29",
     "date_display": "January 29, 2026",
-    "location_hint": "São Paulo — Neues Jahr",
+    "location_hint": "S\u00e3o Paulo \u2014 Neues Jahr",
     "occasion": "new_year",
     "used": false,
     "used_on": null
@@ -2183,7 +2183,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_7641.jpg",
     "date": "2026-01-29",
     "date_display": "January 29, 2026",
-    "location_hint": "São Paulo — Neues Jahr",
+    "location_hint": "S\u00e3o Paulo \u2014 Neues Jahr",
     "occasion": "new_year",
     "used": false,
     "used_on": null
@@ -2194,7 +2194,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_7665.jpg",
     "date": "2026-01-29",
     "date_display": "January 29, 2026",
-    "location_hint": "São Paulo — Neues Jahr",
+    "location_hint": "S\u00e3o Paulo \u2014 Neues Jahr",
     "occasion": "new_year",
     "used": false,
     "used_on": null
@@ -2205,7 +2205,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_7669.jpg",
     "date": "2026-01-29",
     "date_display": "January 29, 2026",
-    "location_hint": "São Paulo — Neues Jahr",
+    "location_hint": "S\u00e3o Paulo \u2014 Neues Jahr",
     "occasion": "new_year",
     "used": false,
     "used_on": null
@@ -2216,7 +2216,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_7674.jpg",
     "date": "2026-01-29",
     "date_display": "January 29, 2026",
-    "location_hint": "São Paulo — Neues Jahr",
+    "location_hint": "S\u00e3o Paulo \u2014 Neues Jahr",
     "occasion": "new_year",
     "used": false,
     "used_on": null
@@ -2227,7 +2227,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_7705.jpg",
     "date": "2026-01-31",
     "date_display": "January 31, 2026",
-    "location_hint": "São Paulo — Neues Jahr",
+    "location_hint": "S\u00e3o Paulo \u2014 Neues Jahr",
     "occasion": "new_year",
     "used": false,
     "used_on": null
@@ -2238,7 +2238,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_7729.jpg",
     "date": "2026-01-31",
     "date_display": "January 31, 2026",
-    "location_hint": "São Paulo — Neues Jahr",
+    "location_hint": "S\u00e3o Paulo \u2014 Neues Jahr",
     "occasion": "new_year",
     "used": false,
     "used_on": null
@@ -2249,7 +2249,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_7733.jpg",
     "date": "2026-01-31",
     "date_display": "January 31, 2026",
-    "location_hint": "São Paulo — Neues Jahr",
+    "location_hint": "S\u00e3o Paulo \u2014 Neues Jahr",
     "occasion": "new_year",
     "used": false,
     "used_on": null
@@ -2260,7 +2260,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_7741.jpg",
     "date": "2026-01-31",
     "date_display": "January 31, 2026",
-    "location_hint": "São Paulo — Neues Jahr",
+    "location_hint": "S\u00e3o Paulo \u2014 Neues Jahr",
     "occasion": "new_year",
     "used": false,
     "used_on": null
@@ -2271,7 +2271,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_7747.jpg",
     "date": "2026-01-31",
     "date_display": "January 31, 2026",
-    "location_hint": "São Paulo — Neues Jahr",
+    "location_hint": "S\u00e3o Paulo \u2014 Neues Jahr",
     "occasion": "new_year",
     "used": false,
     "used_on": null
@@ -2282,7 +2282,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_7749.jpg",
     "date": "2026-02-01",
     "date_display": "February 01, 2026",
-    "location_hint": "São Paulo — Februar",
+    "location_hint": "S\u00e3o Paulo \u2014 Februar",
     "occasion": "february",
     "used": false,
     "used_on": null
@@ -2293,7 +2293,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_7750.jpg",
     "date": "2026-02-01",
     "date_display": "February 01, 2026",
-    "location_hint": "São Paulo — Februar",
+    "location_hint": "S\u00e3o Paulo \u2014 Februar",
     "occasion": "february",
     "used": false,
     "used_on": null
@@ -2304,7 +2304,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_7782.jpg",
     "date": "2026-02-01",
     "date_display": "February 01, 2026",
-    "location_hint": "São Paulo — Februar",
+    "location_hint": "S\u00e3o Paulo \u2014 Februar",
     "occasion": "february",
     "used": false,
     "used_on": null
@@ -2315,7 +2315,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_7783.jpg",
     "date": "2026-02-01",
     "date_display": "February 01, 2026",
-    "location_hint": "São Paulo — Februar",
+    "location_hint": "S\u00e3o Paulo \u2014 Februar",
     "occasion": "february",
     "used": false,
     "used_on": null
@@ -2326,7 +2326,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_7993.jpg",
     "date": "2026-02-14",
     "date_display": "February 14, 2026",
-    "location_hint": "Valentinstag ❤️",
+    "location_hint": "Valentinstag \u2764\ufe0f",
     "occasion": "valentines",
     "used": false,
     "used_on": null
@@ -2337,7 +2337,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_8030.jpg",
     "date": "2026-02-17",
     "date_display": "February 17, 2026",
-    "location_hint": "São Paulo — Februar",
+    "location_hint": "S\u00e3o Paulo \u2014 Februar",
     "occasion": "february",
     "used": false,
     "used_on": null
@@ -2348,7 +2348,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_8032.jpg",
     "date": "2026-02-17",
     "date_display": "February 17, 2026",
-    "location_hint": "São Paulo — Februar",
+    "location_hint": "S\u00e3o Paulo \u2014 Februar",
     "occasion": "february",
     "used": false,
     "used_on": null
@@ -2359,7 +2359,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_8115.jpg",
     "date": "2026-02-19",
     "date_display": "February 19, 2026",
-    "location_hint": "São Paulo — Februar",
+    "location_hint": "S\u00e3o Paulo \u2014 Februar",
     "occasion": "february",
     "used": false,
     "used_on": null
@@ -2370,7 +2370,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_8132.jpg",
     "date": "2026-02-21",
     "date_display": "February 21, 2026",
-    "location_hint": "São Paulo — Februar",
+    "location_hint": "S\u00e3o Paulo \u2014 Februar",
     "occasion": "february",
     "used": false,
     "used_on": null
@@ -2381,7 +2381,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_8141.jpg",
     "date": "2026-02-21",
     "date_display": "February 21, 2026",
-    "location_hint": "São Paulo — Februar",
+    "location_hint": "S\u00e3o Paulo \u2014 Februar",
     "occasion": "february",
     "used": false,
     "used_on": null
@@ -2392,7 +2392,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_8155.jpg",
     "date": "2026-02-22",
     "date_display": "February 22, 2026",
-    "location_hint": "São Paulo — Februar",
+    "location_hint": "S\u00e3o Paulo \u2014 Februar",
     "occasion": "february",
     "used": false,
     "used_on": null
@@ -2403,7 +2403,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_8182.jpg",
     "date": "2026-02-24",
     "date_display": "February 24, 2026",
-    "location_hint": "São Paulo — Februar",
+    "location_hint": "S\u00e3o Paulo \u2014 Februar",
     "occasion": "february",
     "used": false,
     "used_on": null
@@ -2414,7 +2414,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_8352.jpg",
     "date": "2026-03-14",
     "date_display": "March 14, 2026",
-    "location_hint": "Campo Belo — März",
+    "location_hint": "Campo Belo \u2014 M\u00e4rz",
     "occasion": "march",
     "used": false,
     "used_on": null
@@ -2425,7 +2425,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_8422.jpg",
     "date": "2026-03-21",
     "date_display": "March 21, 2026",
-    "location_hint": "Campo Belo — März",
+    "location_hint": "Campo Belo \u2014 M\u00e4rz",
     "occasion": "march",
     "used": false,
     "used_on": null
@@ -2436,7 +2436,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_8423.jpg",
     "date": "2026-03-21",
     "date_display": "March 21, 2026",
-    "location_hint": "Campo Belo — März",
+    "location_hint": "Campo Belo \u2014 M\u00e4rz",
     "occasion": "march",
     "used": false,
     "used_on": null
@@ -2447,7 +2447,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_8504.jpg",
     "date": "2026-03-28",
     "date_display": "March 28, 2026",
-    "location_hint": "Campo Belo — März",
+    "location_hint": "Campo Belo \u2014 M\u00e4rz",
     "occasion": "march",
     "used": false,
     "used_on": null
@@ -2458,7 +2458,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_8508.jpg",
     "date": "2026-03-28",
     "date_display": "March 28, 2026",
-    "location_hint": "Campo Belo — März",
+    "location_hint": "Campo Belo \u2014 M\u00e4rz",
     "occasion": "march",
     "used": false,
     "used_on": null
@@ -2469,7 +2469,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_8614.jpg",
     "date": "2026-04-04",
     "date_display": "April 04, 2026",
-    "location_hint": "Campo Belo — April",
+    "location_hint": "Campo Belo \u2014 April",
     "occasion": "recent",
     "used": false,
     "used_on": null
@@ -2480,7 +2480,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_8625.jpg",
     "date": "2026-04-04",
     "date_display": "April 04, 2026",
-    "location_hint": "Campo Belo — April",
+    "location_hint": "Campo Belo \u2014 April",
     "occasion": "recent",
     "used": false,
     "used_on": null
@@ -2491,7 +2491,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_8627.jpg",
     "date": "2026-04-04",
     "date_display": "April 04, 2026",
-    "location_hint": "Campo Belo — April",
+    "location_hint": "Campo Belo \u2014 April",
     "occasion": "recent",
     "used": false,
     "used_on": null
@@ -2502,7 +2502,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_8632.jpg",
     "date": "2026-04-04",
     "date_display": "April 04, 2026",
-    "location_hint": "Campo Belo — April",
+    "location_hint": "Campo Belo \u2014 April",
     "occasion": "recent",
     "used": false,
     "used_on": null
@@ -2513,7 +2513,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_8647.jpg",
     "date": "2026-04-05",
     "date_display": "April 05, 2026",
-    "location_hint": "Campo Belo — April",
+    "location_hint": "Campo Belo \u2014 April",
     "occasion": "recent",
     "used": false,
     "used_on": null
@@ -2524,7 +2524,7 @@
     "github_url": "https://briefing.alex-pohlein.com/photos/IMG_8666.jpg",
     "date": "2026-04-06",
     "date_display": "April 06, 2026",
-    "location_hint": "Campo Belo — April",
+    "location_hint": "Campo Belo \u2014 April",
     "occasion": "recent",
     "used": false,
     "used_on": null
