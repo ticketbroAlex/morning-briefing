@@ -18,8 +18,8 @@
     "date_display": "June 13, 2025",
     "location_hint": "M\u00fcnchen \u2014 kurz davor",
     "occasion": "early_days",
-    "used": false,
-    "used_on": null
+    "used": true,
+    "used_on": "2026-04-13"
   },
   {
     "filename": "IMG_2266.HEIC",
