@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Morning Briefing — Thursday, April 16, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,700;0,900;1,300;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:#0A0A0A; --ink2:#141414; --ink3:#1A1A1A; --border:rgba(255,255,255,0.07);
+  --muted:#666; --soft:#999; --rose:#E8526A; --coral:#FF7B54; --gold:#F0B429;
+  --sky:#38BDF8; --teal:#0D9488; --purple:#7C3AED; --green:#22C55E; --lime:#84CC16; --orange:#F97316;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0A0A0A;color:#e0e0e0;font-family:'Inter',sans-serif;font-size:15px;line-height:1.6}
+.hero{background:radial-gradient(ellipse at 30% 50%,rgba(232,82,106,0.18) 0%,transparent 60%),radial-gradient(ellipse at 80% 20%,rgba(124,58,237,0.14) 0%,transparent 50%),#0A0A0A;padding:72px 60px 56px;border-bottom:1px solid var(--border)}
+.hero .eyebrow{display:flex;align-items:center;gap:10px;font-size:12px;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:20px}
+.hero .eyebrow::before{content:'';display:block;width:32px;height:1px;background:var(--rose)}
+.hero h1{font-family:'Fraunces',serif;font-size:clamp(48px,7vw,88px);font-weight:900;line-height:1.0;color:#fff;margin-bottom:0}
+.hero h1 em{color:var(--rose);font-style:italic}
+.fx-bar{background:#061206;border-bottom:1px solid rgba(34,197,94,0.12);padding:18px 60px;display:flex;align-items:center;gap:40px;flex-wrap:wrap}
+.fx-rate{font-family:'Fraunces',serif;font-size:38px;font-weight:700;color:var(--green);line-height:1}
+.fx-label{font-size:11px;color:var(--muted);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px}
+.fx-chips{display:flex;gap:8px;flex-wrap:wrap;margin-left:auto}
+.chip{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:4px 12px;font-size:12px;color:#aaa}
+.chip.green{background:rgba(34,197,94,0.1);border-color:rgba(34,197,94,0.2);color:var(--green)}
+.chip.red{background:rgba(232,82,106,0.1);border-color:rgba(232,82,106,0.2);color:var(--rose)}
+nav{position:sticky;top:0;z-index:100;backdrop-filter:blur(16px);background:rgba(10,10,10,0.92);border-bottom:1px solid var(--border);padding:0 60px;display:flex;gap:4px;overflow-x:auto}
+nav a{color:var(--muted);text-decoration:none;font-size:12px;padding:14px 10px;white-space:nowrap;transition:color 0.2s;display:flex;align-items:center;gap:5px}
+nav a:hover{color:#fff}
+.badge{background:var(--rose);color:#fff;font-size:10px;border-radius:8px;padding:1px 6px;font-weight:700}
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:1.5px;background:#0f0f0f}
+.card{padding:32px 36px;background:#0A0A0A;overflow:hidden;position:relative}
+.span-12{grid-column:span 12}
+.span-8{grid-column:span 8}
+.span-6{grid-column:span 6}
+.span-4{grid-column:span 4}
+@media(max-width:900px){.span-6,.span-4,.span-8{grid-column:span 12}}
+.eyebrow{font-size:11px;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:12px;font-weight:600}
+h2{font-family:'Fraunces',serif;font-size:26px;font-weight:700;color:#fff;margin-bottom:12px;line-height:1.2}
+.temp-big{font-family:'Fraunces',serif;font-size:78px;font-weight:900;line-height:1;margin:8px 0}
+.weather-emoji{position:absolute;right:24px;bottom:20px;font-size:64px;opacity:0.15}
+.pull-quote{font-family:'Fraunces',serif;font-size:22px;font-style:italic;font-weight:300;line-height:1.45;color:#e0e0e0;margin-bottom:16px;border-left:none}
+.pull-quote strong{color:var(--rose);font-style:normal;font-weight:700}
+.action-row{display:flex;align-items:flex-start;gap:10px;margin-top:10px;font-size:13px;color:#bbb}
+.action-row .label{color:var(--rose);font-weight:600;white-space:nowrap}
+.priority-item{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--border)}
+.priority-item:last-child{border-bottom:none}
+.priority-num{width:28px;height:28px;border-radius:50%;background:rgba(79,114,224,0.2);color:#4F72E0;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.priority-text{font-size:14px;color:#ccc;line-height:1.5}
+.priority-text strong{color:#fff}
+.lang-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5px;background:#0f0f0f}
+.lang-card{padding:32px 36px;background:#0A0A0A}
+.lang-word{font-family:'Fraunces',serif;font-size:54px;font-weight:900;line-height:1;margin:8px 0 6px}
+.lang-phonetic{font-size:13px;color:var(--muted);font-style:italic;margin-bottom:8px}
+.lang-meaning{font-size:18px;color:#fff;font-weight:500;margin-bottom:10px}
+.lang-example{font-size:13px;color:#aaa;line-height:1.6;border-left:2px solid var(--border);padding-left:12px;margin:10px 0}
+.lang-trick{font-size:13px;color:var(--muted);background:rgba(255,255,255,0.04);border-radius:6px;padding:8px 12px;margin-top:10px}
+.news-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.5px;background:#0f0f0f;margin-top:16px}
+.news-col{background:#0A0A0A;padding:24px 28px}
+.news-col h3{font-size:13px;font-weight:700;color:#fff;margin-bottom:14px;display:flex;align-items:center;gap:6px}
+.news-item{margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid var(--border)}
+.news-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.news-title{font-size:13px;color:#ddd;font-weight:500;line-height:1.4;margin-bottom:4px}
+.news-why{font-size:12px;color:var(--muted);line-height:1.4}
+.hometown-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5px;background:#0f0f0f;margin-top:1.5px}
+.biz-pill{display:inline-block;font-size:11px;padding:3px 10px;border-radius:12px;margin-bottom:8px;font-weight:600;letter-spacing:0.06em}
+.pill-trend{background:rgba(13,148,136,0.15);color:var(--teal);border:1px solid rgba(13,148,136,0.2)}
+.pill-opp{background:rgba(34,197,94,0.1);color:var(--green);border:1px solid rgba(34,197,94,0.2)}
+.pill-threat{background:rgba(232,82,106,0.1);color:var(--rose);border:1px solid rgba(232,82,106,0.2)}
+.pill-coral{background:rgba(255,123,84,0.1);color:var(--coral);border:1px solid rgba(255,123,84,0.2)}
+.biz-item{margin-bottom:18px;padding-bottom:18px;border-bottom:1px solid var(--border)}
+.biz-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.biz-title{font-size:14px;color:#ddd;font-weight:600;margin:4px 0;line-height:1.3}
+.biz-body{font-size:13px;color:#999;line-height:1.5}
+.memory-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5px;background:#0f0f0f;grid-column:span 12}
+.memory-photo{background:#111;overflow:hidden;max-height:440px;min-height:300px}
+.memory-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.memory-caption{background:#0A0A0A;padding:32px 36px;display:flex;flex-direction:column;justify-content:center}
+.memory-date{font-family:'Fraunces',serif;font-size:30px;font-weight:700;color:#fff;line-height:1.15;margin-bottom:8px}
+.memory-loc{font-size:12px;color:var(--muted);font-style:italic;margin-bottom:20px;letter-spacing:0.04em}
+.memory-text{font-size:16px;color:#ccc;line-height:1.65;font-style:italic}
+.inbox-item{padding:14px 16px;border-radius:8px;margin-bottom:10px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06)}
+.inbox-item.red{border-left:3px solid var(--rose)}
+.inbox-item.yellow{border-left:3px solid var(--gold)}
+.priority-badge{font-size:10px;font-weight:700;letter-spacing:0.06em;display:inline-block;margin-bottom:6px}
+.priority-badge.red{color:var(--rose)}
+.priority-badge.yellow{color:var(--gold)}
+.inbox-subject{font-size:14px;font-weight:600;color:#fff;margin-bottom:4px}
+.inbox-detail{font-size:13px;color:#aaa;line-height:1.5}
+.couple-icon{width:72px;height:72px;border-radius:16px;background:rgba(124,58,237,0.2);display:flex;align-items:center;justify-content:center;font-size:36px;margin-bottom:20px}
+.checkbox-row{display:flex;align-items:center;gap:10px;margin-top:16px;padding:12px;background:rgba(124,58,237,0.08);border-radius:8px;border:1px solid rgba(124,58,237,0.2)}
+.checkbox-row span{font-size:13px;color:#bbb}
+.smalls-item{padding:12px 0;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:10px}
+.smalls-item:last-child{border-bottom:none}
+.smalls-icon{width:32px;height:32px;border-radius:8px;background:rgba(34,197,94,0.1);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.smalls-text{font-size:13px;color:#bbb;line-height:1.5}
+.smalls-text strong{color:#fff}
+.thought{padding:64px 80px;background:#1A1A1A;text-align:center}
+.thought-quote{font-family:'Fraunces',serif;font-size:clamp(22px,3vw,34px);font-style:italic;font-weight:300;color:#e0e0e0;line-height:1.45;max-width:780px;margin:0 auto}
+.thought-quote::before{content:'\201C';color:var(--rose);font-size:60px;line-height:0;vertical-align:-20px;margin-right:4px}
+.thought-quote::after{content:'\201D';color:var(--rose);font-size:60px;line-height:0;vertical-align:-20px;margin-left:4px}
+.footer{padding:24px 60px;background:#0A0A0A;border-top:1px solid var(--border);display:flex;justify-content:space-between;font-size:12px;color:var(--muted)}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="eyebrow">Campo Belo · São Paulo · Brasil</div>
+  <h1>Good Morning, <em>Alex & Su.</em></h1>
+</div>
+
+<!-- FX TICKER BAR -->
+<div class="fx-bar">
+  <div>
+    <div class="fx-label">EUR / BRL</div>
+    <div class="fx-rate">R$ 5,9488</div>
+    <div style="font-size:12px;color:var(--muted);margin-top:4px">Opening R$ 5,9531 · Thursday, April 16, 2026</div>
+  </div>
+  <div class="fx-chips">
+    <span class="chip">Range 5,9383 – 5,9880</span>
+    <span class="chip">Opening 5,9531</span>
+    <span class="chip green">USD/BRL R$ 4,9720</span>
+    <span class="chip">BRL +4.58% vs USD (1 Monat)</span>
+    <span class="chip">Ibovespa ~197.500 pts</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="#love">❤️ Love</a>
+  <a href="#weather">🌤 Weather</a>
+  <a href="#focus">🧠 Focus</a>
+  <a href="#language">🎓 Language</a>
+  <a href="#news">🌍 News</a>
+  <a href="#business">🚀 Business</a>
+  <a href="#memory">📸 Memory</a>
+  
+  <a href="#couple">💑 Couple</a>
+  <a href="#smalls">💡 Smalls</a>
+  <a href="#thought">✦ Thought</a>
+</nav>
+
+<!-- GRID -->
+<div class="grid">
+
+  <!-- WEATHER SP -->
+  <div id="weather" class="card span-4" style="background:linear-gradient(135deg,#060d1a,#0a1628)">
+    <div class="eyebrow" style="color:var(--sky)">🇧🇷 São Paulo · Campo Belo</div>
+    <div class="temp-big" style="color:var(--sky)">27°C</div>
+    <div style="font-size:14px;color:#aaa;margin-bottom:6px">↓ 16°C overnight · Broken clouds</div>
+    <div style="font-size:13px;color:var(--muted)">UV Index: 9 — sunscreen if you go out. 0% rain chance.</div>
+    <div class="weather-emoji">⛅</div>
+  </div>
+
+  <!-- WEATHER MUNICH -->
+  <div class="card span-4" style="background:linear-gradient(135deg,#1a1200,#261800)">
+    <div class="eyebrow" style="color:var(--gold)">🇩🇪 München · Bayern</div>
+    <div class="temp-big" style="color:var(--gold)">12°C</div>
+    <div style="font-size:14px;color:#aaa;margin-bottom:6px">↓ 3°C overnight · Mostly cloudy</div>
+    <div style="font-size:13px;color:var(--muted)">⚠️ Pollen season: birch &amp; grass active. Lufthansa strike ends today — airport S-Bahn outage until Fri Apr 17.</div>
+    <div class="weather-emoji">☁️</div>
+  </div>
+
+  <!-- LOVE NOTE -->
+  <div id="love" class="card span-4" style="background:linear-gradient(135deg,#1c0812,#240e1a);border-left:3px solid var(--rose)">
+    <div class="eyebrow" style="color:var(--rose)">❤️ Love Note · Donnerstag</div>
+    <div class="pull-quote">
+      "Thursday has a particular energy — you can almost <strong>taste</strong> the weekend coming. That's you, Su: the whole week, powering through, eyes already on what's next."
+    </div>
+    <p style="font-size:14px;color:#bbb;line-height:1.6;margin-bottom:12px">You show up every day — meetings, targets, the whole Google machine — and you still somehow make it feel effortless. That's not nothing. That's everything. Alex sees it, even from the other side of the room.</p>
+    <div class="action-row">
+      <span class="label">Make Su smile today →</span>
+      <span>Send her a voice message during lunch. Just 30 seconds. No agenda.</span>
+    </div>
+    <div class="action-row">
+      <span class="label">Mini-date idea →</span>
+      <span>Dinner at Campo Belo's boteco tonight — pick the place, let her just show up.</span>
+    </div>
+  </div>
+
+  <!-- FOCUS ALEX -->
+  <div id="focus" class="card span-6" style="background:linear-gradient(135deg,#080f26,#060c1e);border-top:3px solid #4F72E0">
+    <div class="eyebrow" style="color:#4F72E0">🧠 Focus Alex — Top 3 Today</div>
+    <h2>What moves the needle</h2>
+    <div class="priority-item">
+      <div class="priority-num">1</div>
+      <div class="priority-text"><strong>ticketbro Brazil dissolution</strong> — Reply to Julio Fleichman today. Confirm who will serve as Brazilian legal representative (must be tax resident in Brazil). You + Dirk Monning need to sign the PoA. Deadline: April 30.</div>
+    </div>
+    <div class="priority-item">
+      <div class="priority-num">2</div>
+      <div class="priority-text"><strong>INSS payment due Monday Apr 20</strong> — Gorioux sent DCTFWEB 03/2026 docs. Approve the DARF payment today so it doesn't slip over the weekend. Late = penalty.</div>
+    </div>
+    <div class="priority-item">
+      <div class="priority-num">3</div>
+      <div class="priority-text"><strong>Felix's pre-go-live comment (CUS-1084)</strong> — He mentioned you on Linear. Check and unblock before EOD.</div>
+    </div>
+    
+  </div>
+
+  <!-- FOCUS SU -->
+  <div class="card span-6" style="background:linear-gradient(135deg,#100820,#0c0618);border-top:3px solid var(--purple)">
+    <div class="eyebrow" style="color:var(--purple)">🧠 Focus Su — Google Cloud</div>
+    <h2>Your angles today</h2>
+    <div class="priority-item">
+      <div class="priority-num">1</div>
+      <div class="priority-text"><strong>Agentic AI is the SMB pitch of 2026</strong> — Google Cloud is doubling down on channel-led agentic AI for midmarket/SMB. If you're not leading with "agent workflows" in discovery calls, competitors will. Frame it as: "autonomous operations for lean teams."</div>
+    </div>
+    <div class="priority-item">
+      <div class="priority-num">2</div>
+      <div class="priority-text"><strong>Opening question that works right now:</strong> "How is your team currently handling repetitive workflows across tools — and what would it mean to automate that by Q3?" Positions Cloud as the answer before they've framed the problem.</div>
+    </div>
+    <div style="margin-top:16px;background:rgba(124,58,237,0.1);border-radius:8px;padding:14px 16px;border:1px solid rgba(124,58,237,0.2)">
+      <div style="font-size:12px;color:var(--purple);font-weight:600;margin-bottom:6px">💬 CONVERSATION STARTER</div>
+      <div style="font-size:13px;color:#bbb">"Você já testou agentes de IA para automatizar algum processo interno? O Google Cloud lançou algo muito relevante pra isso agora em 2026."</div>
+    </div>
+  </div>
+
+  <!-- LANGUAGE SCHOOL -->
+  <div id="language" class="span-12" style="border-top:3px solid var(--lime)">
+    <div class="lang-grid">
+      <div class="lang-card">
+        <div class="eyebrow" style="color:var(--lime)">🎓 Su learns German 🇩🇪 · Donnerstag = Travel</div>
+        <div class="lang-word" style="color:var(--gold)">FERNWEH</div>
+        <div class="lang-phonetic">[FERN-veh] — noun, das</div>
+        <div class="lang-meaning">The ache for faraway places. Wanderlust, but with pain.</div>
+        <div class="lang-example">
+          <em>"Ich habe so ein Fernweh — ich möchte überall auf der Welt sein."</em><br>
+          "I have such a longing for far places — I want to be everywhere in the world."
+        </div>
+        <div class="lang-trick">🧠 <strong>Trick:</strong> FERN = far + WEH = ache/pain. It's the German word for "my heart hurts because I'm not traveling right now." Very relatable if you live between São Paulo and Munich.</div>
+        <div class="lang-trick" style="margin-top:8px">💬 <strong>Bonus:</strong> "Wir haben Fernweh" — use this when you and Alex are planning your next trip.</div>
+      </div>
+      <div class="lang-card">
+        <div class="eyebrow" style="color:var(--lime)">🎓 Alex learns Portuguese 🇧🇷 · Quinta = Viagem</div>
+        <div class="lang-word" style="color:var(--green)">MOCHILEIRO</div>
+        <div class="lang-phonetic">[mo-shi-LAY-ro]</div>
+        <div class="lang-meaning">Backpacker. Someone who travels light and goes on adventures.</div>
+        <div class="lang-example">
+          <em>"Eles foram de mochileiros pela América do Sul."</em><br>
+          "They backpacked through South America."
+        </div>
+        <div class="lang-trick">🧠 <strong>Trick:</strong> MOCHILA = backpack. Add -EIRO = the person who does it. Like a "backpack person." Easy. Call Alex a mochileiro next time you plan a trip.</div>
+        <div class="lang-trick" style="margin-top:8px">💬 <strong>Uso:</strong> "Você topa ser mochileiro por um fim de semana?" — perfect for proposing a spontaneous trip to Su.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NEWS -->
+  <div id="news" class="card span-12" style="border-top:3px solid var(--gold);padding-bottom:0">
+    <div class="eyebrow" style="color:var(--gold)">🌍 News — Thursday, April 16, 2026</div>
+    <h2>What's happening</h2>
+    <div class="news-grid">
+      <div class="news-col">
+        <h3>🇧🇷 São Paulo / Brasil</h3>
+        <div class="news-item">
+          <div class="news-title">Ibovespa recua para ~197.500 pontos</div>
+          <div class="news-why">Pulled back from recent record highs. Banco do Brasil downgraded by Itaú BBA, losing 1.5%+. BRL strengthening — down 4.58% vs USD in one month. Why it matters: cheaper EUR/BRL hits remittances to Brazil.</div>
+        </div>
+        <div class="news-item">
+          <div class="news-title">Governo de Minas investe R$400M em rodovias do Sul de Minas</div>
+          <div class="news-why">Package announced in Poços de Caldas last week. R$200M in works already this year. Matters for Su's hometown region.</div>
+        </div>
+        <div class="news-item">
+          <div class="news-title">Conjunto Hidrotermal de Poços de Caldas tombado como patrimônio cultural</div>
+          <div class="news-why">Palace Hotel, Palace Cassino, Thermas Presidente Antônio Carlos — officially heritage-listed. Su's hometown making history.</div>
+        </div>
+      </div>
+      <div class="news-col">
+        <h3>🇩🇪 München / Deutschland</h3>
+        <div class="news-item">
+          <div class="news-title">Lufthansa-Pilotenstreik endet heute (16. Apr)</div>
+          <div class="news-why">Strike by Vereinigung Cockpit ends today. Flights should normalize. Check status if traveling.</div>
+        </div>
+        <div class="news-item">
+          <div class="news-title">DB-Baustelle: Kein S-Bahn-Anschluss zum Flughafen bis Fr 17. Apr</div>
+          <div class="news-why">Airport S-Bahn + ÜFEX down since Mon Apr 13, ends Fri Apr 17 5am. Bus replacement active. Plan accordingly if anyone needs to catch a flight.</div>
+        </div>
+        <div class="news-item">
+          <div class="news-title">BMW Open Munich läuft (13–19 Apr) + ESCMID Kongress ab Mo</div>
+          <div class="news-why">Tennis at MTTC Iphitos. ESCMID medical congress arrives Mon at Messe München — 18,000 international attendees. City will be busy.</div>
+        </div>
+      </div>
+      <div class="news-col">
+        <h3>🌐 Global / Tech / AI</h3>
+        <div class="news-item">
+          <div class="news-title">ASML raises 2026 forecast on AI chip demand surge</div>
+          <div class="news-why">The picks-and-shovels play in AI is printing. Demand for advanced lithography machines not slowing.</div>
+        </div>
+        <div class="news-item">
+          <div class="news-title">Accel raises $5B for AI bets; Jane Street invests $1B in CoreWeave</div>
+          <div class="news-why">Institutional conviction in AI infrastructure is accelerating. Anthropic leads model performance rankings in April 2026 (ahead of xAI, Google, OpenAI).</div>
+        </div>
+      </div>
+    </div>
+    <div class="hometown-grid">
+      <div class="news-col">
+        <h3>🏘 Poços de Caldas, MG</h3>
+        <div class="news-item">
+          <div class="news-title">Cidade foi sede simbólica do Governo de Minas na semana passada</div>
+          <div class="news-why">Governor Mateus Simões spent the whole week governing from Poços. Brought visibility + the R$400M roads package to the region.</div>
+        </div>
+      </div>
+      <div class="news-col">
+        <h3>🏡 Michelau i.OFr.</h3>
+        <div class="news-item">
+          <div class="news-title">Heute: Bau- und Umweltausschuss um 16:00 Uhr</div>
+          <div class="news-why">Village council meeting day. Last week: Gemeinde got a shiny new Steyr tractor for winter service. Michelau at full capacity.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BUSINESS ALEX -->
+  <div id="business" class="card span-6" style="border-top:3px solid var(--teal)">
+    <div class="eyebrow" style="color:var(--teal)">🚀 ticketbro · Events Industry</div>
+    <h2>What to watch</h2>
+    <div class="biz-item">
+      <span class="biz-pill pill-trend">TREND</span>
+      <div class="biz-title">Tickets as programmable data assets</div>
+      <div class="biz-body">2026's defining moat: open API-first ticketing infrastructure where tickets are programmable objects tied to persistent customer identity. Legacy "black box" platforms lose this race. ticketbro's open approach is structurally right — now it's about showing it in the product.</div>
+    </div>
+    <div class="biz-item">
+      <span class="biz-pill pill-opp">OPPORTUNITY</span>
+      <div class="biz-title">Last-minute is now a primary sales window</div>
+      <div class="biz-body">For shows/sports, final days before event = biggest ticket volume. ticketbro shops that stay "polished and frictionless" right up to door time will outperform. Push this to merchant playbooks.</div>
+    </div>
+    <div class="biz-item">
+      <span class="biz-pill pill-threat">THREAT</span>
+      <div class="biz-title">Bot-driven fraud scaling fast</div>
+      <div class="biz-body">Organized operations hitting ticketing at scale — automated exploits in seconds. If you don't have bot mitigation at checkout, it becomes a liability as GMV grows.</div>
+    </div>
+  </div>
+
+  <!-- BUSINESS SU -->
+  <div class="card span-6" style="border-top:3px solid var(--coral)">
+    <div class="eyebrow" style="color:var(--coral)">🚀 Google Cloud · SMB Sales</div>
+    <h2>Su's edge today</h2>
+    <div class="biz-item">
+      <span class="biz-pill pill-trend">TREND</span>
+      <div class="biz-title">Google's channel-led agentic AI motion is live</div>
+      <div class="biz-body">Google Cloud + UJET partnership is pushing "agentic AI for SMB/midmarket" through managed service channels. The ICP for 2026 is companies wanting autonomous CX without enterprise overhead. Your job: translate "agentic" into business outcomes, not tech jargon.</div>
+    </div>
+    <div class="biz-item">
+      <span class="biz-pill pill-coral">SALES ANGLE</span>
+      <div class="biz-title">Cost optimization is the hook, AI is the upgrade</div>
+      <div class="biz-body">2026 SMBs want "smarter consumption, not aggressive expansion." Lead with cloud cost savings → land → expand with AI agents. Especially strong with Brazilian startups managing tight burn.</div>
+    </div>
+  </div>
+
+  <!-- MEMORY CARD -->
+  <div id="memory" class="memory-grid">
+    <div class="memory-photo">
+      <img src="https://briefing.alex-pohlein.com/photos/IMG_2274.jpg" alt="Memory — 14. Juni 2025">
+    </div>
+    <div class="memory-caption">
+      <div class="eyebrow" style="color:var(--rose)">📸 Erinnerung</div>
+      <div class="memory-date">14. Juni 2025</div>
+      <div class="memory-loc">München — kurz davor</div>
+      <div class="memory-text">München, 14. Juni 2025. Einen Tag bevor du &#8222;ja&#8220; gesagt hast &#8212; bevor die Fahrt von Monte Verde alles offiziell gemacht hat. Er war noch in München, du noch in São Paulo. Und irgendwo dazwischen war der Plan schon längst gefasst. <em style="color:var(--rose)">Erinnerst du dich noch, wie sich das Warten angefühlt hat?</em></div>
+    </div>
+  </div>
+
+  
+
+  <!-- COUPLE TIP -->
+  <div id="couple" class="card span-8" style="background:linear-gradient(135deg,#0e0820,#0a0618)">
+    <div class="eyebrow" style="color:var(--purple)">💑 Couple Tip · Donnerstag = Growth</div>
+    <div class="couple-icon">🌱</div>
+    <h2>The 3-minute growth debrief</h2>
+    <p style="font-size:14px;color:#bbb;line-height:1.65;margin-bottom:16px">Tonight, ask each other one question: <em>"What's one thing you want us to do differently this month?"</em> Not to criticize — to upgrade. High-performers run retrospectives on their work. Do the same for each other. Keep it concrete: one behavior, one change, no blame. Two minutes each. Done.</p>
+    <p style="font-size:13px;color:var(--muted);margin-bottom:0">The couples who grow together are the ones who treat the relationship as something worth improving, not just maintaining.</p>
+    <div class="checkbox-row">
+      <span style="font-size:18px">☐</span>
+      <span>We asked each other tonight: "What's one thing to do differently this month?"</span>
+    </div>
+  </div>
+
+  <!-- SMALLS -->
+  <div id="smalls" class="card span-4" style="border-top:3px solid var(--green)">
+    <div class="eyebrow" style="color:var(--green)">💡 Small Things</div>
+    <div class="smalls-item">
+      <div class="smalls-icon">📅</div>
+      <div class="smalls-text"><strong>Next monthly anniversary:</strong> May 15 = 11 months together. 29 days away — plan something small for Su.</div>
+    </div>
+    <div class="smalls-item">
+      <div class="smalls-icon">✈️</div>
+      <div class="smalls-text"><strong>Munich travel alert:</strong> S-Bahn to airport down until tomorrow morning (5am). DB bus replacement active.</div>
+    </div>
+    <div class="smalls-item">
+      <div class="smalls-icon">⚖️</div>
+      <div class="smalls-text"><strong>ticketbro Brazil deadline:</strong> April 30 is T-14. Legal procedures need to start NOW.</div>
+    </div>
+    <div class="smalls-item">
+      <div class="smalls-icon">🎾</div>
+      <div class="smalls-text"><strong>BMW Open Munich:</strong> Running through April 19. Good dinner conversation if you need one.</div>
+    </div>
+  </div>
+
+</div><!-- end grid -->
+
+<!-- THOUGHT -->
+<div id="thought" class="thought">
+  <div style="font-size:11px;color:var(--muted);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:20px">✦ Thought of the Day 🌿</div>
+  <div class="thought-quote">The gap between good founders and great ones isn't intelligence. It's the willingness to make the next decision before the last one has fully played out.</div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <span>Morning Briefing for Alex &amp; Su · Campo Belo, São Paulo</span>
+  <span>Donnerstag · 16. April 2026</span>
+</div>
+
+</body>
+</html>
