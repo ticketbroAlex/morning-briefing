@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Morning Briefing — Alex &amp; Su · Wednesday, 29 July 2026</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,700;0,900;1,300;1,700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --ink:#0A0A0A; --ink2:#141414; --ink3:#1A1A1A; --border:rgba(255,255,255,0.07);
+  --muted:#666; --soft:#999; --rose:#E8526A; --coral:#FF7B54; --gold:#F0B429;
+  --sky:#38BDF8; --teal:#0D9488; --purple:#7C3AED; --green:#22C55E; --lime:#84CC16; --orange:#F97316;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--ink);color:#fff;font-family:'Inter',sans-serif;font-size:14px;line-height:1.5;}
+
+/* STICKY NAV */
+.nav{position:sticky;top:0;z-index:100;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);background:rgba(10,10,10,0.92);border-bottom:1px solid var(--border);padding:0 32px;display:flex;align-items:center;gap:22px;height:46px;overflow-x:auto;scrollbar-width:none;}
+.nav::-webkit-scrollbar{display:none;}
+.nav a{color:var(--soft);text-decoration:none;font-size:12px;font-weight:500;white-space:nowrap;transition:color 0.2s;letter-spacing:0.02em;}
+.nav a:hover{color:#fff;}
+.badge{display:inline-block;background:var(--rose);color:#fff;font-size:9px;font-weight:700;border-radius:999px;padding:1px 5px;margin-left:3px;vertical-align:middle;line-height:1.4;}
+
+/* HERO */
+.hero{position:relative;padding:72px 48px 60px;overflow:hidden;border-bottom:1px solid var(--border);}
+.hero::before{content:'';position:absolute;top:-30%;left:-5%;width:55%;height:130%;background:radial-gradient(ellipse at center,rgba(232,82,106,0.18) 0%,rgba(124,58,237,0.1) 45%,transparent 70%);pointer-events:none;}
+.hero-eye{display:flex;align-items:center;gap:10px;margin-bottom:20px;font-size:11px;font-weight:600;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;}
+.hero-eye::before{content:'';display:block;width:28px;height:2px;background:var(--rose);}
+.hero h1{font-family:'Fraunces',serif;font-size:clamp(48px,8vw,96px);font-weight:900;line-height:1.0;color:#fff;position:relative;}
+.hero h1 em{font-style:italic;color:var(--rose);}
+
+/* FX TICKER */
+.fx{background:#061206;border-bottom:1px solid rgba(34,197,94,0.12);padding:18px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
+.fx-label{font-size:10px;font-weight:700;color:#3a4a3a;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:4px;}
+.fx-rate{font-family:'Fraunces',serif;font-size:38px;font-weight:700;color:var(--green);line-height:1;}
+.fx-sub{font-size:11px;color:var(--muted);margin-top:4px;}
+.chips{display:flex;flex-wrap:wrap;gap:8px;align-items:center;}
+.chip{background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:999px;padding:5px 13px;font-size:12px;font-weight:500;color:var(--soft);}
+.chip b{color:#fff;font-weight:600;}
+
+/* BENTO GRID */
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:1.5px;background:#0f0f0f;}
+.c4{grid-column:span 4;} .c6{grid-column:span 6;} .c8{grid-column:span 8;} .c12{grid-column:span 12;}
+.card{padding:28px;position:relative;overflow:hidden;}
+.clabel{font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;gap:7px;}
+
+/* WEATHER */
+.wsp{background:linear-gradient(140deg,#050a15 0%,#0a1422 100%);}
+.wmuc{background:linear-gradient(140deg,#140a00 0%,#1c1000 100%);}
+.wtemp{font-family:'Fraunces',serif;font-size:78px;font-weight:900;line-height:1;margin:8px 0;}
+.wsp .wtemp{color:var(--sky);}
+.wmuc .wtemp{color:var(--gold);}
+.wrange{font-size:13px;color:var(--muted);margin-bottom:6px;}
+.wcond{font-size:13px;color:var(--soft);line-height:1.5;}
+.wemoji{position:absolute;bottom:14px;right:18px;font-size:62px;opacity:0.18;}
+
+/* LOVE NOTE */
+.love{background:linear-gradient(140deg,#1c0812 0%,#240e1a 100%);border-left:3px solid var(--rose);}
+.lpull{font-family:'Fraunces',serif;font-size:19px;font-style:italic;font-weight:300;color:rgba(255,255,255,0.82);line-height:1.55;margin-bottom:14px;}
+.lpull strong{color:var(--rose);font-style:normal;font-weight:700;}
+.lbody{font-size:13px;color:var(--soft);line-height:1.7;margin-bottom:18px;}
+.lact{display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;font-size:13px;}
+.lactico{font-size:15px;flex-shrink:0;margin-top:1px;}
+.lactxt{color:var(--soft);}
+.lactxt strong{color:#fff;font-weight:600;}
+
+/* FOCUS */
+.fal{background:linear-gradient(140deg,#080f26 0%,#060c1e 100%);border-top:3px solid #4F72E0;}
+.fsu{background:linear-gradient(140deg,#100820 0%,#0c0618 100%);border-top:3px solid var(--purple);}
+.plist{list-style:none;}
+.pitem{display:flex;align-items:flex-start;gap:12px;padding:12px 0;border-bottom:1px solid var(--border);}
+.pitem:last-child{border-bottom:none;}
+.pnum{font-family:'Fraunces',serif;font-size:26px;font-weight:700;color:rgba(79,114,224,0.35);line-height:1;flex-shrink:0;width:28px;}
+.fsu .pnum{color:rgba(124,58,237,0.4);}
+.ptitle{font-size:14px;font-weight:600;color:#fff;margin-bottom:3px;line-height:1.3;}
+.pdesc{font-size:12px;color:var(--muted);line-height:1.55;}
+.abox{background:rgba(232,82,106,0.07);border:1px solid rgba(232,82,106,0.18);border-radius:8px;padding:12px 14px;margin-top:16px;font-size:12px;color:var(--rose);line-height:1.55;}
+.abox strong{color:#fff;}
+.cbox{background:rgba(124,58,237,0.07);border:1px solid rgba(124,58,237,0.18);border-radius:8px;padding:12px 14px;margin-top:16px;font-size:12px;color:#9B75F5;line-height:1.55;}
+.cbox strong{color:#fff;}
+
+/* LANGUAGE */
+.lang-outer{border-top:3px solid var(--lime);background:var(--ink2);}
+.lang-hdr{padding:20px 28px 14px;border-bottom:1px solid var(--border);}
+.lang-inner{display:grid;grid-template-columns:1fr 1fr;gap:1.5px;background:#0f0f0f;}
+.lang-half{background:var(--ink2);padding:28px;}
+.lflag{font-size:26px;margin-bottom:14px;}
+.lword-de{font-family:'Fraunces',serif;font-size:52px;font-weight:900;color:var(--gold);line-height:1;margin-bottom:6px;}
+.lword-pt{font-family:'Fraunces',serif;font-size:52px;font-weight:900;color:var(--green);line-height:1;margin-bottom:6px;}
+.lphon{font-size:12px;color:var(--muted);margin-bottom:3px;}
+.lmean{font-size:13px;color:var(--soft);margin-bottom:12px;}
+.lex{font-size:13px;font-style:italic;color:rgba(255,255,255,0.72);margin-bottom:3px;}
+.lex-en{font-size:12px;color:var(--muted);margin-bottom:12px;}
+.ltrick{font-size:12px;color:var(--muted);background:rgba(255,255,255,0.03);border-radius:6px;padding:10px 12px;margin-bottom:10px;line-height:1.55;}
+.ltrick strong{color:var(--soft);}
+.lbonus{font-size:12px;color:var(--muted);line-height:1.5;}
+.lbonus strong{color:var(--soft);}
+
+/* NEWS */
+.news-outer{border-top:3px solid var(--gold);background:var(--ink2);}
+.news-hdr{padding:20px 28px 0;}
+.news-cols{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;}
+.ncol{padding:20px 28px 24px;border-right:1px solid var(--border);}
+.ncol:last-child{border-right:none;}
+.ncoltitle{font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:14px;}
+.nitem{margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid var(--border);}
+.nitem:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.nhead{font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;line-height:1.4;}
+.nwhy{font-size:12px;color:var(--muted);line-height:1.55;}
+.hometown{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--border);}
+.htcol{padding:16px 28px;border-right:1px solid var(--border);}
+.htcol:last-child{border-right:none;}
+.htlabel{font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;}
+.httext{font-size:13px;color:var(--soft);line-height:1.55;}
+
+/* BIZ */
+.bzal{background:var(--ink2);border-top:3px solid var(--teal);}
+.bzsu{background:var(--ink2);border-top:3px solid var(--coral);}
+.pills{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:14px;}
+.ptag{display:inline-block;border-radius:999px;padding:4px 12px;font-size:10px;font-weight:700;letter-spacing:0.06em;}
+.ptag-tr{background:rgba(13,148,136,0.12);color:var(--teal);border:1px solid rgba(13,148,136,0.25);}
+.ptag-op{background:rgba(34,197,94,0.1);color:var(--green);border:1px solid rgba(34,197,94,0.22);}
+.ptag-th{background:rgba(232,82,106,0.1);color:var(--rose);border:1px solid rgba(232,82,106,0.2);}
+.ptag-co{background:rgba(255,123,84,0.1);color:var(--coral);border:1px solid rgba(255,123,84,0.2);}
+.btitle{font-size:14px;font-weight:600;color:#fff;margin-bottom:6px;line-height:1.3;}
+.bbody{font-size:12px;color:var(--muted);line-height:1.65;margin-bottom:18px;}
+
+/* INBOX */
+.inbox{background:var(--ink2);border-top:3px solid var(--orange);}
+.iitem{display:flex;align-items:flex-start;gap:12px;padding:11px 0;border-bottom:1px solid var(--border);}
+.iitem:last-child{border-bottom:none;}
+.iprio{font-size:15px;flex-shrink:0;width:22px;text-align:center;margin-top:1px;}
+.isubj{font-size:13px;font-weight:600;color:#fff;margin-bottom:3px;line-height:1.35;}
+.iact{font-size:12px;color:var(--muted);line-height:1.5;}
+.calnote{background:rgba(249,115,22,0.06);border:1px solid rgba(249,115,22,0.14);border-radius:8px;padding:11px 14px;margin-top:14px;font-size:12px;color:#aaa;line-height:1.55;}
+.calnote strong{color:#fff;}
+
+/* COUPLE */
+.couple{background:linear-gradient(140deg,#0d0516 0%,#12082a 100%);}
+.cico{width:72px;height:72px;border-radius:16px;background:linear-gradient(135deg,rgba(124,58,237,0.28),rgba(232,82,106,0.28));display:flex;align-items:center;justify-content:center;font-size:36px;margin-bottom:16px;}
+.ctitle{font-family:'Fraunces',serif;font-size:26px;font-weight:700;color:#fff;margin-bottom:12px;line-height:1.25;}
+.cbody{font-size:14px;color:var(--soft);line-height:1.75;margin-bottom:16px;}
+.ccheck{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--muted);}
+.ccheck::before{content:'☐';font-size:18px;color:var(--purple);}
+
+/* SMALLS */
+.smalls{background:var(--ink2);border-top:3px solid var(--green);}
+.sitem{display:flex;align-items:flex-start;gap:10px;padding:13px 0;border-bottom:1px solid var(--border);}
+.sitem:last-child{border-bottom:none;}
+.sico{font-size:22px;flex-shrink:0;}
+.stxt{font-size:13px;color:var(--soft);line-height:1.6;}
+.stxt strong{color:#fff;}
+
+/* THOUGHT */
+.thought{background:var(--ink3);padding:64px 48px;text-align:center;}
+.tq{font-family:'Fraunces',serif;font-size:clamp(20px,3.2vw,36px);font-style:italic;font-weight:300;color:rgba(255,255,255,0.88);max-width:760px;margin:0 auto;line-height:1.55;}
+.tq::before{content:'\201C';color:var(--rose);font-style:normal;}
+.tq::after{content:'\201D';color:var(--rose);font-style:normal;}
+.tleaf{font-size:28px;margin-top:22px;opacity:0.45;}
+
+/* FOOTER */
+.footer{padding:18px 48px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border);}
+.fl{font-size:12px;color:var(--muted);}
+.fr{font-size:12px;color:var(--muted);font-weight:500;letter-spacing:0.04em;}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .c4,.c6,.c8{grid-column:span 12;}
+  .news-cols,.hometown,.lang-inner{grid-template-columns:1fr;}
+  .ncol,.htcol,.lang-half{border-right:none;border-bottom:1px solid var(--border);}
+  .hero{padding:48px 24px 40px;}
+  .fx{padding:14px 24px;}
+  .thought{padding:48px 24px;}
+  .footer{padding:16px 24px;flex-direction:column;gap:6px;text-align:center;}
+}
+</style>
+</head>
+<body>
+
+<!-- STICKY NAV -->
+<nav class="nav">
+  <a href="#love">❤️ Love</a>
+  <a href="#weather">🌤 Weather</a>
+  <a href="#focus">🧠 Focus</a>
+  <a href="#language">🎓 Language</a>
+  <a href="#news">🌍 News</a>
+  <a href="#business">🚀 Business</a>
+  <a href="#inbox">📬 Inbox<span class="badge">15</span></a>
+  <a href="#couple">💑 Couple</a>
+  <a href="#smalls">💡 Smalls</a>
+  <a href="#thought">✦ Thought</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eye">Wednesday &nbsp;·&nbsp; 29 July 2026 &nbsp;·&nbsp; Campo Belo, São Paulo</div>
+  <h1>Good Morning, <em>Alex &amp; Su.</em></h1>
+</section>
+
+<!-- FX TICKER -->
+<div class="fx">
+  <div>
+    <div class="fx-label">EUR / BRL</div>
+    <div class="fx-rate">R$ 5,84</div>
+    <div class="fx-sub">Mid-market · XE.com · updated overnight</div>
+  </div>
+  <div class="chips">
+    <div class="chip">7-day range <b>5,78 – 5,83</b></div>
+    <div class="chip">Opening (Jul 28) <b>R$ 5,81</b></div>
+    <div class="chip">USD/BRL <b>R$ 5,13</b></div>
+    <div class="chip">Ibovespa <b>175.334</b> ↑ 0,74%</div>
+  </div>
+</div>
+
+<!-- BENTO GRID -->
+<main class="grid">
+
+  <!-- WEATHER SP -->
+  <div id="weather" class="card wsp c4">
+    <div class="clabel" style="color:var(--sky);">🌦 São Paulo · Campo Belo</div>
+    <div class="wtemp">16°</div>
+    <div class="wrange">Min 9° · Max 19° · Celsius</div>
+    <div class="wcond">Heavy rain likely · 75–90% probability · Cold front dominates through Friday. Saturday clears up.</div>
+    <div class="wemoji">🌧️</div>
+  </div>
+
+  <!-- WEATHER MUNICH -->
+  <div class="card wmuc c4">
+    <div class="clabel" style="color:var(--gold);">☀️ Munich · Bayern</div>
+    <div class="wtemp">31°</div>
+    <div class="wrange">Min 20° · Max 33° · Celsius</div>
+    <div class="wcond">Germany-wide heatwave · Sunny &amp; hot · Western regions up to 38°C · Persists through Thursday.</div>
+    <div class="wemoji">🌞</div>
+  </div>
+
+  <!-- LOVE NOTE -->
+  <div id="love" class="card love c4">
+    <div class="clabel" style="color:var(--rose);">❤️ For Su — Wednesday</div>
+    <div class="lpull">
+      You built your career <strong>on merit</strong> in one of the most competitive rooms in tech.
+    </div>
+    <div class="lbody">
+      Google Cloud hit 82% growth this quarter — and you're part of the team making that happen.
+      Every SMB you bring on is a bet on a future they didn't know they could afford.
+      That's not just sales. That's vision translation. You do it every single day.
+      Today, take that into your first call and own it.
+    </div>
+    <div class="lact">
+      <span class="lactico">✨</span>
+      <div class="lactxt"><strong>Make Su smile →</strong> Leave a 30-second voice note on her phone before her first call. "I'm proud of you" hits differently spoken than typed.</div>
+    </div>
+    <div class="lact">
+      <span class="lactico">🍽️</span>
+      <div class="lactxt"><strong>Mini-date →</strong> You've already got Mai Garten booked for 19:00 tonight. Put phones face-down for the full hour. No exceptions.</div>
+    </div>
+  </div>
+
+  <!-- FOCUS ALEX -->
+  <div id="focus" class="card fal c6">
+    <div class="clabel" style="color:#4F72E0;">🧠 Alex · Today's Priorities</div>
+    <ul class="plist">
+      <li class="pitem">
+        <span class="pnum">1</span>
+        <div>
+          <div class="ptitle">Send eventbro pitch deck → Ralf Borchers / nBank</div>
+          <div class="pdesc">HubSpot task overdue. ralf.borchers@nbank.de — nBank is Lower Saxony's regional development bank. Warm door. Send today, don't lose the window.</div>
+        </div>
+      </li>
+      <li class="pitem">
+        <span class="pnum">2</span>
+        <div>
+          <div class="ptitle">Follow up Orhun Suzer — Offline Mode critical</div>
+          <div class="pdesc">Called Mon Jul 27. Task: "Ende der Vorbereitungen; Offline Modus zwingend." Client needs offline functionality confirmed — scope, timeline, ship ETA. Do it today.</div>
+        </div>
+      </li>
+      <li class="pitem">
+        <span class="pnum">3</span>
+        <div>
+          <div class="ptitle">Pepelino Kiel + David Photien follow-ups</div>
+          <div class="pdesc">Pepelino Kiel: called yesterday (Jul 28 17:36) — hot 24h window, close it now. David Photien: pitch deck task also due. Block one outreach sprint.</div>
+        </div>
+      </li>
+    </ul>
+    <div class="abox">🔴 <strong>4 HubSpot tasks due today.</strong> Block 09:00–10:30 for outreach. Hard stop 19:00 — Mai Garten. Make the calls first, not last.</div>
+  </div>
+
+  <!-- FOCUS SU -->
+  <div class="card fsu c6">
+    <div class="clabel" style="color:var(--purple);">🧠 Su · Google Cloud Angles</div>
+    <ul class="plist">
+      <li class="pitem">
+        <span class="pnum">1</span>
+        <div>
+          <div class="ptitle">Lead with the 82% number — own it</div>
+          <div class="pdesc">Google Cloud Q2 2026: $24.8B revenue, 82% YoY — fastest growth since separate reporting began in 2020. You're selling the fastest-growing enterprise cloud in history. Say it confidently. It's yours.</div>
+        </div>
+      </li>
+      <li class="pitem">
+        <span class="pnum">2</span>
+        <div>
+          <div class="ptitle">$462B backlog = SMB urgency is real</div>
+          <div class="pdesc">Google Cloud backlog nearly doubled to $462B. Enterprises are locking multi-year contracts at record pace. SMBs who wait will compete for capacity. Turn delay into visible risk — the data backs you up.</div>
+        </div>
+      </li>
+    </ul>
+    <div class="cbox">💬 <strong>Conversation opener:</strong> "If you knew cloud capacity was being locked up by enterprises on multi-year contracts right now, would you still wait another quarter?" — then stop talking.</div>
+  </div>
+
+  <!-- LANGUAGE SCHOOL -->
+  <div id="language" class="c12 lang-outer">
+    <div class="lang-hdr">
+      <div class="clabel" style="color:var(--lime);margin-bottom:0;">🎓 Language School &nbsp;·&nbsp; Wednesday = Emotions</div>
+    </div>
+    <div class="lang-inner">
+      <div class="lang-half">
+        <div class="lflag">🇩🇪 Su learns German</div>
+        <div class="lword-de">Sehnsucht</div>
+        <div class="lphon">/ ZEHN-zookt /</div>
+        <div class="lmean">A deep, aching longing — for a person, a place, or something you can't quite name.</div>
+        <div class="lex">"Ich habe so eine Sehnsucht nach dir, wenn du nicht da bist."</div>
+        <div class="lex-en">"I feel such a deep longing for you when you're not here."</div>
+        <div class="ltrick"><strong>Memory trick:</strong> "Seh" (to see) + "sucht" (seeking) — it's the constant searching to see someone who isn't there. Germans felt it so intensely they invented a whole word for it.</div>
+        <div class="lbonus"><strong>Bonus phrase:</strong> "Du fehlst mir" = literally "You are missing from me" — more emotionally loaded than just "I miss you."</div>
+      </div>
+      <div class="lang-half">
+        <div class="lflag">🇧🇷 Alex learns Portuguese</div>
+        <div class="lword-pt">Saudade</div>
+        <div class="lphon">/ sow-DAH-ji /</div>
+        <div class="lmean">A bittersweet longing for someone or something absent — can be past, present, or even imagined future.</div>
+        <div class="lex">"Estou com saudade da sua risada."</div>
+        <div class="lex-en">"I'm missing the sound of your laugh."</div>
+        <div class="ltrick"><strong>Memory trick:</strong> Think "sad-age" — the melancholy that grows with distance and time. Portuguese is so good at emotional sadness they exported this word to linguistics textbooks worldwide.</div>
+        <div class="lbonus"><strong>Bonus:</strong> "Que saudade!" = "I missed this so much!" — say it when you see someone after a long time, eat your favorite food, or return somewhere meaningful. Instant local credibility.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NEWS -->
+  <div id="news" class="c12 news-outer">
+    <div class="news-hdr">
+      <div class="clabel" style="color:var(--gold);padding-bottom:14px;">🌍 News Radar &nbsp;·&nbsp; Wednesday, 29 July 2026</div>
+    </div>
+    <div class="news-cols">
+      <div class="ncol">
+        <div class="ncoltitle">🇧🇷 São Paulo</div>
+        <div class="nitem">
+          <div class="nhead">Rodízio today: plates ending in 5 &amp; 6</div>
+          <div class="nwhy">Centro Expandido restricted 7–10am and 5–8pm. Fine: R$130 + 4 points on your CNH. Plan around it if you're driving.</div>
+        </div>
+        <div class="nitem">
+          <div class="nhead">Rain dominates all week — 75–90% probability</div>
+          <div class="nwhy">Cold front holds through Friday. Temps 9–19°C. Saturday clears — save any outdoor Ibirapuera plans for then. Tonight's Mai Garten dinner is the smart move.</div>
+        </div>
+        <div class="nitem">
+          <div class="nhead">Ibovespa 175.334 · +0.74% · Embraer +5.3%</div>
+          <div class="nwhy">Embraer surged on a $34.5B record backlog. JBS +10% ahead of earnings. Petrobras -2.84% on weak crude. Brazil domestic story holding well.</div>
+        </div>
+      </div>
+      <div class="ncol">
+        <div class="ncoltitle">🇩🇪 Munich &amp; Germany</div>
+        <div class="nitem">
+          <div class="nhead">Nationwide heatwave — 30–38°C across Germany</div>
+          <div class="nwhy">Bavaria around 31–33°C. Western regions up to 38°C. Persists through Thursday into next week. Hot nights too (20–24°C). Check on family in Michelau.</div>
+        </div>
+        <div class="nitem">
+          <div class="nhead">Berlin Pride attack — IS connection confirmed</div>
+          <div class="nwhy">Prosecutors confirmed the suspect pledged IS allegiance on video. 1 dead, 31 injured near the Pride parade. Security debate intensifying ahead of major German public events.</div>
+        </div>
+        <div class="nitem">
+          <div class="nhead">Germany tourism at record — Bavaria leads at 10.6M stays</div>
+          <div class="nwhy">68.3M overnight stays in 2025 (+13% YoY). Bavaria #1 domestic. Events &amp; hospitality booming — relevant context for ticketbro's German expansion.</div>
+        </div>
+      </div>
+      <div class="ncol">
+        <div class="ncoltitle">🌐 Global Tech &amp; AI</div>
+        <div class="nitem">
+          <div class="nhead">FCC bans Chinese humanoid robots from US market</div>
+          <div class="nwhy">Unitree (20% global humanoid market) most exposed. US-China AI supply chain decoupling is accelerating into hardware. The AI arms race isn't just software anymore.</div>
+        </div>
+        <div class="nitem">
+          <div class="nhead">Meta + BlackRock: $14B AI data center in El Paso</div>
+          <div class="nwhy">1 GW campus, online 2028. BlackRock 80% stake, Meta operates + contributes $2.3B. AI infrastructure is now $10B+ investment territory. Pick your cloud stack early — this capacity is being claimed now.</div>
+        </div>
+      </div>
+    </div>
+    <div class="hometown">
+      <div class="htcol">
+        <div class="htlabel">📍 Poços de Caldas, MG</div>
+        <div class="httext">Poços just joined AMIG Brasil — positioning itself as a global rare earth hub. The city is quietly becoming a strategic minerals play. More happening there than the altitude suggests.</div>
+      </div>
+      <div class="htcol">
+        <div class="htlabel">📍 Michelau, Oberfranken</div>
+        <div class="httext">The village is delightfully quiet — but tomorrow (30. Juli) there's a Rock im Wald Festival right in Michelau in Oberfranken. The one day per year the forest gets loud. 🎸</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BIZ ALEX -->
+  <div id="business" class="card bzal c6">
+    <div class="clabel" style="color:var(--teal);">🚀 Business · Alex / ticketbro &amp; eventbro</div>
+    <div class="pills"><span class="ptag ptag-tr">TREND</span></div>
+    <div class="btitle">Identity-linked ticketing is eating static barcodes</div>
+    <div class="bbody">Tickets are evolving from transaction receipts into programmable access objects tied to persistent attendee profiles. The platform that owns attendee identity owns the upsell, the rebooking, and the LTV. This is the strategic layer ticketbro needs to own — are you building toward identity or staying at barcode level?</div>
+    <div class="pills"><span class="ptag ptag-op">OPPORTUNITY</span></div>
+    <div class="btitle">AI behind-the-scenes delivers ROI; consumer AI still underwhelming</div>
+    <div class="bbody">Operational AI is where the money is: dispute resolution, fraud triage, refund classification, reconciliation. Back-office automation gives immediate ROI and frees the team for complex edge cases. Double down here — customers won't see the AI, but they'll feel zero friction.</div>
+  </div>
+
+  <!-- BIZ SU -->
+  <div class="card bzsu c6">
+    <div class="clabel" style="color:var(--coral);">🚀 Business · Su / Google Cloud SMB</div>
+    <div class="pills"><span class="ptag ptag-co">TREND</span></div>
+    <div class="btitle">82% growth — fastest since cloud reporting began in 2020</div>
+    <div class="bbody">Google Cloud Q2 2026: $24.8B revenue, 82% YoY. $462B backlog — nearly doubled. You are selling the fastest-growing enterprise cloud in history. This isn't a talking point, it's the factual context for every call you take today.</div>
+    <div class="pills"><span class="ptag ptag-co">SALES ANGLE</span></div>
+    <div class="btitle">Frame delay as risk, not patience</div>
+    <div class="bbody">A CFO who says "we'll revisit next quarter" thinks they're being prudent. Reframe: with $462B already in backlog, enterprises are locking capacity now. SMBs who wait aren't being careful — they're queuing behind contracts already signed. Make that concrete and tangible.</div>
+  </div>
+
+  <!-- INBOX -->
+  <div id="inbox" class="card inbox c12">
+    <div class="clabel" style="color:var(--orange);">📬 Inbox · Priority Items &nbsp;·&nbsp; 15 unread</div>
+    <div class="iitem">
+      <span class="iprio">🔴</span>
+      <div>
+        <div class="isubj">Send eventbro pitch deck → Ralf Borchers / nBank</div>
+        <div class="iact">Task due today. ralf.borchers@nbank.de — nBank (nbank.de), Lower Saxony regional development bank. Warm door, don't let it go cold.</div>
+      </div>
+    </div>
+    <div class="iitem">
+      <span class="iprio">🔴</span>
+      <div>
+        <div class="isubj">David Photien — eventbro pitch deck follow-up</div>
+        <div class="iact">Second outstanding pitch deck task due today. Pair this outreach with Ralf Borchers — same asset, two separate decision makers.</div>
+      </div>
+    </div>
+    <div class="iitem">
+      <span class="iprio">🔴</span>
+      <div>
+        <div class="isubj">Orhun Suzer — Offline Modus zwingend (from Mon Jul 27 call)</div>
+        <div class="iact">Task: "Ende der Vorbereitungen." Client has a hard requirement for offline mode — confirm scope, implementation timeline, and ship ETA today.</div>
+      </div>
+    </div>
+    <div class="iitem">
+      <span class="iprio">🔴</span>
+      <div>
+        <div class="isubj">Pepelino Kiel — follow-up from yesterday's call (Jul 28, 17:36)</div>
+        <div class="iact">Hot lead, called yesterday afternoon. 24-hour window is closing — follow up before lunch. +494315333330.</div>
+      </div>
+    </div>
+    <div class="iitem">
+      <span class="iprio">🟡</span>
+      <div>
+        <div class="isubj">Dirk Reimering — tillhub contract expiry window</div>
+        <div class="iact">Task from Apr 10 call. Their tillhub contract may be lapsing — classic switching moment. Light touch outreach today.</div>
+      </div>
+    </div>
+    <div class="iitem">
+      <span class="iprio">🟢</span>
+      <div>
+        <div class="isubj">DFF Ventures Newsletter — July 2026 (Marketplaces, Vertical AI, EU Tech)</div>
+        <div class="iact">Worth 10 minutes. European Vertical AI and marketplace dynamics — directly relevant for eventbro positioning. Read during lunch.</div>
+      </div>
+    </div>
+    <div class="iitem">
+      <span class="iprio">🟢</span>
+      <div>
+        <div class="isubj">ticketbro: ticket rebooking + SCHLOSS BURG NAMEDY order confirmed</div>
+        <div class="iact">Platform confirmations — all looks good operationally. New tickets available + "Die Rheinische auf der Burg Hoffnung" invite — sounds like a good event.</div>
+      </div>
+    </div>
+    <div class="calnote">📅 No Google Calendar MCP connected — no calendar data available in this briefing.<br>
+    <strong>Confirmed tonight via email:</strong> Mai Garten restaurant reservation, 19:00 Uhr, 2 Personen. Block the evening. Hard stop on work at 18:30.</div>
+  </div>
+
+  <!-- COUPLE TIP -->
+  <div id="couple" class="card couple c8">
+    <div class="cico">🙏</div>
+    <div class="ctitle">Wednesday: The Specific Beats the General</div>
+    <div class="cbody">
+      Generic gratitude ("I'm grateful for you") lands flat with two high-performers — it sounds like background noise both of you tune out.
+      Tonight at dinner, each of you names one <em>specific</em> thing the other did in the last 7 days that made your life better.
+      Not "you're amazing." More like: "When you made coffee before my 7am call without me asking — that actually changed my morning."
+      Specificity is what makes the other person feel truly <em>seen</em>, not just appreciated in theory. That's the whole exercise. Two minutes. Then enjoy your food.
+    </div>
+    <div class="ccheck">Tonight at Mai Garten: name one specific thing. Phones face-down.</div>
+  </div>
+
+  <!-- SMALLS -->
+  <div id="smalls" class="card smalls c4">
+    <div class="clabel" style="color:var(--green);">💡 Smalls</div>
+    <div class="sitem">
+      <span class="sico">🍽️</span>
+      <div class="stxt"><strong>Dinner tonight: Mai Garten, 19:00</strong> — reservation confirmed for 2. You already did the right thing. Now just show up without a laptop.</div>
+    </div>
+    <div class="sitem">
+      <span class="sico">🎸</span>
+      <div class="stxt"><strong>Rock im Wald — tomorrow in Michelau</strong> (30. Juli 2026). The quiet Oberfranken village gets its one annual moment of noise. The forest rocks.</div>
+    </div>
+  </div>
+
+</main>
+
+<!-- THOUGHT OF THE DAY -->
+<section id="thought" class="thought">
+  <div class="tq">The bottleneck is rarely the idea. It's the three emails you didn't send and the call you almost made.</div>
+  <div class="tleaf">🌿</div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="fl">Morning Briefing for Alex &amp; Su &nbsp;·&nbsp; Campo Belo, São Paulo</div>
+  <div class="fr">Wednesday &nbsp;·&nbsp; 29 July 2026</div>
+</footer>
+
+</body>
+</html>
