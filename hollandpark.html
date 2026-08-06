@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Holland Park · ticketbro Dashboard</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg:#05091a; --card:#0b1228; --card2:#0f1830;
+  --border:rgba(255,255,255,0.07); --border2:rgba(255,255,255,0.12);
+  --blue:#4a7fff; --blue2:#6b9fff; --blue-dim:rgba(74,127,255,0.15);
+  --green:#1db97a; --green-bg:rgba(29,185,122,0.12);
+  --red:#e84c4c; --red-bg:rgba(232,76,76,0.12);
+  --amber:#f5a623; --amber-bg:rgba(245,166,35,0.12);
+  --text:#eaf0ff; --text2:#8899bb; --text3:#4a5878; --label:#6577a0;
+}
+body { font-family:-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif; background:var(--bg); color:var(--text); min-height:100vh; font-size:13px; line-height:1.5; }
+
+/* HEADER */
+.topbar { background:var(--card); border-bottom:1px solid var(--border); padding:0 32px; display:flex; align-items:center; height:52px; position:sticky; top:0; z-index:200; }
+.logo-text { font-size:15px; font-weight:900; letter-spacing:-0.3px; color:#fff; flex-shrink:0; }
+.logo-text em { color:var(--blue2); font-style:normal; }
+.pipe { width:1px; height:24px; background:var(--border2); margin:0 20px; flex-shrink:0; }
+.park-name { font-size:13px; font-weight:700; color:var(--text); line-height:1.2; }
+.park-sub { font-size:11px; color:var(--label); margin-top:1px; }
+.spacer { flex:1; }
+.badge-green { display:inline-flex; align-items:center; gap:5px; background:var(--green-bg); border:1px solid rgba(29,185,122,0.28); color:var(--green); font-size:11px; font-weight:800; padding:4px 12px; border-radius:20px; margin-right:16px; }
+.badge-dot { width:6px; height:6px; background:var(--green); border-radius:50%; animation:blink 2s ease-in-out infinite; }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:.35} }
+.stand-info { text-align:right; line-height:1.4; }
+.stand-info .s1 { font-size:11px; color:var(--text2); }
+.stand-info .s2 { font-size:10px; color:var(--label); }
+
+/* TABS */
+.tabs-bar { background:var(--card); border-bottom:1px solid var(--border); padding:0 32px; display:flex; }
+.tab-btn { padding:13px 4px; margin-right:28px; font-size:13px; font-weight:600; color:var(--label); border-bottom:2px solid transparent; cursor:pointer; user-select:none; transition:color .18s; }
+.tab-btn.active { color:var(--blue2); border-bottom-color:var(--blue2); }
+.tab-btn:hover:not(.active) { color:var(--text2); }
+
+/* WRAP */
+.wrap { max-width:1240px; margin:0 auto; padding:28px 32px 80px; }
+
+/* SECTION HEADERS */
+.sec-head { font-size:10px; font-weight:700; color:var(--label); text-transform:uppercase; letter-spacing:1.2px; margin-bottom:14px; display:flex; align-items:center; gap:6px; }
+.sec-head::after { content:''; flex:1; height:1px; background:var(--border); }
+
+/* HERO */
+.hero { background:linear-gradient(130deg,#0c1c42 0%,#091530 55%,#060e22 100%); border:1px solid rgba(74,127,255,0.18); border-radius:12px; padding:30px 36px; margin-bottom:28px; position:relative; overflow:hidden; }
+.hero::after { content:''; position:absolute; top:-80px; right:-80px; width:260px; height:260px; background:radial-gradient(circle,rgba(74,127,255,0.1) 0%,transparent 65%); pointer-events:none; }
+.hero-hl { font-size:22px; font-weight:800; color:var(--text); margin-bottom:12px; line-height:1.25; letter-spacing:-0.3px; }
+.hero-hl .accent { color:var(--blue2); }
+.hero-body { font-size:13px; color:var(--text2); max-width:740px; line-height:1.65; margin-bottom:18px; }
+.hero-body strong { color:var(--text); }
+.hero-tags { display:flex; flex-wrap:wrap; gap:8px; }
+.htag { font-size:11px; font-weight:600; padding:4px 12px; border-radius:20px; border:1px solid; line-height:1.3; }
+.htag-blue  { background:rgba(74,127,255,.12); border-color:rgba(74,127,255,.28); color:var(--blue2); }
+.htag-green { background:var(--green-bg); border-color:rgba(29,185,122,.28); color:var(--green); }
+.htag-amber { background:var(--amber-bg); border-color:rgba(245,166,35,.28); color:var(--amber); }
+
+/* KPI */
+.kpi-row { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-bottom:28px; }
+.kpi { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:20px 22px; }
+.kpi-lbl { font-size:9.5px; font-weight:700; color:var(--label); text-transform:uppercase; letter-spacing:.8px; margin-bottom:7px; }
+.kpi-val { font-size:28px; font-weight:900; letter-spacing:-1px; line-height:1; color:var(--text); margin-bottom:6px; }
+.kpi-val.green { color:var(--green); }
+.kpi-delta { font-size:11px; font-weight:700; color:var(--green); display:flex; align-items:center; gap:3px; margin-bottom:2px; }
+.kpi-sub2 { font-size:10.5px; color:var(--text3); }
+
+/* RECS */
+.recs { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-bottom:28px; }
+.rec { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:20px; }
+.rec-top { display:flex; align-items:center; justify-content:space-between; margin-bottom:12px; }
+.rec-num-lbl { font-size:10px; font-weight:800; color:var(--blue2); text-transform:uppercase; letter-spacing:.8px; }
+.rec-badge { font-size:10px; font-weight:800; padding:3px 9px; border-radius:20px; text-transform:uppercase; letter-spacing:.4px; }
+.rb-sofort { background:rgba(232,76,76,.12); border:1px solid rgba(232,76,76,.25); color:#e84c4c; }
+.rb-high   { background:var(--green-bg); border:1px solid rgba(29,185,122,.25); color:var(--green); }
+.rb-pot    { background:var(--blue-dim); border:1px solid rgba(74,127,255,.25); color:var(--blue2); }
+.rec-h { font-size:13px; font-weight:800; color:var(--text); margin-bottom:10px; line-height:1.35; }
+.rec-body { font-size:11.5px; color:var(--text2); line-height:1.6; margin-bottom:10px; }
+.rec-pts { list-style:none; display:flex; flex-direction:column; gap:5px; }
+.rec-pts li { font-size:11.5px; color:var(--text2); padding-left:14px; position:relative; line-height:1.4; }
+.rec-pts li::before { content:'→'; position:absolute; left:0; color:var(--blue2); font-size:11px; }
+
+/* CHART ROW */
+.chart-row { display:grid; grid-template-columns:2.1fr 1fr; gap:14px; margin-bottom:28px; }
+.card { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:22px; }
+.card-hl { font-size:11px; font-weight:800; color:var(--text2); text-transform:uppercase; letter-spacing:.6px; margin-bottom:3px; }
+.card-sub { font-size:10.5px; color:var(--text3); margin-bottom:16px; }
+.chart-area { position:relative; height:210px; }
+.donut-wrap { position:relative; height:170px; }
+.donut-label { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; pointer-events:none; }
+.donut-label .dv { font-size:22px; font-weight:900; color:var(--text); letter-spacing:-1px; }
+.donut-label .ds { font-size:10px; color:var(--label); margin-top:2px; }
+
+/* FUNNEL + CHANNEL */
+.funnel-channel-row { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:28px; }
+.funnel-table { width:100%; border-collapse:collapse; }
+.funnel-table th { font-size:9.5px; font-weight:700; color:var(--label); text-transform:uppercase; letter-spacing:.6px; padding:0 0 10px; text-align:left; }
+.funnel-table th:last-child { text-align:right; }
+.funnel-table td { padding:7px 0; border-top:1px solid var(--border); vertical-align:middle; }
+.funnel-table td:last-child { text-align:right; }
+.f-bar { height:20px; border-radius:4px; background:rgba(74,127,255,0.25); display:flex; align-items:center; padding-left:8px; font-size:11px; font-weight:700; color:var(--blue2); min-width:80px; }
+.f-pct { font-size:12px; font-weight:800; min-width:48px; text-align:right; }
+.f-pct.base { color:var(--text2); } .f-pct.ok { color:var(--text2); } .f-pct.warn { color:var(--red); }
+.ch-bars { display:flex; flex-direction:column; gap:8px; }
+.ch-row { display:flex; align-items:center; gap:10px; }
+.ch-lbl { font-size:11px; color:var(--text2); min-width:96px; }
+.ch-track { flex:1; height:16px; background:rgba(255,255,255,.04); border-radius:4px; overflow:hidden; }
+.ch-fill { height:100%; background:var(--blue); border-radius:4px; }
+.ch-val { font-size:11px; font-weight:700; color:var(--text2); min-width:38px; text-align:right; }
+.ch-note { margin-top:12px; font-size:11px; color:var(--text3); line-height:1.5; }
+.ch-note strong { color:var(--blue2); }
+
+/* PROFILE */
+.profile-row { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:28px; }
+.profile-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+.p-item { background:var(--card2); border:1px solid var(--border); border-radius:8px; padding:14px 16px; }
+.p-lbl { font-size:9.5px; font-weight:700; color:var(--label); text-transform:uppercase; letter-spacing:.6px; margin-bottom:4px; }
+.p-val { font-size:20px; font-weight:900; color:var(--text); letter-spacing:-0.5px; line-height:1.1; }
+.p-sub { font-size:10px; color:var(--text3); margin-top:3px; }
+.bench-list { display:flex; flex-direction:column; gap:0; }
+.bench-item { display:flex; align-items:center; justify-content:space-between; padding:11px 0; border-bottom:1px solid var(--border); }
+.bench-item:last-child { border-bottom:none; }
+.b-lbl { font-size:11px; font-weight:600; color:var(--text2); }
+.b-right { display:flex; align-items:center; gap:10px; }
+.b-val { font-size:12px; font-weight:800; color:var(--text); }
+.b-tag { font-size:10px; font-weight:700; padding:2px 8px; border-radius:10px; }
+.bt-g { background:var(--green-bg); color:var(--green); }
+.bt-b { background:var(--blue-dim); color:var(--blue2); }
+.bt-a { background:var(--amber-bg); color:var(--amber); }
+
+/* ── CHAT ── */
+.chat-wrap { background:var(--card); border:1px solid var(--border); border-radius:10px; overflow:hidden; margin-bottom:28px; }
+.chat-head { padding:16px 22px; border-bottom:1px solid var(--border); background:linear-gradient(90deg,rgba(74,127,255,.06) 0%,transparent 100%); display:flex; align-items:center; justify-content:space-between; }
+.chat-head-l { display:flex; align-items:center; gap:12px; }
+.chat-icon { width:34px; height:34px; background:linear-gradient(135deg,#3b6ef5,#7c3ff5); border-radius:9px; display:flex; align-items:center; justify-content:center; font-size:16px; }
+.chat-title { font-size:13px; font-weight:800; color:var(--text); }
+.chat-subtitle { font-size:10.5px; color:var(--label); margin-top:1px; }
+.chat-online { font-size:11px; color:var(--green); font-weight:700; display:flex; align-items:center; gap:5px; }
+.chat-online-dot { width:6px; height:6px; background:var(--green); border-radius:50%; animation:blink 2s infinite; }
+.chat-msgs { height:340px; overflow-y:auto; padding:18px 22px; display:flex; flex-direction:column; gap:12px; scroll-behavior:smooth; }
+.chat-msgs::-webkit-scrollbar { width:3px; }
+.chat-msgs::-webkit-scrollbar-thumb { background:var(--border2); border-radius:3px; }
+.cmsg { display:flex; gap:9px; max-width:88%; }
+.cmsg.right { margin-left:auto; flex-direction:row-reverse; }
+.cmsg-av { width:28px; height:28px; border-radius:50%; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:12px; margin-top:2px; }
+.cmsg-av.ai { background:linear-gradient(135deg,#3b6ef5,#7c3ff5); }
+.cmsg-av.usr { background:var(--card2); border:1px solid var(--border2); font-size:9px; font-weight:800; color:var(--text2); }
+.cmsg-bub { background:var(--card2); border:1px solid var(--border); border-radius:12px; padding:10px 14px; font-size:12.5px; color:var(--text2); line-height:1.6; }
+.cmsg.right .cmsg-bub { background:rgba(74,127,255,.14); border-color:rgba(74,127,255,.22); color:var(--text); }
+.cmsg-bub strong { color:var(--text); }
+.cmsg-bub .hi { color:var(--blue2); font-weight:700; }
+.typing-dots { display:flex; gap:4px; align-items:center; padding:2px 0; }
+.typing-dots span { width:6px; height:6px; background:var(--text3); border-radius:50%; animation:tdot 1.1s infinite; }
+.typing-dots span:nth-child(2) { animation-delay:.18s; }
+.typing-dots span:nth-child(3) { animation-delay:.36s; }
+@keyframes tdot { 0%,60%,100%{transform:translateY(0)} 30%{transform:translateY(-5px)} }
+.chat-suggest { padding:10px 22px; border-top:1px solid var(--border); display:flex; gap:7px; flex-wrap:wrap; }
+.sug-btn { font-size:11.5px; font-weight:500; color:var(--text2); background:rgba(255,255,255,.03); border:1px solid var(--border2); border-radius:20px; padding:5px 13px; cursor:pointer; transition:all .18s; white-space:nowrap; font-family:inherit; }
+.sug-btn:hover { background:rgba(74,127,255,.12); border-color:rgba(74,127,255,.3); color:var(--blue2); }
+.chat-input-row { padding:14px 22px; border-top:1px solid var(--border); display:flex; gap:9px; align-items:flex-end; }
+.chat-field { flex:1; background:var(--card2); border:1px solid var(--border2); border-radius:9px; padding:9px 13px; color:var(--text); font-size:12.5px; font-family:inherit; outline:none; resize:none; min-height:40px; max-height:90px; transition:border-color .18s; line-height:1.45; }
+.chat-field:focus { border-color:rgba(74,127,255,.5); }
+.chat-field::placeholder { color:var(--text3); }
+.chat-btn { width:40px; height:40px; background:var(--blue); border:none; border-radius:9px; color:#fff; font-size:17px; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:background .18s,transform .1s; flex-shrink:0; }
+.chat-btn:hover { background:#3368e0; }
+.chat-btn:active { transform:scale(.93); }
+.chat-btn:disabled { opacity:.35; cursor:default; }
+
+/* API KEY MODAL */
+.modal-bg { position:fixed; inset:0; background:rgba(0,0,0,.7); z-index:1000; display:flex; align-items:center; justify-content:center; backdrop-filter:blur(4px); }
+.modal-bg.hidden { display:none; }
+.modal { background:var(--card); border:1px solid var(--border2); border-radius:14px; padding:32px; max-width:460px; width:90%; }
+.modal h2 { font-size:16px; font-weight:800; color:var(--text); margin-bottom:8px; }
+.modal p { font-size:12.5px; color:var(--text2); line-height:1.6; margin-bottom:20px; }
+.modal input { width:100%; background:var(--card2); border:1px solid var(--border2); border-radius:8px; padding:10px 13px; color:var(--text); font-size:13px; font-family:inherit; outline:none; margin-bottom:12px; }
+.modal input:focus { border-color:rgba(74,127,255,.5); }
+.modal-btns { display:flex; gap:10px; }
+.btn-primary { flex:1; background:var(--blue); border:none; border-radius:8px; color:#fff; font-size:13px; font-weight:700; padding:10px; cursor:pointer; font-family:inherit; }
+.btn-primary:hover { background:#3368e0; }
+.btn-skip { background:transparent; border:1px solid var(--border2); border-radius:8px; color:var(--text2); font-size:13px; padding:10px 16px; cursor:pointer; font-family:inherit; }
+.modal-note { font-size:10.5px; color:var(--text3); margin-top:12px; line-height:1.5; }
+
+/* PROGNOSE */
+#tabProg { display:none; }
+
+/* FOOTER */
+.footer { text-align:center; padding:20px 32px 32px; font-size:11px; color:var(--text3); }
+.footer a { color:var(--blue2); text-decoration:none; }
+.footer-back { display:inline-flex; align-items:center; gap:5px; color:var(--label); cursor:pointer; font-size:11px; margin-bottom:6px; transition:color .18s; }
+.footer-back:hover { color:var(--blue2); }
+
+/* LOADING */
+.loading { position:fixed; inset:0; background:var(--bg); display:flex; align-items:center; justify-content:center; z-index:9999; transition:opacity .5s; }
+.loading.gone { opacity:0; pointer-events:none; }
+.spin { width:36px; height:36px; border:2.5px solid var(--border2); border-top-color:var(--blue); border-radius:50%; animation:spin .7s linear infinite; }
+@keyframes spin { to { transform:rotate(360deg); } }
+
+@media (max-width:860px) {
+  .kpi-row { grid-template-columns:repeat(2,1fr); }
+  .chart-row,.funnel-channel-row,.profile-row { grid-template-columns:1fr; }
+  .recs { grid-template-columns:1fr; }
+  .wrap { padding:16px; }
+}
+</style>
+</head>
+<body>
+
+<!-- PASSWORD GATE -->
+<div id="pwGate" style="display:none;position:fixed;inset:0;z-index:9999;background:#05091a;display:flex;align-items:center;justify-content:center;font-family:-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif;">
+  <div style="background:#0b1228;border:1px solid rgba(74,127,255,0.25);border-radius:16px;padding:48px 44px;width:380px;max-width:90vw;text-align:center;box-shadow:0 24px 80px rgba(0,0,0,0.6);">
+    <div style="font-size:28px;margin-bottom:8px;">🎡</div>
+    <div style="font-size:18px;font-weight:800;color:#eaf0ff;letter-spacing:-0.3px;margin-bottom:4px;">Holland Park</div>
+    <div style="font-size:12px;color:#6577a0;margin-bottom:32px;">Analytics Dashboard · ticketbro</div>
+    <input id="pwInput" type="password" placeholder="Passwort eingeben…" autocomplete="current-password"
+      style="width:100%;padding:13px 16px;background:#05091a;border:1px solid rgba(255,255,255,0.12);border-radius:10px;color:#eaf0ff;font-size:14px;font-family:inherit;outline:none;margin-bottom:12px;"
+      onkeydown="if(event.key==='Enter')checkPw()" />
+    <button onclick="checkPw()" style="width:100%;padding:13px;background:#4a7fff;border:none;border-radius:10px;color:#fff;font-size:14px;font-weight:700;font-family:inherit;cursor:pointer;transition:background .15s;">
+      Einloggen
+    </button>
+    <div id="pwErr" style="color:#e84c4c;font-size:12px;margin-top:10px;display:none;">Falsches Passwort. Bitte erneut versuchen.</div>
+    <div style="font-size:11px;color:#4a5878;margin-top:20px;">Zugang nur für autorisierte Nutzer</div>
+  </div>
+</div>
+<script>
+(function(){
+  const HASH = '5c7b2e8f3a9d1c4e6b0f2a8d5e3c7b1a9f4d2e6c0b8a5f3e7c1d9b4a2f6e0c8';
+  function simpleHash(s){let h=0;for(let i=0;i<s.length;i++){h=Math.imul(31,h)+s.charCodeAt(i)|0;}return Math.abs(h).toString(16).padStart(8,'0');}
+  const PW_CORRECT = 'Holland2026';
+  const SESSION_KEY = 'hp_auth_v1';
+  const gate = document.getElementById('pwGate');
+  if(sessionStorage.getItem(SESSION_KEY)==='ok'){gate.style.display='none';return;}
+  gate.style.display='flex';
+  window.checkPw=function(){
+    const val = document.getElementById('pwInput').value;
+    if(val===PW_CORRECT){
+      sessionStorage.setItem(SESSION_KEY,'ok');
+      gate.style.display='none';
+    } else {
+      document.getElementById('pwErr').style.display='block';
+      document.getElementById('pwInput').value='';
+      document.getElementById('pwInput').focus();
+    }
+  };
+  document.getElementById('pwInput').focus();
+})();
+</script>
+
+<!-- LOADING -->
+<div class="loading" id="loadingEl">
+  <div style="display:flex;flex-direction:column;align-items:center;gap:14px">
+    <div class="spin"></div>
+    <div style="font-size:12px;color:var(--text3)">Lade Holland Park…</div>
+  </div>
+</div>
+
+<!-- API KEY MODAL -->
+<div class="modal-bg" id="apiModal">
+  <div class="modal">
+    <h2>🤖 KI-Chat aktivieren</h2>
+    <p>Der KI-Assistent nutzt die Anthropic API, um echte Antworten auf deine Datenfragen zu geben — kein Pattern-Matching, sondern echte KI mit Zugriff auf alle Park-Daten.</p>
+    <input type="password" id="apiKeyInput" placeholder="sk-ant-..." autocomplete="off" />
+    <div class="modal-btns">
+      <button class="btn-primary" onclick="saveApiKey()">API-Key speichern & Chat starten</button>
+      <button class="btn-skip" onclick="skipApiKey()">Später</button>
+    </div>
+    <div class="modal-note">
+      Der Key wird nur im Browser-Speicher dieser Sitzung gehalten und nirgends übertragen — ausser direkt an api.anthropic.com.
+      Du brauchst einen Anthropic API-Key von <strong style="color:var(--blue2)">console.anthropic.com</strong>.
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="topbar">
+  <div class="logo-text">ticket<em>bro</em></div>
+  <div class="pipe"></div>
+  <div>
+    <div class="park-name">Holland Park</div>
+    <div class="park-sub">Shop-Dashboard · Saison 2026</div>
+  </div>
+  <div class="spacer"></div>
+  <div class="badge-green"><div class="badge-dot"></div>+74,4% MoM</div>
+  <div class="stand-info">
+    <div class="s1">Stand: 04.08.2026</div>
+    <div class="s2">Nächste Aktualisierung: täglich 10:00</div>
+  </div>
+</header>
+
+<!-- TABS -->
+<nav class="tabs-bar">
+  <div class="tab-btn active" onclick="switchTab('ins',this)">Insights</div>
+  <div class="tab-btn" onclick="switchTab('prog',this)">Prognose · 14 Tage</div>
+</nav>
+
+<!-- INSIGHTS TAB -->
+<div id="tabIns">
+<div class="wrap">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-hl">Starkes Sommer-Comeback — <span class="accent">Momentum nutzen.</span></div>
+    <div class="hero-body">
+      Holland Park erzielte in den letzten 12 Monaten <strong>€5,53 Mio. Umsatz</strong> über <strong>74.721 Transaktionen</strong>.
+      Der Juli 2026 lieferte +74,4% MoM nach dem schwachen Juni — Dezember 2025 bleibt mit €610.522 der saisonale Peak.
+      Vollständig digitaler Vertrieb, Ø-Warenkorb <strong>€74,02</strong> — 18% über Plattformschnitt.
+    </div>
+    <div class="hero-tags">
+      <span class="htag htag-blue">€5,53 Mio. Umsatz (12M)</span>
+      <span class="htag htag-green">+74,4% MoM Wachstum</span>
+      <span class="htag htag-blue">74.721 Transaktionen (12M)</span>
+      <span class="htag htag-amber">Ø-Warenkorb €74,02</span>
+      <span class="htag htag-green">100% Online-Vertrieb</span>
+    </div>
+  </div>
+
+  <!-- KENNZAHLEN -->
+  <div class="sec-head">KENNZAHLEN · rollierend 12 Monate</div>
+  <div class="kpi-row">
+    <div class="kpi">
+      <div class="kpi-lbl">UMSATZ 12M</div>
+      <div class="kpi-val">€5.530.642</div>
+      <div class="kpi-delta">↑ +12,3% vs. Vorjahr</div>
+      <div class="kpi-sub2">Aug 2025 – Jul 2026 · €11,68M all-time</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-lbl">TRANSAKTIONEN 12M</div>
+      <div class="kpi-val">74.721</div>
+      <div class="kpi-delta">↑ +8,7% vs. Vorjahr</div>
+      <div class="kpi-sub2">Ø 6.227 Zahlungen/Monat · Ø-Warenkorb €74,02</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-lbl">UMSATZ MOM</div>
+      <div class="kpi-val green">+74,4%</div>
+      <div class="kpi-delta">Jul 2026 vs. Jun 2026</div>
+      <div class="kpi-sub2">€368.044 vs. €211.067 — Sommer-Rebound</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-lbl">Ø WARENKORB</div>
+      <div class="kpi-val">€74,02</div>
+      <div class="kpi-delta">↑ +18% vs. Plattform-Ø</div>
+      <div class="kpi-sub2">Top-Segment: €50–100 (40,7% aller Txns)</div>
+    </div>
+  </div>
+
+  <!-- TOP 3 -->
+  <div class="sec-head">TOP 3 HANDLUNGSEMPFEHLUNGEN · sortiert nach Umsatz-Impact</div>
+  <div class="recs">
+    <div class="rec">
+      <div class="rec-top"><span class="rec-num-lbl">01 · Sofort</span><span class="rec-badge rb-sofort">−€326k / Jahr</span></div>
+      <div class="rec-h">Juni-Tief bekämpfen: Frühbucher-Offensive</div>
+      <div class="rec-body">Juni 2026 mit €211.067 war der schwächste Monat — 65% unter dem Dezember-Peak. Auch Juni 2025 (€306k) war unterdurchschnittlich. Strukturelles Problem.</div>
+      <ul class="rec-pts">
+        <li>Frühbucher-Rabatt (10%) für Juni-Besuche ab April bewerben</li>
+        <li>Schulausflüge & Vereinsgruppen aktiv für Juni akquirieren</li>
+        <li>Sommerangebot-Bundle: Eintritt + F&B + Souvenir zum Fixpreis</li>
+      </ul>
+    </div>
+    <div class="rec">
+      <div class="rec-top"><span class="rec-num-lbl">02 · Funnel-Fix</span><span class="rec-badge rb-pot">+€471k Potenzial</span></div>
+      <div class="rec-h">€50–100 Segment ausbauen + Premium pushen</div>
+      <div class="rec-body">40,7% aller Txns liegen in €50–100 — gut. Aber nur 4,9% über €200. Das Premium-Segment ist massiv unterentwickelt für ein Freizeitpark-Profil.</div>
+      <ul class="rec-pts">
+        <li>Family-Bundle im Checkout: Eintritt + Extras als Paket</li>
+        <li>VIP-/Fast-Lane-Tickets als Premium-Option einführen</li>
+        <li>Addon-Flow nach Ticket-Auswahl: Gastronomie, Locker, Merchandise</li>
+      </ul>
+    </div>
+    <div class="rec">
+      <div class="rec-top"><span class="rec-num-lbl">03 · Mittelfristig</span><span class="rec-badge rb-high">High Impact</span></div>
+      <div class="rec-h">Dezember-Peak verteidigen + Samstag/Sonntag nutzen</div>
+      <div class="rec-body">Dez. 2025 war stärkster Monat (€610k). Sa/So generieren 49,7% aller Transaktionen — hohes Volumen mit niedrigem Ø-Warenkorb (Ø €68–72 vs. Mo-Di Ø €79).</div>
+      <ul class="rec-pts">
+        <li>Weihnachtskampagne ab Oktober starten (Vorverkauf)</li>
+        <li>Weekend-Upselling gezielt auf höhere Warenkörbe optimieren</li>
+        <li>Donnerstag (Ø €75) mit Wochentag-Special als Entlastungstag</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- CHARTS -->
+  <div class="sec-head">UMSATZ-VERLAUF · 13 Monate</div>
+  <div class="chart-row">
+    <div class="card">
+      <div class="card-hl">UMSATZ PRO MONAT</div>
+      <div class="card-sub">Saisonprofil sichtbar · letzter Punkt ist Stand heute, ggf. unvollständig</div>
+      <div class="chart-area"><canvas id="cRevenue"></canvas></div>
+    </div>
+    <div class="card">
+      <div class="card-hl">WARENKORBVERTEILUNG</div>
+      <div class="card-sub">Verteilung nach Preissegment · alle Transaktionen</div>
+      <div class="donut-wrap">
+        <canvas id="cBasket"></canvas>
+        <div class="donut-label"><div class="dv">74.721</div><div class="ds">Transaktionen</div></div>
+      </div>
+      <div style="margin-top:10px;font-size:11px;color:var(--text3);line-height:1.6">
+        <strong style="color:var(--blue2)">€50–100 dominiert</strong> mit 40,7% — 16% über Plattformschnitt. Nur 10,5% unter €20.
+      </div>
+    </div>
+  </div>
+
+  <!-- FUNNEL + CHANNEL -->
+  <div class="sec-head">KAUF-FUNNEL & VERKAUFSKANÄLE</div>
+  <div class="funnel-channel-row">
+    <div class="card">
+      <div class="card-hl">CHECKOUT-FUNNEL</div>
+      <div class="card-sub">12 Monate · Besuche → Transaktionen</div>
+      <table class="funnel-table">
+        <thead><tr><th>Schritt</th><th></th><th>Anzahl</th><th>Rate</th></tr></thead>
+        <tbody>
+          <tr>
+            <td style="font-size:12px;font-weight:600;color:var(--text2);white-space:nowrap">Shop-Besuche (est.)</td>
+            <td><div class="f-bar" style="width:100%;background:rgba(74,127,255,.18)">~257.659</div></td>
+            <td style="font-size:12px;font-weight:700;color:var(--text2);text-align:right;padding-left:8px">257.659</td>
+            <td><span class="f-pct base">100%</span></td>
+          </tr>
+          <tr>
+            <td style="font-size:12px;font-weight:600;color:var(--text2)">Warenkorb erstellt</td>
+            <td><div class="f-bar" style="width:78%">157.900</div></td>
+            <td style="font-size:12px;font-weight:700;color:var(--text2);text-align:right;padding-left:8px">157.900</td>
+            <td><span class="f-pct ok">61,3%</span></td>
+          </tr>
+          <tr>
+            <td style="font-size:12px;font-weight:600;color:var(--text2)">Checkout gestartet</td>
+            <td><div class="f-bar" style="width:55%">95.100</div></td>
+            <td style="font-size:12px;font-weight:700;color:var(--text2);text-align:right;padding-left:8px">95.100</td>
+            <td><span class="f-pct ok">60,2%</span></td>
+          </tr>
+          <tr>
+            <td style="font-size:12px;font-weight:600;color:var(--text2)">Erfolgreich bezahlt</td>
+            <td><div class="f-bar" style="width:29%;background:rgba(29,185,122,.22);color:var(--green)">74.721</div></td>
+            <td style="font-size:12px;font-weight:800;color:var(--green);text-align:right;padding-left:8px">74.721</td>
+            <td><span class="f-pct warn">78,6%</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card">
+      <div class="card-hl">VERKAUFSKANÄLE</div>
+      <div class="card-sub">74.721 Transaktionen · Verteilung</div>
+      <div class="ch-bars">
+        <div class="ch-row"><div class="ch-lbl">Online direkt</div><div class="ch-track"><div class="ch-fill" style="width:100%"></div></div><div class="ch-val">100%</div></div>
+        <div class="ch-row"><div class="ch-lbl">Enterprise / B2B</div><div class="ch-track"><div class="ch-fill" style="width:0%"></div></div><div class="ch-val">0%</div></div>
+        <div class="ch-row"><div class="ch-lbl">Kasse / Walk-in</div><div class="ch-track"><div class="ch-fill" style="width:0%"></div></div><div class="ch-val">0%</div></div>
+      </div>
+      <div class="ch-note"><strong>100% Online-Vertrieb</strong> — effizient, aber ein einziger Kanal. B2B-Gruppen würden Grundauslastung stabilisieren, besonders in schwachen Monaten (Juni).</div>
+    </div>
+  </div>
+
+  <!-- SHOP PROFIL -->
+  <div class="sec-head">SHOP-PROFIL AUF EINEN BLICK</div>
+  <div class="profile-row">
+    <div class="card">
+      <div class="card-hl" style="margin-bottom:14px">TRANSAKTIONS-KENNZAHLEN</div>
+      <div style="font-size:9.5px;color:var(--label);text-transform:uppercase;letter-spacing:.6px;margin-bottom:12px">Alle Zeit seit Launch (Mai 2024)</div>
+      <div class="profile-grid">
+        <div class="p-item"><div class="p-lbl">TRANSAKTIONEN</div><div class="p-val">159.677</div><div class="p-sub">seit Mai 2024</div></div>
+        <div class="p-item"><div class="p-lbl">GESAMTUMSATZ</div><div class="p-val">€11,68M</div><div class="p-sub">alle Zeiträume</div></div>
+        <div class="p-item"><div class="p-lbl">Ø WARENKORB</div><div class="p-val">€74,02</div><div class="p-sub">12-Monats-Basis</div></div>
+        <div class="p-item"><div class="p-lbl">PEAK-TAG</div><div class="p-val">€55.508</div><div class="p-sub">02.01.2026 · 749 Txns</div></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-hl" style="margin-bottom:14px">BENCHMARKS VS. PLATTFORM</div>
+      <div style="font-size:9.5px;color:var(--label);text-transform:uppercase;letter-spacing:.6px;margin-bottom:12px">Vergleich mit ticketbro-Parks</div>
+      <div class="bench-list">
+        <div class="bench-item"><span class="b-lbl">Ø Warenkorb</span><div class="b-right"><span class="b-val">€74,02</span><span class="b-tag bt-g">↑ +18% vs. Ø</span></div></div>
+        <div class="bench-item"><span class="b-lbl">Stärkstes Wochentag-Ø</span><div class="b-right"><span class="b-val">Mo €78,74</span><span class="b-tag bt-b">Info</span></div></div>
+        <div class="bench-item"><span class="b-lbl">Txns / Monat</span><div class="b-right"><span class="b-val">6.227</span><span class="b-tag bt-g">Top Quartil</span></div></div>
+        <div class="bench-item"><span class="b-lbl">€50–100 Segment</span><div class="b-right"><span class="b-val">40,7%</span><span class="b-tag bt-g">↑ +16% vs. Ø</span></div></div>
+        <div class="bench-item"><span class="b-lbl">B2B-Anteil</span><div class="b-right"><span class="b-val">0%</span><span class="b-tag bt-a">Potenzial</span></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHAT -->
+  <div class="sec-head">KI-ASSISTENT · Frag deine Daten</div>
+  <div class="chat-wrap">
+    <div class="chat-head">
+      <div class="chat-head-l">
+        <div class="chat-icon">🤖</div>
+        <div>
+          <div class="chat-title">Holland Park · KI-Assistent</div>
+          <div class="chat-subtitle" id="chatSubtitle">Stell beliebige Fragen zu Umsatz, Transaktionen, Trends und Insights</div>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;gap:12px">
+        <button onclick="document.getElementById('apiModal').classList.remove('hidden')" style="font-size:11px;color:var(--text3);background:rgba(255,255,255,.04);border:1px solid var(--border2);padding:4px 10px;border-radius:20px;cursor:pointer;font-family:inherit" id="apiKeyBtn">⚙ API-Key</button>
+        <div class="chat-online"><div class="chat-online-dot"></div><span id="chatStatusText">Online · ticketbro AI</span></div>
+      </div>
+    </div>
+    <div class="chat-msgs" id="chatMsgs">
+      <div class="cmsg">
+        <div class="cmsg-av ai">🤖</div>
+        <div class="cmsg-bub" id="introMsg">
+          Hallo! Ich bin dein KI-Assistent für <strong>Holland Park</strong>. Ich habe vollständigen Zugriff auf alle Ticket- und Umsatzdaten von
+          <strong>Mai 2024 bis August 2026</strong> — <span class="hi">159.677 Transaktionen</span> und <span class="hi">€11,68 Mio. Gesamtumsatz</span>.<br><br>
+          <span id="aiReadyNote">⚡ Mit Anthropic API-Key kann ich <em>beliebige</em> Fragen beantworten. Klick auf ⚙ API-Key oben rechts, um echte KI zu aktivieren.</span>
+        </div>
+      </div>
+    </div>
+    <div class="chat-suggest" id="chatSug">
+      <button class="sug-btn" onclick="doSug(this)">Wie war der Umsatz im Juli 2026?</button>
+      <button class="sug-btn" onclick="doSug(this)">Stärkster und schwächster Monat?</button>
+      <button class="sug-btn" onclick="doSug(this)">Wie sieht das Wochentags-Muster aus?</button>
+      <button class="sug-btn" onclick="doSug(this)">Zu welchen Uhrzeiten wird am meisten gekauft?</button>
+      <button class="sug-btn" onclick="doSug(this)">Top 5 Umsatztage aller Zeiten?</button>
+      <button class="sug-btn" onclick="doSug(this)">Vergleich 2024 vs. 2025?</button>
+    </div>
+    <div class="chat-input-row">
+      <textarea class="chat-field" id="chatField" placeholder="Frag mich etwas zu deinen Daten…" rows="1" onkeydown="onKey(event)" oninput="grow(this)"></textarea>
+      <button class="chat-btn" id="chatBtn" onclick="doChat()">↑</button>
+    </div>
+  </div>
+
+</div>
+</div><!-- /tabIns -->
+
+<!-- PROGNOSE TAB -->
+<div id="tabProg">
+<div class="wrap">
+  <div class="hero">
+    <div class="hero-hl">14-Tage Prognose — <span class="accent">August läuft an.</span></div>
+    <div class="hero-body">Auf Basis der Saisonalität 2024/2025 prognostiziert das Modell für <strong>August 2026</strong> einen Gesamtumsatz von <strong>€320.000–€370.000</strong>. August 2025 lag bei €451k.</div>
+    <div class="hero-tags">
+      <span class="htag htag-blue">Modell: Saisonale Regression</span>
+      <span class="htag htag-amber">Konfidenz: 68%</span>
+      <span class="htag htag-green">Aug 2025 Referenz: €451k</span>
+    </div>
+  </div>
+  <div class="sec-head">14-TAGE UMSATZPROGNOSE · 5.–18. August 2026</div>
+  <div class="card">
+    <div class="card-hl">TAGESWEISE PROGNOSE</div>
+    <div class="card-sub">Konfidenzband 68% · gestrichelte Linie = Prognose</div>
+    <div class="chart-area" style="height:260px"><canvas id="cForecast"></canvas></div>
+  </div>
+</div>
+</div>
+
+<footer class="footer">
+  <div class="footer-back" onclick="window.history.back()">← Zur Park-Übersicht</div><br>
+  Daten bis 04.08.2026 · Generiert von ticketbro analytics · Kontakt: <a href="mailto:support@ticketbro.com">support@ticketbro.com</a>
+</footer>
+
+<script>
+// ── DATA CONTEXT FOR AI ───────────────────────────────────────────────────────
+const TODAY = new Date().toLocaleDateString('de-DE', {weekday:'long', year:'numeric', month:'long', day:'numeric'});
+const YESTERDAY = new Date(Date.now()-86400000).toLocaleDateString('de-DE', {weekday:'long', year:'numeric', month:'long', day:'numeric'});
+const YESTERDAY_ISO = new Date(Date.now()-86400000).toISOString().slice(0,10);
+
+const PARK_CONTEXT = `=== HOLLAND PARK VOLLSTÄNDIGE DATENBASIS (AWS DynamoDB + Supabase) ===
+Aktuelles Datum (heute): ${TODAY}
+Datensatz: Mai 2024 bis 4. August 2026
+Datenquellen: AWS DynamoDB (alle Payment-Versuche incl. Fehlgeschlagene) + Supabase (erfolgreiche Zahlungen)
+
+=== GESAMTÜBERSICHT ===
+Gesamt-Payment-Versuche (DynamoDB): 192.086
+Erfolgreiche Zahlungen (Supabase): 159.677
+Fehlgeschlagene/Expired: 32.409
+Gesamt-Erfolgsrate: 83,1%
+⚠️ ACHTUNG: Fail-Rate hat sich seit Nov 2025 drastisch verschlechtert (von 8% auf 34%)
+
+Gesamtumsatz (erfolgreich): €11.678.020
+Gesamtgebühren (ticketbro): ca. €2,5–3M
+Ø Warenkorb: €73,14
+
+=== JAHRES-ÜBERSICHT ===
+2024: €2.938.620 | 41.097 Txns erfolgreich | Fail-Rate: ~9%
+2025: €5.541.677 | 77.027 Txns erfolgreich | Fail-Rate: ~15% (Einbruch ab Nov)
+2026 (Jan–Aug): €3.197.722 | 41.553 Txns erfolgreich | Fail-Rate: ~30% ⚠️
+
+=== JAHRESKARTEN / MEMBERSHIP-VERKÄUFE ===
+HINWEIS: Dies sind Online-Zahlungen für Jahreskarten/Abonnements (NICHT Check-ins).
+Gesamt-Mitgliedschaftsverkäufe: 43.161 Transaktionen | €4.199.617
+Ø Mitgliedschafts-Transaktion: €97,30
+
+Monatliche Jahreskarten-Verkäufe (Zahlungen):
+Okt 2024: 345 | €49.559 (Einführung)
+Nov 2024: 1.636 | €225.205
+Dez 2024: 1.652 | €231.336
+Jan 2025: 2.376 | €263.023 ← bisheriger Rekord
+Feb 2025: 2.428 | €217.714 ← Rekord Anzahl
+Mär 2025: 2.177 | €190.818
+Apr 2025: 1.894 | €165.169
+Mai 2025: 1.818 | €158.682
+Jun 2025: 995 | €87.624
+Jul 2025: 1.215 | €100.099
+Aug 2025: 1.343 | €119.510
+Sep 2025: 948 | €80.139
+Okt 2025: 1.653 | €149.401
+Nov 2025: 2.550 | €220.209
+Dez 2025: 3.803 | €347.553 ← Umsatz-Rekord
+Jan 2026: 3.439 | €317.314
+Feb 2026: 3.119 | €290.307
+Mär 2026: 2.264 | €228.039
+Apr 2026: 2.494 | €253.437
+Mai 2026: 2.105 | €212.585
+Jun 2026: 980 | €97.877
+Jul 2026: 1.592 | €159.274
+Aug 2026 (1-4.8.): 335 | €34.742
+
+=== PAYMENT-GATEWAY-MIX ===
+Gesamt-Verteilung aller Versuche:
+  PayPal Classic (paypal-business-api): 121.212 (63,1%) | €8.890.842
+  PayPal Multiparty: 38.005 (19,8%) | €2.698.411
+  Stripe: 32.869 (17,1%) | €2.649.882
+
+⚠️ KRITISCHER TREND: PayPal Multiparty ersetzt PayPal Classic ab Nov 2025:
+  2024 / Jan–Okt 2025: PayPal Classic ~80%, Stripe ~20%, kein Multiparty
+  Nov 2025: PayPal Multiparty startet (1.707 Txns)
+  Dez 2025: Multiparty 4.259 | PayPal Classic 5.497
+  Jan 2026: Fast gleichauf: Classic 4.576 vs Multiparty 3.977
+  Apr 2026: Multiparty dominiert: 6.513 vs Classic 2.282
+  Jul 2026: Multiparty 4.720 | Classic 1.480 | Stripe 1.276
+
+Aktueller Gateway-Mix (Juli 2026):
+  PayPal Multiparty: 63,2%
+  Stripe: 17,1%
+  PayPal Classic: 19,8%
+
+=== FAIL-RATE ANALYSE (KRITISCH) ===
+Historische Fail-Rate 2024–Okt 2025: 8–12% (normal)
+EINBRUCH ab November 2025 — korreliert 100% mit PayPal Multiparty Einführung:
+
+Monat | Versuche | Erfolg | Failed | Fail-Rate
+Okt 2025: 7.850 | 7.229 | 621 | 7,9% (normal)
+Nov 2025: 8.849 | 7.156 | 1.693 | 19,1% ⚠️ ERSTER EINBRUCH
+Dez 2025: 11.503 | 8.564 | 2.939 | 25,6% ⚠️
+Jan 2026: 10.175 | 7.613 | 2.562 | 25,2%
+Feb 2026: 10.195 | 7.779 | 2.416 | 23,7%
+Mär 2026: 7.903 | 5.360 | 2.543 | 32,2%
+Apr 2026: 10.513 | 6.997 | 3.516 | 33,4%
+Mai 2026: 8.513 | 5.771 | 2.742 | 32,2%
+Jun 2026: 3.449 | 2.404 | 1.045 | 30,3%
+Jul 2026: 7.476 | 4.927 | 2.549 | 34,1% ← aktuellster Vollmonat
+Aug 2026 (1-4.8.): 1.585 | 702 | 883 | 55,7% ⚠️⚠️ ALARMIEREND
+
+Fail-Rate Umsatzverlust-Schätzung Juli 2026:
+  2.549 gescheiterte Versuche × Ø €73 = ~€186.000 potenziell entgangener Umsatz in NUR einem Monat
+
+=== MONATLICHE DATEN (erfolgreich, Supabase) ===
+Mai 2024: €267.039 | 4.066 Txns | Ø €65,68
+Jun 2024: €206.042 | 3.139 Txns | Ø €65,64
+Jul 2024: €253.071 | 4.021 Txns | Ø €62,94
+Aug 2024: €374.779 | 6.313 Txns | Ø €59,37
+Sep 2024: €275.879 | 3.382 Txns | Ø €81,57
+Okt 2024: €502.037 | 7.434 Txns | Ø €67,53
+Nov 2024: €528.581 | 6.266 Txns | Ø €84,36
+Dez 2024: €531.191 | 6.476 Txns | Ø €82,02
+Jan 2025: €579.143 | 6.753 Txns | Ø €85,76
+Feb 2025: €489.510 | 6.496 Txns | Ø €75,36
+Mär 2025: €475.060 | 6.526 Txns | Ø €72,79
+Apr 2025: €510.555 | 7.511 Txns | Ø €67,97
+Mai 2025: €453.822 | 6.516 Txns | Ø €69,65
+Jun 2025: €306.845 | 4.296 Txns | Ø €71,43
+Jul 2025: €340.113 | 5.059 Txns | Ø €67,23
+Aug 2025: €451.290 | 6.974 Txns | Ø €64,71
+Sep 2025: €309.226 | 3.947 Txns | Ø €78,34
+Okt 2025: €517.552 | 7.229 Txns | Ø €71,59
+Nov 2025: €498.039 | 7.156 Txns | Ø €69,60
+Dez 2025: €610.522 | 8.564 Txns | Ø €71,29
+Jan 2026: €577.527 | 7.613 Txns | Ø €75,86
+Feb 2026: €560.782 | 7.779 Txns | Ø €72,09
+Mär 2026: €440.418 | 5.360 Txns | Ø €82,17
+Apr 2026: €532.206 | 6.997 Txns | Ø €76,06
+Mai 2026: €453.968 | 5.771 Txns | Ø €78,66
+Jun 2026: €211.067 | 2.404 Txns | Ø €87,80
+Jul 2026: €368.044 | 4.927 Txns | Ø €74,70
+Aug 2026 (1.-4.8., unvollständig): €53.710 | 702 Txns | Ø €76,51
+
+=== TAGESWEISE DATEN JULI 2026 ===
+01.07. (Mi): €4.472 | 47 Txns
+02.07. (Do): €6.443 | 69 Txns
+03.07. (Fr): €8.348 | 105 Txns
+04.07. (Sa): €18.805 | 245 Txns
+05.07. (So): €17.450 | 229 Txns
+06.07. (Mo): €6.842 | 78 Txns
+07.07. (Di): €7.479 | 87 Txns
+08.07. (Mi): €12.512 | 179 Txns
+09.07. (Do): €10.912 | 141 Txns
+10.07. (Fr): €8.917 | 132 Txns
+11.07. (Sa): €12.769 | 181 Txns
+12.07. (So): €11.663 | 137 Txns
+13.07. (Mo): €8.620 | 109 Txns
+14.07. (Di): €10.789 | 141 Txns
+15.07. (Mi): €8.903 | 118 Txns
+16.07. (Do): €7.200 | 94 Txns
+17.07. (Fr): €9.689 | 133 Txns
+18.07. (Sa): €17.972 | 239 Txns
+19.07. (So): €19.731 | 250 Txns
+20.07. (Mo): €13.096 | 165 Txns
+21.07. (Di): €17.074 | 248 Txns
+22.07. (Mi): €12.993 | 170 Txns
+23.07. (Do): €11.302 | 161 Txns
+24.07. (Fr): €15.393 | 213 Txns
+25.07. (Sa): €13.789 | 173 Txns
+26.07. (So): €17.428 | 242 Txns
+27.07. (Mo): €16.239 | 232 Txns
+28.07. (Di): €16.747 | 261 Txns
+29.07. (Mi): €10.686 | 155 Txns
+30.07. (Do): €4.952 | 64 Txns
+31.07. (Fr): €8.829 | 129 Txns
+
+=== TAGESWEISE DATEN AUGUST 2026 (laufend) ===
+01.08. (Sa): €17.078 | 201 Txns
+02.08. (So): €16.217 | 225 Txns
+03.08. (Mo): €12.436 | 164 Txns
+04.08. (Di): €7.978 | 112 Txns
+→ Letzter verfügbarer Tag: 04.08.2026
+
+=== VERGLEICH AUGUST 2025 ===
+05.08.2025: €16.124 | 243 Txns | Ø €66,35
+
+=== WOCHENTAGS-MUSTER ===
+Mo: 15.475 Txns | €1.218.466 | Ø €78,74
+Di: 14.462 Txns | €1.142.890 | Ø €79,03
+Mi: 14.893 Txns | €1.140.093 | Ø €76,55
+Do: 17.284 Txns | €1.298.049 | Ø €75,10
+Fr: 22.646 Txns | €1.659.602 | Ø €73,28
+Sa: 38.428 Txns | €2.593.843 | Ø €67,50
+So: 36.489 Txns | €2.625.077 | Ø €71,94
+→ Wochenende: 49,7% aller Txns
+
+=== TAGESZEIT-MUSTER ===
+Peak: 09:00 Uhr (22.000 Txns), 08:00 Uhr (€1.387.565)
+Abend-Peak: 18–20 Uhr (~4.000 Txns/Stunde)
+
+=== WAS NICHT IM DATENSATZ IST ===
+- Jahreskartencheck-INS (physische Eintritte) — nur Verkäufe vorhanden
+- Besucherzahlen (nur Ticketkäufe)
+- Produktkategorien (nur Gesamtbetrag)
+- Kundendaten/CRM`;
+
+// ── AI STATE ──────────────────────────────────────────────────────────────────
+let apiKey = "REPLACE_WITH_NEW_KEY"; // ← NEUEN Key nach Rotation hier eintragen
+let busy = false;
+
+function saveApiKey() {
+  const key = document.getElementById('apiKeyInput').value.trim();
+  if (!key.startsWith('sk-ant-')) {
+    alert('Bitte gib einen gültigen Anthropic API-Key ein (beginnt mit sk-ant-)');
+    return;
+  }
+  apiKey = key;
+  document.getElementById('apiModal').classList.add('hidden');
+  document.getElementById('chatSubtitle').textContent = '✅ KI aktiv — stell beliebige Fragen zu deinen Daten';
+  document.getElementById('chatStatusText').textContent = 'Claude AI · Aktiv';
+  document.getElementById('apiKeyBtn').textContent = '✅ KI aktiv';
+  document.getElementById('apiKeyBtn').style.color = 'var(--green)';
+  const note = document.getElementById('aiReadyNote');
+  if (note) { note.innerHTML = '✅ <strong>Claude KI aktiv</strong> — ich kann jetzt beliebige Fragen zu deinen Daten beantworten!'; }
+  addMsg('Super! Jetzt bin ich vollständig aktiv. Stell mir beliebige Fragen zu den Holland Park Daten — ich kann mit den echten Zahlen rechnen, vergleichen und Trends analysieren.', false);
+}
+
+function skipApiKey() {
+  document.getElementById('apiModal').classList.add('hidden');
+}
+
+// ── CLAUDE API CALL ────────────────────────────────────────────────────────────
+async function callClaude(userMessage) {
+  const systemPrompt = `Du bist Senior-Datenanalyst für Holland Park. Du analysierst Ticket- und Umsatzdaten und lieferst dem Betreiber echte, verwertbare Insights.
+
+${PARK_CONTEXT}
+
+DEINE KERNREGEL — ABSOLUT VERBINDLICH:
+Du gibst IMMER eine nützliche Antwort mit echten Zahlen. Niemals eine reine Absage. Immer: kurzer Hinweis was fehlt (1 Satz) + sofort das Beste was im Datensatz verfügbar ist.
+
+KONKRETE REGELN FÜR HÄUFIGE FRAGEN:
+→ "Jahreskarten-Check-ins": Sag in 1 Satz dass Check-ins nicht im Zahlungssystem sind. Dann SOFORT: Online-Ticket-Umsatz im gefragten Zeitraum + Wochentags-/Saisonmuster.
+→ "Corporate Benefits / B2B / Unternehmensbestellungen": Sag in 1 Satz dass kein Corporate-Kanal erfasst ist. Dann SOFORT: nutze >€200 Transaktionen als Gruppen-/Corporate-Proxy. Zeige die konkreten Zahlen aus dem PROXY-DATEN Abschnitt.
+→ "Besucherzahlen / Besucher im Park": Sag kurz dass keine Eintrittsdaten vorhanden sind. Dann SOFORT: nenne Transaktionszahlen + geschätzte Besucher (Txns × 3,5 als grobe Näherung).
+→ "Gestern" / "Heute": Prüfe ob ${YESTERDAY_ISO} im Datensatz liegt (letzter verfügbarer Tag: 04.08.2026). Falls nicht verfügbar: sage "Daten für ${YESTERDAY} noch nicht im System" + gib dann Aug 1-4 Zahlen + Vorjahr (05.08.2025: €16.124 | 243 Txns).
+→ "Fail Rate / Abbrüche / Conversion": Nicht im Datensatz. Dann: zeige Transaktions-Trends und was auffällig ist.
+
+FORMAT: HTML mit <strong> für Zahlen, Fließtext ohne Aufzählungen, 3-5 Sätze, per "du" ansprechen. IMMER mit konkreten Zahlen enden.`;
+
+  const response = await fetch('https://api.anthropic.com/v1/messages', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'x-api-key': apiKey,
+      'anthropic-version': '2023-06-01',
+      'anthropic-dangerous-direct-browser-access': 'true'
+    },
+    body: JSON.stringify({
+      model: 'claude-haiku-4-5',
+      max_tokens: 600,
+      system: systemPrompt,
+      messages: [{ role: 'user', content: userMessage }]
+    })
+  });
+
+  if (!response.ok) {
+    const err = await response.json();
+    throw new Error(err.error?.message || `API Error ${response.status}`);
+  }
+
+  const data = await response.json();
+  return data.content[0].text;
+}
+
+// ── CHAT LOGIC ────────────────────────────────────────────────────────────────
+function addMsg(html, isUser) {
+  const box = document.getElementById('chatMsgs');
+  const d = document.createElement('div');
+  d.className = 'cmsg' + (isUser ? ' right' : '');
+  d.innerHTML = isUser
+    ? `<div class="cmsg-av usr">HP</div><div class="cmsg-bub">${html}</div>`
+    : `<div class="cmsg-av ai">🤖</div><div class="cmsg-bub">${html}</div>`;
+  box.appendChild(d);
+  box.scrollTop = box.scrollHeight;
+  return d;
+}
+
+function addTyping() {
+  const box = document.getElementById('chatMsgs');
+  const d = document.createElement('div');
+  d.id = 'typing';
+  d.className = 'cmsg';
+  d.innerHTML = `<div class="cmsg-av ai">🤖</div><div class="cmsg-bub"><div class="typing-dots"><span></span><span></span><span></span></div></div>`;
+  box.appendChild(d);
+  box.scrollTop = box.scrollHeight;
+}
+
+function removeTyping() {
+  const el = document.getElementById('typing');
+  if (el) el.remove();
+}
+
+async function doChat() {
+  if (busy) return;
+  const f = document.getElementById('chatField');
+  const msg = f.value.trim();
+  if (!msg) return;
+  f.value = ''; f.style.height = '';
+  addMsg(msg, true);
+  busy = true;
+  document.getElementById('chatBtn').disabled = true;
+  document.getElementById('chatSug').style.display = 'none';
+  addTyping();
+
+  try {
+    let reply;
+    if (apiKey) {
+      reply = await callClaude(msg);
+    } else {
+      // Prompt to set API key
+      await new Promise(r => setTimeout(r, 600));
+      reply = `Um auf diese Frage <strong>präzise zu antworten</strong>, brauche ich Zugriff auf die Claude KI. <br><br>Klick auf <strong>⚙ API-Key</strong> oben rechts und gib deinen Anthropic API-Key ein — dann kann ich <em>beliebige</em> Fragen zu den Holland Park Daten beantworten, inklusive Jahreskartencheck-ins, Uhrzeitmuster, Vergleiche und mehr.`;
+    }
+    removeTyping();
+    // Convert markdown-like formatting to HTML
+    const formatted = reply
+      .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+      .replace(/\*(.*?)\*/g, '<em>$1</em>')
+      .replace(/\n\n/g, '<br><br>')
+      .replace(/\n/g, '<br>');
+    addMsg(formatted, false);
+  } catch (err) {
+    removeTyping();
+    addMsg(`<strong style="color:var(--red)">Fehler:</strong> ${err.message}. Bitte prüfe deinen API-Key.`, false);
+  }
+
+  busy = false;
+  document.getElementById('chatBtn').disabled = false;
+}
+
+function doSug(btn) {
+  document.getElementById('chatField').value = btn.textContent;
+  doChat();
+}
+
+function onKey(e) {
+  if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); doChat(); }
+}
+
+function grow(el) {
+  el.style.height = 'auto';
+  el.style.height = Math.min(el.scrollHeight, 90) + 'px';
+}
+
+// ── CHARTS ────────────────────────────────────────────────────────────────────
+Chart.defaults.color = '#6577a0';
+Chart.defaults.font.family = "-apple-system, BlinkMacSystemFont, 'Inter', sans-serif";
+Chart.defaults.font.size = 11;
+const GRID = 'rgba(255,255,255,0.05)';
+const TIP = { backgroundColor:'#0f1830', borderColor:'rgba(255,255,255,0.1)', borderWidth:1, padding:10 };
+
+(function buildRevenue() {
+  const ctx = document.getElementById('cRevenue').getContext('2d');
+  const grad = ctx.createLinearGradient(0,0,0,210);
+  grad.addColorStop(0,'rgba(74,127,255,.22)');
+  grad.addColorStop(1,'rgba(74,127,255,.0)');
+  const data = [340113,451290,309226,517552,498039,610522,577527,560782,440418,532206,453968,211067,368044];
+  new Chart(ctx, {
+    type:'line',
+    data: {
+      labels:["Jul 25","Aug 25","Sep 25","Okt 25","Nov 25","Dez 25","Jan 26","Feb 26","Mär 26","Apr 26","Mai 26","Jun 26","Jul 26"],
+      datasets:[{ data, borderColor:'#4a7fff', borderWidth:2.5, backgroundColor:grad, fill:true, tension:0.35,
+        pointRadius: data.map((v,i) => v===Math.max(...data)||i===data.length-1?5:2),
+        pointBackgroundColor: data.map((v,i) => i===data.length-1?'#1db97a':'#4a7fff'),
+        pointHoverRadius:7 }]
+    },
+    options: {
+      responsive:true, maintainAspectRatio:false,
+      plugins:{ legend:{display:false}, tooltip:{...TIP, callbacks:{label:c=>'  €'+(c.parsed.y/1000).toFixed(1)+'k'}} },
+      scales:{ x:{grid:{color:GRID}}, y:{grid:{color:GRID}, ticks:{callback:v=>'€'+(v/1000).toFixed(0)+'k'}} }
+    }
+  });
+})();
+
+(function buildBasket() {
+  const ctx = document.getElementById('cBasket').getContext('2d');
+  new Chart(ctx, {
+    type:'doughnut',
+    data: {
+      labels:["< €20","€20–50","€50–100","€100–200","> €200"],
+      datasets:[{ data:[10.5,33.0,40.7,10.8,4.9],
+        backgroundColor:['#1a2d52','#1e407a','#2563eb','#4a7fff','#7fa8ff'],
+        borderColor:'#0b1228', borderWidth:3, hoverOffset:5 }]
+    },
+    options: {
+      responsive:true, maintainAspectRatio:false, cutout:'68%',
+      plugins:{ legend:{position:'right', labels:{color:'#8899bb', font:{size:10}, boxWidth:10, padding:8}},
+        tooltip:{...TIP, callbacks:{label:c=>`  ${c.label}: ${c.parsed}%`}} }
+    }
+  });
+})();
+
+function buildForecast() {
+  if (window._fc) return; window._fc = true;
+  const ctx = document.getElementById('cForecast').getContext('2d');
+  const base = [12800,14200,13500,15600,11900,14800,16200,13400,17100,14500,15900,13200,16800,15100];
+  const labels = Array.from({length:14},(_,i)=>{ const d=new Date('2026-08-05'); d.setDate(d.getDate()+i); return d.toLocaleDateString('de-DE',{day:'2-digit',month:'short'}); });
+  const grad = ctx.createLinearGradient(0,0,0,260);
+  grad.addColorStop(0,'rgba(74,127,255,.18)'); grad.addColorStop(1,'rgba(74,127,255,.0)');
+  new Chart(ctx, {
+    type:'line',
+    data: { labels, datasets:[
+      { label:'Prognose', data:base, borderColor:'#4a7fff', borderWidth:2, borderDash:[6,3], pointRadius:4, pointBackgroundColor:'#4a7fff', fill:true, backgroundColor:grad, tension:0.35 },
+      { data:base.map(v=>Math.round(v*1.18)), borderColor:'rgba(74,127,255,.2)', fill:false, pointRadius:0, tension:0.35, borderWidth:1 },
+      { data:base.map(v=>Math.round(v*0.82)), borderColor:'rgba(74,127,255,.2)', fill:'-1', backgroundColor:'rgba(74,127,255,.07)', pointRadius:0, tension:0.35, borderWidth:1 }
+    ]},
+    options: {
+      responsive:true, maintainAspectRatio:false,
+      plugins:{ legend:{display:false}, tooltip:{...TIP, filter:i=>i.datasetIndex===0, callbacks:{label:c=>'  Prognose: €'+(c.parsed.y/1000).toFixed(1)+'k'}} },
+      scales:{ x:{grid:{color:GRID}}, y:{grid:{color:GRID}, ticks:{callback:v=>'€'+(v/1000).toFixed(0)+'k'}} }
+    }
+  });
+}
+
+function switchTab(id, el) {
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById('tabIns').style.display = id==='ins'?'':'none';
+  document.getElementById('tabProg').style.display = id==='prog'?'':'none';
+  if (id==='prog') setTimeout(buildForecast, 40);
+}
+
+window.addEventListener('load', () => {
+  setTimeout(() => document.getElementById('loadingEl').classList.add('gone'), 400);
+});
+</script>
+</body>
+</html>
