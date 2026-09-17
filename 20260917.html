@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Morning Briefing — Alex & Su · Thursday, September 17, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,700;0,900;1,300;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#0A0A0A;--ink2:#141414;--ink3:#1A1A1A;--border:rgba(255,255,255,0.07);
+  --muted:#666;--soft:#999;--rose:#E8526A;--coral:#FF7B54;--gold:#F0B429;
+  --sky:#38BDF8;--teal:#0D9488;--purple:#7C3AED;--green:#22C55E;--lime:#84CC16;--orange:#F97316;
+  --white:#FFFFFF;--f-sans:'Inter',sans-serif;--f-serif:'Fraunces',serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:#E8E8E8;font-family:var(--f-sans);line-height:1.6;font-size:15px}
+
+/* STICKY NAV */
+.nav{position:sticky;top:0;z-index:100;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);background:rgba(10,10,10,0.92);border-bottom:1px solid var(--border);padding:0 24px;display:flex;align-items:center;gap:4px;height:48px;overflow-x:auto;white-space:nowrap}
+.nav a{color:var(--soft);text-decoration:none;font-size:12px;font-weight:500;padding:6px 10px;border-radius:6px;transition:color .2s,background .2s;letter-spacing:.01em}
+.nav a:hover{color:#fff;background:rgba(255,255,255,0.07)}
+.nav-badge{display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;background:var(--rose);border-radius:50%;font-size:10px;font-weight:700;color:#fff;margin-left:3px;vertical-align:middle}
+
+/* HERO */
+.hero{position:relative;overflow:hidden;padding:80px 40px 60px;text-align:center;border-bottom:1px solid var(--border)}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 100%,rgba(232,82,106,0.22) 0%,rgba(124,58,237,0.14) 60%,transparent 100%);pointer-events:none}
+.hero-eyebrow{font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:20px;display:flex;align-items:center;justify-content:center;gap:8px}
+.hero-eyebrow::before,.hero-eyebrow::after{content:'';width:24px;height:1px;background:var(--rose)}
+.hero-title{font-family:var(--f-serif);font-weight:900;font-size:clamp(40px,8vw,80px);line-height:1.05;color:#fff;margin-bottom:12px}
+.hero-title em{font-style:italic;color:var(--rose)}
+.hero-sub{font-size:13px;color:var(--muted);letter-spacing:.04em}
+
+/* FX TICKER */
+.fx-bar{background:#061206;border-top:1px solid rgba(34,197,94,0.12);border-bottom:1px solid rgba(34,197,94,0.12);padding:16px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.fx-main{display:flex;flex-direction:column;gap:2px}
+.fx-label{font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(34,197,94,0.6)}
+.fx-rate{font-family:var(--f-serif);font-size:38px;font-weight:700;color:var(--green);line-height:1;letter-spacing:-.02em}
+.fx-note{font-size:11px;color:rgba(34,197,94,0.5);margin-top:2px}
+.fx-chips{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.chip{display:inline-flex;align-items:center;gap:5px;background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.16);border-radius:20px;padding:4px 10px;font-size:11px;font-weight:500;color:rgba(34,197,94,0.8)}
+.chip span{color:rgba(34,197,94,0.5);font-size:10px}
+
+/* BENTO GRID */
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:1.5px;background:#0f0f0f}
+.col-4{grid-column:span 4}
+.col-6{grid-column:span 6}
+.col-8{grid-column:span 8}
+.col-12{grid-column:span 12}
+@media(max-width:900px){.col-4,.col-6,.col-8{grid-column:span 12}}
+
+/* CELL BASE */
+.cell{padding:28px;position:relative;overflow:hidden}
+.cell-label{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;margin-bottom:14px;opacity:.5}
+.cell-title{font-family:var(--f-serif);font-weight:700;font-size:22px;line-height:1.25;margin-bottom:8px}
+
+/* WEATHER */
+.weather-sp{background:linear-gradient(135deg,#060e1c 0%,#0a1a30 100%);grid-column:span 4}
+.weather-mc{background:linear-gradient(135deg,#100f00 0%,#1a1600 100%);grid-column:span 4}
+.weather-temp{font-family:var(--f-serif);font-size:78px;font-weight:900;line-height:1;letter-spacing:-.04em;position:relative;z-index:1}
+.weather-sp .weather-temp{color:var(--sky)}
+.weather-mc .weather-temp{color:var(--gold)}
+.weather-range{font-size:12px;color:var(--muted);margin-top:4px}
+.weather-cond{font-size:14px;font-weight:500;color:#ddd;margin-top:8px}
+.weather-emoji{position:absolute;right:20px;bottom:20px;font-size:64px;opacity:.12;z-index:0;line-height:1}
+.weather-alert{display:inline-block;margin-top:10px;padding:3px 8px;border-radius:4px;font-size:11px;font-weight:600}
+.alert-ok{background:rgba(56,189,248,0.12);color:var(--sky)}
+.alert-fest{background:rgba(240,180,41,0.15);color:var(--gold)}
+
+/* LOVE NOTE */
+.love{background:linear-gradient(145deg,#1c0812,#240e1a);border-left:3px solid var(--rose);grid-column:span 4}
+.love-pull{font-family:var(--f-serif);font-style:italic;font-size:17px;line-height:1.55;color:#e0c0c8;margin-bottom:16px}
+.love-pull strong{color:var(--rose);font-style:normal}
+.love-action{display:flex;align-items:flex-start;gap:8px;padding:8px 12px;border-radius:8px;margin-bottom:6px}
+.love-action-sm{background:rgba(232,82,106,0.1)}
+.love-action-md{background:rgba(255,123,84,0.1)}
+.love-action-label{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--rose);white-space:nowrap}
+.love-action-text{font-size:12px;color:#ccc}
+
+/* FOCUS */
+.focus-alex{background:linear-gradient(145deg,#080f26,#060c1e);border-top:3px solid #4F72E0;grid-column:span 6}
+.focus-su{background:linear-gradient(145deg,#100820,#0c0618);border-top:3px solid var(--purple);grid-column:span 6}
+.focus-num{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;font-size:11px;font-weight:700;flex-shrink:0}
+.focus-alex .focus-num{background:rgba(79,114,224,0.25);color:#7B9AEF}
+.focus-su .focus-num{background:rgba(124,58,237,0.25);color:#A78BFA}
+.focus-item{display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;font-size:13px;color:#ccc}
+.alert-box{padding:10px 14px;border-radius:8px;font-size:12px;margin-top:12px}
+.alert-blue{background:rgba(79,114,224,0.1);border:1px solid rgba(79,114,224,0.2);color:#9ab0ef}
+.alert-purple{background:rgba(124,58,237,0.1);border:1px solid rgba(124,58,237,0.2);color:#c4b5fd}
+.pill{display:inline-block;padding:2px 8px;border-radius:12px;font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px}
+.pill-trend{background:rgba(13,148,136,0.2);color:var(--teal)}
+.pill-opp{background:rgba(34,197,94,0.15);color:var(--green)}
+.pill-threat{background:rgba(239,68,68,0.15);color:#F87171}
+.pill-su-trend{background:rgba(255,123,84,0.15);color:var(--coral)}
+.pill-su-angle{background:rgba(124,58,237,0.15);color:#A78BFA}
+
+/* LANGUAGE */
+.language{background:#0a0f07;border-top:3px solid var(--lime);grid-column:span 12}
+.lang-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5px}
+@media(max-width:600px){.lang-grid{grid-template-columns:1fr}}
+.lang-panel{padding:24px}
+.lang-de{background:rgba(240,180,41,0.04)}
+.lang-pt{background:rgba(34,197,94,0.04)}
+.lang-word{font-family:var(--f-serif);font-weight:900;font-size:52px;line-height:1;letter-spacing:-.03em;margin-bottom:6px}
+.lang-de .lang-word{color:var(--gold)}
+.lang-pt .lang-word{color:var(--green)}
+.lang-phonetic{font-size:12px;color:var(--muted);font-style:italic;margin-bottom:4px}
+.lang-meaning{font-size:13px;font-weight:600;color:#ddd;margin-bottom:10px}
+.lang-example{font-size:12px;background:rgba(255,255,255,0.04);border-radius:6px;padding:8px 10px;margin-bottom:8px;color:#bbb}
+.lang-example em{color:#aaa;font-style:italic;font-size:11px;display:block;margin-top:2px}
+.lang-trick{font-size:11px;color:var(--muted);border-left:2px solid rgba(255,255,255,0.1);padding-left:8px;margin-bottom:8px}
+.lang-bonus{font-size:11px;padding:6px 10px;border-radius:6px;background:rgba(255,255,255,0.05);color:#999}
+
+/* NEWS */
+.news{background:var(--ink2);border-top:3px solid var(--gold);grid-column:span 12}
+.news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5px;margin-bottom:1.5px}
+@media(max-width:700px){.news-grid{grid-template-columns:1fr}}
+.news-col{padding:20px;background:rgba(255,255,255,0.02)}
+.news-col-title{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:14px;display:flex;align-items:center;gap:6px}
+.news-item{margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid var(--border)}
+.news-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.news-item-title{font-size:13px;font-weight:600;color:#ddd;margin-bottom:3px;line-height:1.35}
+.news-item-why{font-size:11px;color:var(--muted)}
+.hometown{display:grid;grid-template-columns:1fr 1fr;gap:1.5px}
+@media(max-width:600px){.hometown{grid-template-columns:1fr}}
+.hometown-col{padding:16px 20px;background:rgba(255,255,255,0.015)}
+.hometown-title{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.hometown-text{font-size:12px;color:#999;line-height:1.5}
+
+/* BUSINESS */
+.biz-alex{background:linear-gradient(145deg,#030f0e,#041413);border-top:3px solid var(--teal);grid-column:span 6}
+.biz-su{background:linear-gradient(145deg,#120d06,#1a1008);border-top:3px solid var(--coral);grid-column:span 6}
+.biz-block{margin-bottom:16px}
+.biz-block-title{font-size:12px;font-weight:600;color:#ddd;margin-top:8px;margin-bottom:6px;line-height:1.4}
+.biz-block-text{font-size:12px;color:var(--muted)}
+
+/* INBOX */
+.inbox{background:#0d0a06;border-top:3px solid var(--orange);grid-column:span 12}
+.inbox-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:10px;margin-top:4px}
+.inbox-item{display:flex;align-items:flex-start;gap:10px;padding:10px 12px;border-radius:8px}
+.inbox-high{background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.15)}
+.inbox-med{background:rgba(250,204,21,0.06);border:1px solid rgba(250,204,21,0.12)}
+.inbox-low{background:rgba(255,255,255,0.03);border:1px solid var(--border)}
+.inbox-emoji{font-size:18px;flex-shrink:0;margin-top:1px}
+.inbox-content{flex:1}
+.inbox-subject{font-size:12px;font-weight:600;color:#ddd;margin-bottom:2px;line-height:1.3}
+.inbox-action{font-size:11px;color:var(--muted)}
+.inbox-cal{margin-top:16px;padding:10px 14px;background:rgba(79,114,224,0.08);border-radius:8px;border:1px solid rgba(79,114,224,0.15);font-size:12px;color:#9ab0ef}
+
+/* COUPLE TIP */
+.couple{background:linear-gradient(135deg,#0d0720,#120928);grid-column:span 8;display:flex;flex-direction:column}
+.couple-icon-box{width:72px;height:72px;border-radius:16px;background:rgba(124,58,237,0.2);border:1px solid rgba(124,58,237,0.25);display:flex;align-items:center;justify-content:center;font-size:32px;margin-bottom:16px;flex-shrink:0}
+.couple-title{font-family:var(--f-serif);font-weight:700;font-size:22px;color:#ddd;margin-bottom:10px}
+.couple-body{font-size:13px;color:var(--muted);line-height:1.7;flex:1}
+.couple-check{display:flex;align-items:center;gap:10px;margin-top:16px;padding:10px 14px;background:rgba(124,58,237,0.08);border-radius:8px;font-size:12px;color:#a78bfa}
+.couple-check::before{content:'☐';font-size:16px}
+
+/* SMALLS */
+.smalls{background:var(--ink2);border-top:3px solid var(--green);grid-column:span 4}
+.small-row{padding:12px 0;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:10px}
+.small-row:last-child{border-bottom:none}
+.small-row-icon{font-size:20px;flex-shrink:0}
+.small-row-text{font-size:12px;color:var(--muted);line-height:1.5}
+.small-row-text strong{color:#ddd;display:block;font-size:13px;margin-bottom:2px}
+
+/* THOUGHT */
+.thought{background:#1A1A1A;padding:64px 40px;text-align:center}
+.thought-text{font-family:var(--f-serif);font-style:italic;font-size:clamp(20px,3vw,30px);line-height:1.6;color:#ddd;max-width:680px;margin:0 auto;position:relative}
+.thought-text::before{content:'\201C';color:var(--rose);font-size:4em;line-height:.3;vertical-align:-.4em;margin-right:.08em;font-style:normal}
+.thought-text::after{content:'\201D';color:var(--rose);font-size:4em;line-height:.3;vertical-align:-.4em;margin-left:.06em;font-style:normal}
+.thought-plant{text-align:center;margin-top:16px;font-size:20px;opacity:.5}
+
+/* FOOTER */
+.footer{padding:20px 32px;display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--border);font-size:11px;color:var(--muted);letter-spacing:.04em;flex-wrap:wrap;gap:8px}
+
+/* SECTION PADDING */
+#love,.love{scroll-margin-top:56px}
+#weather,.weather-sp,.weather-mc,.love{scroll-margin-top:56px}
+.cell,.cell{scroll-margin-top:56px}
+</style>
+</head>
+<body>
+
+<!-- STICKY NAV -->
+<nav class="nav">
+  <a href="#love">❤️ Love</a>
+  <a href="#weather">🌤 Weather</a>
+  <a href="#focus">🧠 Focus</a>
+  <a href="#language">🎓 Language</a>
+  <a href="#news">🌍 News</a>
+  <a href="#business">🚀 Business</a>
+  <a href="#inbox">📬 Inbox<span class="nav-badge">7</span></a>
+  <a href="#couple">💑 Couple</a>
+  <a href="#smalls">💡 Smalls</a>
+  <a href="#thought">✦ Thought</a>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-eyebrow">Campo Belo, São Paulo &nbsp;·&nbsp; Donnerstag, 17. September 2026</div>
+  <h1 class="hero-title">Good Morning, <em>Alex & Su.</em></h1>
+  <p class="hero-sub">Thursday briefing &nbsp;·&nbsp; Oktoberfest starts Saturday · 7 action items today</p>
+</header>
+
+<!-- FX TICKER -->
+<div class="fx-bar">
+  <div class="fx-main">
+    <div class="fx-label">EUR / BRL</div>
+    <div class="fx-rate">R$ 5,62</div>
+    <div class="fx-note">+0.18% vs. yesterday</div>
+  </div>
+  <div class="fx-chips">
+    <div class="chip"><span>Range</span> R$ 5,57 – 5,67</div>
+    <div class="chip"><span>Open</span> R$ 5,59</div>
+    <div class="chip"><span>USD/BRL</span> R$ 5,19</div>
+    <div class="chip"><span>Ibovespa</span> ~115.400 pts</div>
+  </div>
+</div>
+
+<!-- GRID -->
+<main class="grid">
+
+  <!-- WEATHER SP -->
+  <section class="cell weather-sp col-4" id="weather">
+    <div class="cell-label">🇧🇷 São Paulo · Campo Belo</div>
+    <div class="weather-temp">24°</div>
+    <div class="weather-range">Mín 18° · Máx 28°</div>
+    <div class="weather-cond">⛅ Parcialmente nublado — chuvas à tarde</div>
+    <span class="weather-alert alert-ok">Humidade 72% · UV alto</span>
+    <div class="weather-emoji">☀️</div>
+  </section>
+
+  <!-- WEATHER MUNICH -->
+  <section class="cell weather-mc col-4">
+    <div class="cell-label">🇩🇪 München · Innenstadt</div>
+    <div class="weather-temp">16°</div>
+    <div class="weather-range">Min 9° · Max 18°</div>
+    <div class="weather-cond">☁️ Mostly cloudy, autumn chill</div>
+    <span class="weather-alert alert-fest">🍺 Oktoberfest opens SATURDAY</span>
+    <div class="weather-emoji">🍂</div>
+  </section>
+
+  <!-- LOVE NOTE -->
+  <section class="cell love col-4" id="love">
+    <div class="cell-label">❤️ For Su, with love</div>
+    <p class="love-pull">
+      Thursday is that quiet electricity before the weekend. You've pushed through the week with the focus of someone who actually gives a damn about what they do — and <strong>that</strong> is deeply attractive.
+    </p>
+    <p style="font-size:12px;color:#b08090;margin-bottom:14px;">You carry Google Cloud conversations, São Paulo traffic, and a high-energy founder at home — all at once. That's not multitasking. That's strength.</p>
+    <div class="love-action love-action-sm">
+      <span class="love-action-label">Make Su smile →</span>
+      <span class="love-action-text">Leave a sticky note on her laptop before she sits down today. One sentence. Any sentence that's just hers.</span>
+    </div>
+    <div class="love-action love-action-md">
+      <span class="love-action-label">Mini-date →</span>
+      <span class="love-action-text">Thursday tapas: grab something from the padaria, eat on the varanda after dark. No phones. 30 minutes is enough.</span>
+    </div>
+  </section>
+
+  <!-- FOCUS ALEX -->
+  <section class="cell focus-alex col-6" id="focus">
+    <div class="cell-label">🧠 Focus · Alex</div>
+    <div class="focus-item"><span class="focus-num">1</span><div>Follow up <strong>Christian Scholz</strong> — call was Monday, task is due TODAY. This is a warm lead, don't let it cool.</div></div>
+    <div class="focus-item"><span class="focus-num">2</span><div>Call <strong>LuFUN Soccer / Sari Altun</strong> (Indoorspielplatz) — due today. Two venue-type prospects firing the same morning = opportunity signal for ticketbro's segment.</div></div>
+    <div class="focus-item"><span class="focus-num">3</span><div>Review <strong>Olaf Brorsen + Désirée Coletta</strong> call recordings (HubSpot) — follow-up emails are pre-drafted by AI, review + send.</div></div>
+    <div class="alert-box alert-blue">📅 <strong>Today:</strong> Tide Onboarding DE — 11:15am GMT+1 (= 7:15am BRT). Check calendar. Also: Kinderwelt Köthen, Chari Krause, papijo tasks all due.</div>
+    <div class="alert-box alert-blue" style="margin-top:8px">🚗 Sixt car returned in Munich today. Safe travels or welcome back to SP.</div>
+  </section>
+
+  <!-- FOCUS SU -->
+  <section class="cell focus-su col-6">
+    <div class="cell-label">🧠 Focus · Su · Google Cloud SMB</div>
+    <div class="biz-block">
+      <div class="pill pill-su-trend">Trend</div>
+      <div class="biz-block-title" style="color:#c4b5fd">Google Cloud hit 82% YoY growth — SMB AI adoption is the primary driver</div>
+      <div class="biz-block-text">SMBs aren't buying cloud anymore — they're buying AI outcomes delivered via cloud. The pitch that's landing: "Your analyst, not your server rack."</div>
+    </div>
+    <div class="biz-block">
+      <div class="pill pill-su-angle">Sales Angle</div>
+      <div class="biz-block-title" style="color:#c4b5fd">ROI metrics, not features. SMBs need concrete numbers.</div>
+      <div class="biz-block-text">Lead with time-saved-per-week or cost-per-customer-served. "Vertex AI reduced their support triage by 40%" opens more doors than "we have AutoML."</div>
+    </div>
+    <div class="alert-box alert-purple">💡 Conversation starter today: Ask prospects "What's one thing your team does manually that you wish just… happened?" Then map it to a Google Cloud workflow.</div>
+  </section>
+
+  <!-- LANGUAGE SCHOOL -->
+  <section class="cell language col-12" id="language">
+    <div class="cell-label">🎓 Language School · Thursday = Travel Theme</div>
+    <div class="lang-grid">
+      <!-- SU LEARNS GERMAN -->
+      <div class="lang-panel lang-de">
+        <div style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(240,180,41,0.5);margin-bottom:10px">🇩🇪 Su lernt Deutsch</div>
+        <div class="lang-word">Reisefieber</div>
+        <div class="lang-phonetic">/ ˈʀaɪzə.fiːbɐ /</div>
+        <div class="lang-meaning">Travel fever — that buzzy, can't-sit-still feeling before a trip</div>
+        <div class="lang-example">
+          "Ich habe schon Reisefieber, obwohl wir erst nächste Woche fliegen!"
+          <em>"I already have travel fever, even though we don't fly until next week!"</em>
+        </div>
+        <div class="lang-trick">💡 Trick: Reise = journey. Fieber = fever. You're literally sick with excitement about traveling. Germans invented a word for this feeling because of course they did.</div>
+        <div class="lang-bonus">🎁 Bonus: "Fernweh" (fern = far, weh = ache) = longing for far-away places. Germany's version of saudade — but make it geographic.</div>
+      </div>
+      <!-- ALEX LEARNS PORTUGUESE -->
+      <div class="lang-panel lang-pt">
+        <div style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(34,197,94,0.5);margin-bottom:10px">🇧🇷 Alex aprende Português</div>
+        <div class="lang-word">Mochileiro</div>
+        <div class="lang-phonetic">/ mo-shi-ˈle-ɾo /</div>
+        <div class="lang-meaning">Backpacker — but also anyone traveling light, spontaneously, on their own terms</div>
+        <div class="lang-example">
+          "Vamos ser mochileiros e explorar o interior de SP neste fim de semana!"
+          <em>"Let's be backpackers and explore the SP countryside this weekend!"</em>
+        </div>
+        <div class="lang-trick">💡 Trick: Mochila = backpack. Mochileiro = the person with the backpack. If you've ever gone somewhere with only a carry-on, Su would call you a mochileiro honorário.</div>
+        <div class="lang-bonus">🎁 Usage tip: "Ele é muito mochileiro" is a compliment — someone low-maintenance and adventurous. Use it when someone's being refreshingly spontaneous.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWS -->
+  <section class="cell news col-12" id="news">
+    <div class="cell-label">🌍 News · September 17, 2026</div>
+    <div class="news-grid">
+      <!-- SP NEWS -->
+      <div class="news-col">
+        <div class="news-col-title">🇧🇷 São Paulo</div>
+        <div class="news-item">
+          <div class="news-item-title">Election Season Heats Up — SP Gubernatorial Race Accelerates</div>
+          <div class="news-item-why">Why it matters: São Paulo's 2026 election cycle is entering final stretch. Political noise will dominate Oct–Nov. Consumer sentiment dips during elections — plan any ticketbro campaigns accordingly.</div>
+        </div>
+        <div class="news-item">
+          <div class="news-item-title">Ibovespa Holds ~115k pts — BRL Firmer on Global Risk Appetite</div>
+          <div class="news-item-why">Markets calm this morning. BRL benefiting from broader EM rally. Watch for any Central Bank signaling on SELIC before end of month.</div>
+        </div>
+        <div class="news-item">
+          <div class="news-item-title">SP Spring Traffic Warning: Rain Expected by 4pm</div>
+          <div class="news-item-why">Early spring showers hitting by late afternoon. If either of you is commuting post-4pm, factor in 30+ mins extra. Work from home window: now open.</div>
+        </div>
+      </div>
+      <!-- MUNICH NEWS -->
+      <div class="news-col">
+        <div class="news-col-title">🇩🇪 München</div>
+        <div class="news-item">
+          <div class="news-item-title">Oktoberfest 2026 Opens Saturday — 7 Million Visitors Expected</div>
+          <div class="news-item-why">The world's largest folk festival kicks off this Saturday with the Anzapfen ceremony at noon. Munich's economic output spikes by ~€1.3B. If Alex is still in Munich, there's your evening plan sorted.</div>
+        </div>
+        <div class="news-item">
+          <div class="news-item-title">Bavaria Transport Upgrades for Fest Crowds</div>
+          <div class="news-item-why">U-Bahn and S-Bahn getting extended hours through mid-October. Theresienwiese area: expect full closures Fri–Sun. Plan routes accordingly.</div>
+        </div>
+        <div class="news-item">
+          <div class="news-item-title">Bayern München: Champions League Group Stage in Full Swing</div>
+          <div class="news-item-why">Bayern top of their UCL group after matchday 1. Home match next week at Allianz Arena — gives Münchenliebhaber something to track.</div>
+        </div>
+      </div>
+      <!-- GLOBAL NEWS -->
+      <div class="news-col">
+        <div class="news-col-title">🌐 Global</div>
+        <div class="news-item">
+          <div class="news-item-title">OpenAI + Anthropic + Google Form Joint AI Safety Standards Body</div>
+          <div class="news-item-why">The three frontier labs announced this week they're co-creating an industry AI standards organization. Rare alignment move. Signals: regulators are coming, and the labs want to shape the rules first. Relevant for anyone building on AI infrastructure.</div>
+        </div>
+        <div class="news-item">
+          <div class="news-item-title">Google, Anthropic, OpenAI Unveil Cyber AI Models & Enterprise Safeguards</div>
+          <div class="news-item-why">New class of AI models built specifically for cybersecurity detection and response. Google Cloud's version integrates directly with Workspace — headline Su can use in SMB pitches: "AI that keeps your business safe, not just productive."</div>
+        </div>
+      </div>
+    </div>
+    <!-- HOMETOWN INTEL -->
+    <div style="padding:0 0 0 0">
+      <div style="font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);padding:16px 20px 8px">🏘 Hometown Intel</div>
+      <div class="hometown">
+        <div class="hometown-col">
+          <div class="hometown-title">☕ Poços de Caldas, MG</div>
+          <div class="hometown-text">Minas Gerais state government is highlighting Poços de Caldas as a rare earth mineral hub — significant economic positioning for the region. Local pride note: the city's mineral wealth is now being talked about at national level. Águas termais still flowing, cafezinho still excellent.</div>
+        </div>
+        <div class="hometown-col">
+          <div class="hometown-title">🍁 Michelau in Oberfranken</div>
+          <div class="hometown-text">Ruhige Woche in Michelau. Die Birken an der Rodach färben sich langsam goldbraun — der Frankenwald im Vorwinter-Modus. Kein Drama, kein Lärm. Irgendwo macht jemand Kuchen. Das ist Michelau.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUSINESS ALEX -->
+  <section class="cell biz-alex col-6" id="business">
+    <div class="cell-label">🚀 Business · ticketbro + eventbro</div>
+    <div class="biz-block">
+      <div class="pill pill-trend">Industry Trend</div>
+      <div class="biz-block-title">AI-powered predictive demand is now the dominant ticketing conversation in 2026</div>
+      <div class="biz-block-text">INTIX reports 73% of large venues now use some form of AI-driven dynamic pricing. The arms race is happening at the top of the market — but the SMB event organizer segment is wide open.</div>
+    </div>
+    <div class="biz-block">
+      <div class="pill pill-opp">Opportunity</div>
+      <div class="biz-block-title">White-label "smart pricing" for independent venues = ticketbro's wedge</div>
+      <div class="biz-block-text">Big platforms (Ticketmaster, Eventim) serve arenas. ticketbro's moat: bring AI-assisted pricing to Indoorspielplätze, Kinderparks, and local event organizers who don't know these tools exist. The Personalized Songs product sold this morning is proof of demand diversity — keep expanding the revenue surface.</div>
+    </div>
+    <div class="biz-block">
+      <div class="pill pill-threat">Threat</div>
+      <div class="biz-block-title">Anti-scalping regulation tightening in DE + EU in Q4 2026</div>
+      <div class="biz-block-text">Germany is advancing face-value resale restrictions. Monitor closely — could affect secondary market features and resale partnerships if eventbro enters that space.</div>
+    </div>
+  </section>
+
+  <!-- BUSINESS SU -->
+  <section class="cell biz-su col-6">
+    <div class="cell-label">🚀 Business · Su · Google Cloud SMB</div>
+    <div class="biz-block">
+      <div class="pill pill-su-trend">Market Trend</div>
+      <div class="biz-block-title">Google Cloud 82% growth driven by SMB AI tool bundles — Workspace + Vertex AI</div>
+      <div class="biz-block-text">SMBs are adopting AI at a faster rate than enterprises in 2026. Google's SMB Next conference this year made it official: the channel is pivoting to AI-led conversations. Cloud infrastructure is now the assumed baseline — AI productivity is the differentiator.</div>
+    </div>
+    <div class="biz-block">
+      <div class="pill pill-su-angle">Sales Angle</div>
+      <div class="biz-block-title">SMBs want time-back metrics, not TCO charts</div>
+      <div class="biz-block-text">The Google Cloud blog on London SMBs showed the winning pitch is "what does your team spend 2 hours a week on that we can automate?" — not feature lists. Startups especially respond to velocity framing: "how fast can your team move with AI vs. without it."</div>
+    </div>
+    <div class="alert-box" style="background:rgba(255,123,84,0.08);border:1px solid rgba(255,123,84,0.15);color:#FFB8A0;margin-top:12px">
+      💡 Cyber AI safeguards announced this week by Google = new conversation opener with security-conscious SMBs who've been hesitating on cloud migration.
+    </div>
+  </section>
+
+  <!-- INBOX -->
+  <section class="cell inbox col-12" id="inbox">
+    <div class="cell-label">📬 Inbox · 15 unread · 7 need attention</div>
+    <div class="inbox-grid">
+      <div class="inbox-item inbox-high">
+        <div class="inbox-emoji">🔴</div>
+        <div class="inbox-content">
+          <div class="inbox-subject">HubSpot: Follow up with Christian Scholz</div>
+          <div class="inbox-action">DUE TODAY — call was Monday Sept 14. Warm lead, time-sensitive. Call or email now.</div>
+        </div>
+      </div>
+      <div class="inbox-item inbox-high">
+        <div class="inbox-emoji">🔴</div>
+        <div class="inbox-content">
+          <div class="inbox-subject">HubSpot: LuFUN Soccer — Sari Altun anrufen</div>
+          <div class="inbox-action">DUE TODAY — Indoorspielplatz prospect. Call Sari at 18:00 as logged. High-potential venue type for ticketbro.</div>
+        </div>
+      </div>
+      <div class="inbox-item inbox-med">
+        <div class="inbox-emoji">🟡</div>
+        <div class="inbox-content">
+          <div class="inbox-subject">Linear: Johannes mentioned you in CUS-1417</div>
+          <div class="inbox-action">"Remove Conne..." — team needs input on a customer issue. Check & unblock Johannes.</div>
+        </div>
+      </div>
+      <div class="inbox-item inbox-med">
+        <div class="inbox-emoji">🟡</div>
+        <div class="inbox-content">
+          <div class="inbox-subject">HubSpot: Call with Olaf Brorsen — recording ready</div>
+          <div class="inbox-action">AI follow-up email pre-drafted. Review & send today while context is fresh.</div>
+        </div>
+      </div>
+      <div class="inbox-item inbox-med">
+        <div class="inbox-emoji">🟡</div>
+        <div class="inbox-content">
+          <div class="inbox-subject">HubSpot: Call with Désirée Coletta — recording ready</div>
+          <div class="inbox-action">Same — AI follow-up ready. Review & send. Two calls, two follow-ups. Clear this today.</div>
+        </div>
+      </div>
+      <div class="inbox-item inbox-med">
+        <div class="inbox-emoji">🟡</div>
+        <div class="inbox-content">
+          <div class="inbox-subject">HubSpot tasks: Kinderwelt Köthen · Chari Krause · papijo</div>
+          <div class="inbox-action">3× DUE TODAY. Kinderwelt: check if reopened. Chari Krause: satisfaction check. papijo: pitch ticketbro.</div>
+        </div>
+      </div>
+      <div class="inbox-item inbox-low">
+        <div class="inbox-emoji">🟢</div>
+        <div class="inbox-content">
+          <div class="inbox-subject">ticketbro: Personalized Song sold! Order #1087 — Hilal Özer</div>
+          <div class="inbox-action">🎵 Morning revenue. FYI only.</div>
+        </div>
+      </div>
+    </div>
+    <div class="inbox-cal">📅 <strong>Calendar today:</strong> Tide Onboarding – DE Calendar @ 11:15am GMT+1 (7:15am BRT / 12:15pm Munich time) &nbsp;·&nbsp; No Google Calendar MCP available — check your calendar app for full day view.</div>
+  </section>
+
+  <!-- COUPLE TIP -->
+  <section class="cell couple col-8" id="couple">
+    <div class="couple-icon-box">🌱</div>
+    <div class="couple-title">Thursday Couple Tip · Growth</div>
+    <div class="couple-body">
+      Before Friday hits, take 90 seconds at dinner tonight to each name <em>one win from this week</em> — work or personal, big or small. No commentary, no advice, no comparison. Just say it out loud. High-performance people almost never pause to register their own progress, so the week disappears into the next without a moment to exhale. This isn't therapy. It's how high performers stay calibrated without burning out.
+      <br><br>The rule: listen to the other person's win without pivoting to yours. Let it land. Then share yours.
+    </div>
+    <div class="couple-check">Thursday ritual: name your win before the weekend arrives</div>
+  </section>
+
+  <!-- SMALLS -->
+  <section class="cell smalls col-4" id="smalls">
+    <div class="cell-label">💡 Small Things Worth Knowing</div>
+    <div class="small-row">
+      <div class="small-row-icon">🚗</div>
+      <div class="small-row-text">
+        <strong>Sixt key returned in Munich today</strong>
+        Rental closed out. Either Alex is back in SP or just wrapped up a Munich leg. Either way — travel logistics sorted.
+      </div>
+    </div>
+    <div class="small-row">
+      <div class="small-row-icon">🍺</div>
+      <div class="small-row-text">
+        <strong>2 days until Oktoberfest</strong>
+        Opens Saturday, September 19. Alex: if you're near Munich this weekend, you already know what to do. SP crew: plan a virtual toast at 13:00 BRT / 18:00 CEST Saturday.
+      </div>
+    </div>
+    <div class="small-row">
+      <div class="small-row-icon">⚡</div>
+      <div class="small-row-text">
+        <strong>SP spring rain window: after 4pm</strong>
+        Early spring showers forecast for Campo Belo. Perfect excuse to stay home, cook something, and not sit in traffic.
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- THOUGHT OF THE DAY -->
+<section class="thought" id="thought">
+  <div class="thought-text">
+    The gap between "nearly done" and "finished" is where most founders live permanently. Thursday is the best day of the week to close one thing completely.
+  </div>
+  <div class="thought-plant">🌿</div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <span>Morning Briefing for Alex & Su · Campo Belo, São Paulo</span>
+  <span>Thursday · September 17, 2026</span>
+</footer>
+
+</body>
+</html>
